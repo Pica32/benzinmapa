@@ -63,7 +63,7 @@ export function getStationsByRegion(region: string): StationWithPrice[] {
 
 export function getCheapestStations(fuelType: FuelType, limit = 10): StationWithPrice[] {
   return getStationsWithPrices()
-    .filter(s => s.price?.[fuelType] != null)
+    .filter(s => s.price?.[fuelType] != null && s.price?.source === 'mbenzin.cz')
     .sort((a, b) => (a.price![fuelType] ?? 999) - (b.price![fuelType] ?? 999))
     .slice(0, limit);
 }
