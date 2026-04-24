@@ -155,6 +155,166 @@ Pro dálkové cestování: MOL nebo Benzina ORLEN (hustá síť u dálnic).
       { q: 'Proč jsou Shell a OMV dražší?', a: 'Prémiové značky platí za globální marketing, prémiové pozice u dálnic a rozšířené služby na stanicích. Rozdíl v ceně paliva samotného je minimální.' },
     ],
   },
+  'co-ovlivnuje-ceny-pohonnych-hmot': {
+    title: 'Co ovlivňuje ceny pohonných hmot v ČR? Kompletní průvodce',
+    excerpt: 'Od ceny ropy přes rafinérie, daně, distribuci až po marže čerpacích stanic – rozebíráme každý krok, který rozhoduje o tom, co zaplatíte na pumpě.',
+    date: '2026-04-22',
+    readTime: '8 min',
+    tag: 'Průvodce',
+    content: `
+## Cesta ropy od vrtu k pumpě
+
+Cena benzínu nebo nafty, kterou zaplatíte na čerpací stanici, vzniká jako součet mnoha faktorů. Pojďme je rozebrat krok za krokem.
+
+### 1. Světová cena ropy (40–50 % konečné ceny)
+
+Základem je ropa – konkrétně ropa Brent, která je referenční cenou pro Evropu. Její cenu určuje globální nabídka a poptávka, geopolitické napětí, rozhodnutí OPEC+ a spekulace na komoditních burzách.
+
+Každé zdražení ropy o 10 USD/barel se přibližně za 2–4 týdny promítne do ceny benzínu zdražením o 1,5–2,5 Kč/l.
+
+### 2. Rafinérie a zpracování (10–15 %)
+
+Ropa se musí přeměnit na benzín nebo naftu v rafinériích. Náklady na zpracování závisí na technologii rafinérie, ceně energie a požadavcích na kvalitu paliva (letní/zimní specifikace).
+
+### 3. Spotřební daň – největší fixní složka
+
+Spotřební daň v ČR je pevně daná zákonem:
+- **Natural 95 a 98:** 12 843 Kč za 1 000 litrů = **12,84 Kč za litr**
+- **Nafta:** 10 950 Kč za 1 000 litrů = **10,95 Kč za litr**
+
+To znamená, že bez ohledu na světové ceny ropy platíte za benzín daňový základ ~13 Kč/l.
+
+### 4. DPH (21 %)
+
+DPH se počítá z celé ceny včetně spotřební daně. Pokud celková cena bez DPH je 30 Kč, DPH přidá dalších 6,30 Kč.
+
+### 5. Distribuce a logistika (5–10 %)
+
+Palivo musí přicestovat z rafinérie (ČR závisí na polských a slovenských rafinériích) do distribučních terminálů a dále na čerpací stanice. Náklady na dopravu, skladování a poplatky za terminály se promítnou do velkoobchodní ceny.
+
+### 6. Marže čerpací stanice (5–15 %)
+
+Marže se výrazně liší podle sítě:
+- Velké sítě (Shell, OMV): **3–6 Kč/l**
+- Středně velké (Benzina, MOL): **2–4 Kč/l**
+- Nezávislé a supermarketové: **1–2,5 Kč/l**
+
+### 7. Kurz CZK/USD
+
+Protože ropa se obchoduje v dolarech, oslabení koruny zdražuje dovoz. Pokud koruna oslabí o 1 Kč/USD, cena benzínu roste přibližně o 0,5 Kč/l.
+
+## Proč se ceny liší na různých stanicích?
+
+Stejné palivo (splňující normu EN 228) může stát na sousedních stanicích 3–5 Kč/l jinak. Důvody:
+- **Nájemné:** Čerpačka u dálnice platí za prémiovou polohu.
+- **Branding:** Velké sítě investují do marketingu.
+- **Obrat:** Stanice s vyšším obratem si mohou dovolit nižší marži.
+    `,
+    faqs: [
+      { q: 'Proč zdražil benzín přes noc?', a: 'Ceny pohonných hmot mohou reagovat rychle na pohyb ropy na světových trzích, výkyvy kurzu dolaru nebo regionální výpadky dodávek. Skokové zdražení o více než 1 Kč přes noc je obvykle způsobeno kombinací těchto faktorů.' },
+      { q: 'Kdy se zdražení ropy projeví na pumpě?', a: 'Zpravidla za 2–4 týdny. Rafinérie a distributoři mají zásoby nakoupené za starší ceny, takže změna ceny ropy se promítá postupně.' },
+      { q: 'Může stát ovlivnit ceny pohonných hmot?', a: 'Stát může dočasně snížit spotřební daň nebo DPH. V ČR k tomu zatím nedošlo, ale v době energetické krize 2022 to udělalo Německo či Francie.' },
+    ],
+  },
+
+  'rozdil-natural-95-vs-98': {
+    title: 'Natural 95 vs. Natural 98: Jaký je skutečný rozdíl?',
+    excerpt: 'Stojí za příplatek 3–4 Kč/l Natural 98? Vysvětlujeme oktanové číslo, vliv na motor, výkon a kdy se tankování prémia skutečně vyplatí.',
+    date: '2026-04-18',
+    readTime: '5 min',
+    tag: 'Průvodce',
+    content: `
+## Co je oktanové číslo?
+
+Oktanové číslo vyjadřuje odolnost paliva proti samovznícení (klepání motoru). Natural 95 má minimální oktanové číslo 95 RON, Natural 98 má 98 RON.
+
+### Proč záleží na klepání motoru?
+
+Moderní motory s přeplňováním (turbo) pracují s vyšším kompresním poměrem, aby dosáhly vyššího výkonu při nižší spotřebě. Pokud se palivo vzněcuje příliš brzy (před zapálením svíčkou), motor "klepe" – to poškozuje ložiska, písty a snižuje životnost.
+
+## Kdy se Natural 98 vyplatí?
+
+### Motory s doporučením 98 RON
+Výrobci jako BMW, Mercedes, Porsche, Audi a některé sporty Honda/Toyota doporučují nebo vyžadují 98 RON. Používáte-li 95 v takovém motoru:
+- Řídící jednotka zpozdí zapalování → méně výkonu (-5–15 hp)
+- Vyšší spotřeba (+0,3–0,8 l/100 km)
+- Dlouhodobě větší opotřebení
+
+### Motory navržené pro 95 RON
+Běžné motory s nižším kompresním poměrem z 98 nezískají nic. Řídící jednotka jednoduše nenechá motoru "zpívat" výš, protože na to není konstrukčně připraven.
+
+## Ekonomická kalkulace
+
+| Parametr | Natural 95 | Natural 98 |
+|---|---|---|
+| Cena (duben 2026) | ~40,5 Kč/l | ~43,5 Kč/l |
+| Příplatek | – | +3 Kč/l |
+| Úspora spotřeby (turbo motor) | – | 0–5 % |
+| Výsledek (60 l nádrž) | 2 430 Kč | 2 610 Kč |
+
+Při průměrné spotřebě 7 l/100 km a 20 000 km/rok zaplatíte za Natural 98 o **4 200 Kč více ročně**. Úspora na spotřebě (max. 5 %) tuto částku zpravidla nepokryje.
+
+## Závěr
+
+- **Máte turbo motor od prémiové značky?** Tankujte 98, jak doporučuje výrobce.
+- **Máte běžný atmosférický nebo starší motor?** Natural 95 stačí.
+- **Nevíte?** Podívejte se do technického průkazu nebo příručky – je tam přímo uvedeno.
+    `,
+    faqs: [
+      { q: 'Zničím motor tankem Natural 95 místo 98?', a: 'Ne. Moderní motory mají řídící jednotku (ECU), která automaticky upraví zapalování a zabrání poškození. Výsledkem je ale nižší výkon a vyšší spotřeba, nikoli okamžité poškození.' },
+      { q: 'Je Natural 98 čistší než 95?', a: 'Obě paliva splňují normu EN 228. Někteří výrobci přidávají do prémiových paliv čisticí aditiva, ale tato aditiva lze koupit i samostatně za zlomek ceny rozdílu.' },
+      { q: 'Mohu mixovat Natural 95 a 98?', a: 'Ano, bez problémů. Výsledné oktanové číslo bude přibližně průměr obou paliv. Obvykle se to dělá, když dojedete na prázdno k jiné stanici.' },
+    ],
+  },
+
+  'dalnicni-vs-mestska-cerpacka': {
+    title: 'Dálniční vs. městská čerpačka: Kde je benzín opravdu levnější?',
+    excerpt: 'Dálniční pumpy jsou proslulé vyššími cenami. Kolik ale skutečně přeplatíte? A kdy se vyplatí odbočit do města? Reálná data z celé ČR.',
+    date: '2026-04-08',
+    readTime: '4 min',
+    tag: 'Analýza',
+    content: `
+## Mýtus vs. realita: dálniční přirážka
+
+Dálniční čerpačky jsou dražší – to je obecně známý fakt. Ale o kolik?
+
+Na základě dat BenzinMapa.cz z tisíců stanic v ČR platí:
+
+| Typ stanice | Průměr Natural 95 | Přirážka |
+|---|---|---|
+| Nejlevnější v ČR (nezávislé) | -1,50 Kč pod průměrem | – |
+| Průměr ČR | 0 Kč | – |
+| Shell/OMV u dálnice | +1,50–2,50 Kč nad průměrem | +1,50–2,50 Kč |
+
+Pro 60l nádrž to znamená přeplatek **90–150 Kč** oproti průměrné stanici ve městě.
+
+## Kdy je dálniční stanice rozumná volba?
+
+### 1. Máte méně než čtvrtinu nádrže
+Tankujte dříve, než "musíte" – u prázdné nádrže nemáte výběr.
+
+### 2. Jedete na dlouhé trase s časovým tlakem
+Zastávka v obci přidá 10–20 minut. Při hodinové sazbě 400 Kč stojí váš čas víc než ušetřených 100 Kč.
+
+### 3. Noc nebo neznámá oblast
+Bezpečnost a jistota otevřené stanice mají svou hodnotu.
+
+## Kdy odbočit do města stojí za to
+
+- Víkend + delší trasa: tankujte ráno před výjezdem
+- Znáte trasu: naplánujte si zastávku v levné stanici pomocí BenzinMapa.cz
+- Velká nádrž (SUV, dodávka): úspora 200–400 Kč se vyplatí i za 5 minut zastávky
+
+## Tip: Plánujte zastávky na BenzinMapa.cz
+
+Na naší mapě vidíte ceny všech stanic podél vaší trasy. Stačí kliknout na stanici a zobrazit aktuální cenu Natural 95, nafty nebo LPG.
+    `,
+    faqs: [
+      { q: 'Jsou dálniční čerpačky povinny mít vyšší ceny?', a: 'Ne, ceny nejsou regulovány. Vyšší ceny jsou výsledkem vyššího nájemného za prémiovou polohu, nižšího obratu mimo sezónu a monopolního postavení v daném úseku.' },
+      { q: 'Která dálnice má nejlevnější čerpačky?', a: 'Podle dat BenzinMapa.cz bývají relativně levnější stanice na D35 a D46. Nejdražší jsou typicky stanice u Prahy (D1, D5, D8) a u hranic.' },
+    ],
+  },
+
   'benzin-vs-diesel-co-je-ekonomictejsi': {
     title: 'Benzín vs. nafta: Co je v roce 2026 ekonomičtější?',
     excerpt: 'Benzín nebo diesel – odpovídáme s ohledem na aktuální ceny.',

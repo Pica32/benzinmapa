@@ -18,6 +18,22 @@ const POSTS = [
     tag: 'Analýza',
   },
   {
+    slug: 'co-ovlivnuje-ceny-pohonnych-hmot',
+    title: 'Co ovlivňuje ceny pohonných hmot v ČR? Kompletní průvodce',
+    excerpt: 'Od ceny ropy přes rafinérie, daně, distribuci až po marže čerpacích stanic – rozebíráme každý krok, který rozhoduje o tom, co zaplatíte na pumpě.',
+    date: '2026-04-22',
+    readTime: '8 min',
+    tag: 'Průvodce',
+  },
+  {
+    slug: 'rozdil-natural-95-vs-98',
+    title: 'Natural 95 vs. Natural 98: Jaký je skutečný rozdíl?',
+    excerpt: 'Stojí za příplatek 3–4 Kč/l Natural 98? Vysvětlujeme oktanové číslo, vliv na motor, výkon a kdy se tankování prémia skutečně vyplatí.',
+    date: '2026-04-18',
+    readTime: '5 min',
+    tag: 'Průvodce',
+  },
+  {
     slug: 'jak-usetrit-za-palivo-10-tipu',
     title: 'Jak ušetřit za palivo: 10 tipů pro řidiče',
     excerpt: 'Přinášíme praktické tipy, jak snížit náklady na pohonné hmoty. Od výběru správné čerpací stanice přes jízdní styl až po věrnostní programy.',
@@ -32,6 +48,14 @@ const POSTS = [
     date: '2026-04-10',
     readTime: '6 min',
     tag: 'Srovnání',
+  },
+  {
+    slug: 'dalnicni-vs-mestska-cerpacka',
+    title: 'Dálniční vs. městská čerpačka: Kde je benzín opravdu levnější?',
+    excerpt: 'Dálniční pumpy jsou proslulé vyššími cenami. Kolik ale skutečně přeplatíte? A kdy se vyplatí odbočit do města? Reálná data z celé ČR.',
+    date: '2026-04-08',
+    readTime: '4 min',
+    tag: 'Analýza',
   },
   {
     slug: 'nejlevnejsi-cerpaci-stanice-cr-2026',
