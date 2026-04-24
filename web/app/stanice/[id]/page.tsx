@@ -106,33 +106,69 @@ export default async function StationPage({ params }: Props) {
 
         {/* CENY */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 mb-5 shadow-sm">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-            <Fuel size={18} className="text-green-600" /> Aktuální ceny paliv
-          </h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+              <Fuel size={18} className="text-green-600" /> Aktuální ceny paliv
+            </h2>
+            {station.price?.source === 'mbenzin.cz' && (
+              <span className="text-xs bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full font-semibold">
+                ✓ Ověřená cena
+              </span>
+            )}
+            {station.price?.source === 'mbenzin-avg-offset' && (
+              <span className="text-xs bg-gray-100 text-gray-500 dark:bg-gray-700 dark:text-gray-400 px-2 py-0.5 rounded-full">
+                ~ Průměrný odhad
+              </span>
+            )}
+          </div>
+
           {station.price ? (
             <>
+              {/* Varování pro odhadové ceny */}
+              {station.price.source === 'mbenzin-avg-offset' && (
+                <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl text-sm text-amber-800 dark:text-amber-300">
+                  <p className="font-semibold mb-0.5">Nemáme aktuální cenu pro tuto stanici</p>
+                  <p className="text-xs text-amber-700 dark:text-amber-400">Zobrazujeme průměrný odhad podle značky. Znáš skutečnou cenu? Zadej ji níže — pomůžeš ostatním řidičům.</p>
+                </div>
+              )}
+
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
                 {fuels.map(f => {
                   const price = station.price![f];
+                  const isReal = station.price!.source === 'mbenzin.cz';
                   return (
-                    <div key={f} className={`rounded-xl p-4 text-center border ${
+                    <div key={f} className={`rounded-xl p-4 text-center border transition-opacity ${
                       price != null
-                        ? 'bg-green-50 dark:bg-gray-700 border-green-200 dark:border-gray-600'
-                        : 'bg-gray-50 dark:bg-gray-750 border-gray-200 dark:border-gray-700 opacity-40'
+                        ? isReal
+                          ? 'bg-green-50 dark:bg-gray-700 border-green-200 dark:border-gray-600'
+                          : 'bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 opacity-60'
+                        : 'bg-gray-50 dark:bg-gray-750 border-gray-200 dark:border-gray-700 opacity-30'
                     }`}>
                       <div className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
                         {FUEL_LABELS[f]}
                       </div>
-                      <div className={`text-2xl font-black ${price != null ? 'text-green-700 dark:text-green-400' : 'text-gray-400'}`}>
+                      <div className={`text-2xl font-black ${
+                        price != null
+                          ? isReal ? 'text-green-700 dark:text-green-400' : 'text-gray-500 dark:text-gray-400'
+                          : 'text-gray-300'
+                      }`}>
                         {price != null ? price.toFixed(2).replace('.', ',') : '–'}
                       </div>
-                      {price != null && <div className="text-[10px] text-gray-400 mt-0.5">Kč/l</div>}
+                      {price != null && (
+                        <div className="text-[10px] mt-0.5">
+                          <span className="text-gray-400">Kč/l</span>
+                          {!isReal && <span className="text-amber-500 ml-1">~odhad</span>}
+                        </div>
+                      )}
                     </div>
                   );
                 })}
               </div>
               <p className="text-xs text-gray-400 text-center">
-                Aktualizováno {timeAgo(station.price.reported_at)}
+                {station.price.source === 'mbenzin.cz'
+                  ? `Aktualizováno ${timeAgo(station.price.reported_at)}`
+                  : 'Průměrná cena dle značky — není ověřena'
+                }
               </p>
             </>
           ) : (

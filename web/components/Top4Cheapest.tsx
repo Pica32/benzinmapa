@@ -15,8 +15,13 @@ const MEDAL_COLORS = [
 ];
 
 export default function Top4Cheapest({ stations }: Props) {
-  const top4nafta  = [...stations].filter(s => s.price?.nafta).sort((a,b) => (a.price!.nafta??999)-(b.price!.nafta??999)).slice(0,4);
-  const top4nat95  = [...stations].filter(s => s.price?.natural_95).sort((a,b) => (a.price!.natural_95??999)-(b.price!.natural_95??999)).slice(0,4);
+  // Pouze stanice s reálnými ověřenými cenami (ne odhady)
+  const top4nafta = [...stations]
+    .filter(s => s.price?.nafta && s.price.source === 'mbenzin.cz')
+    .sort((a,b) => (a.price!.nafta??999)-(b.price!.nafta??999)).slice(0,4);
+  const top4nat95 = [...stations]
+    .filter(s => s.price?.natural_95 && s.price.source === 'mbenzin.cz')
+    .sort((a,b) => (a.price!.natural_95??999)-(b.price!.natural_95??999)).slice(0,4);
 
   return (
     <section className="bg-gradient-to-r from-green-900 via-green-800 to-emerald-900 text-white">

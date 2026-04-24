@@ -10,8 +10,9 @@ interface Props {
 }
 
 export default function CheapestTable({ stations, fuelType, city }: Props) {
+  // Jen stanice s reálnými cenami z mbenzin.cz
   const sorted = [...stations]
-    .filter(s => s.price?.[fuelType] != null)
+    .filter(s => s.price?.[fuelType] != null && s.price?.source === 'mbenzin.cz')
     .sort((a, b) => (a.price![fuelType] ?? 999) - (b.price![fuelType] ?? 999))
     .slice(0, 10);
 

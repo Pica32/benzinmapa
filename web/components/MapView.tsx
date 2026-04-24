@@ -60,9 +60,15 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
         ? kmBetween(userLat, userLng, station.lat, station.lng)
         : null;
 
+      const isReal = station.price?.source === 'mbenzin.cz';
+
+      // Na mapě: šedé kolečko pro odhady, barevné pro reálné ceny
+      const markerColor = isReal ? color : '#9ca3af';
       const icon = L.divIcon({
         className: '',
-        html: `<div style="background:${color};color:#fff;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:700;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap;cursor:pointer;line-height:1.4">${price.toFixed(2).replace('.', ',')}</div>`,
+        html: isReal
+          ? `<div style="background:${markerColor};color:#fff;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:700;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap;cursor:pointer;line-height:1.4">${price.toFixed(2).replace('.', ',')}</div>`
+          : `<div style="background:#e5e7eb;color:#6b7280;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:600;border:2px solid #d1d5db;white-space:nowrap;cursor:pointer;line-height:1.4;opacity:0.8">~${price.toFixed(2).replace('.', ',')}</div>`,
         iconAnchor: [26, 12],
         popupAnchor: [0, -16],
       });
@@ -73,11 +79,16 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
         ['LPG', station.price?.lpg],
       ] as [string, number | null | undefined][])
         .filter(([, v]) => v != null)
-        .map(([lbl, v]) => `
-          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 10px;text-align:center">
-            <div style="font-size:9px;color:#166534;text-transform:uppercase;letter-spacing:.05em">${lbl}</div>
-            <div style="font-weight:800;color:#15803d;font-size:14px">${Number(v).toFixed(2).replace('.', ',')} Kč</div>
-          </div>`).join('');
+        .map(([lbl, v]) => isReal
+          ? `<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:4px 10px;text-align:center">
+               <div style="font-size:9px;color:#166534;text-transform:uppercase;letter-spacing:.05em">${lbl}</div>
+               <div style="font-weight:800;color:#15803d;font-size:14px">${Number(v).toFixed(2).replace('.', ',')} Kč</div>
+             </div>`
+          : `<div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:4px 10px;text-align:center">
+               <div style="font-size:9px;color:#9ca3af;text-transform:uppercase;letter-spacing:.05em">${lbl}</div>
+               <div style="font-weight:600;color:#9ca3af;font-size:13px">~${Number(v).toFixed(2).replace('.', ',')} Kč</div>
+             </div>`
+        ).join('');
 
       const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${station.lat},${station.lng}`;
       const waze  = `https://waze.com/ul?ll=${station.lat},${station.lng}&navigate=yes`;
@@ -85,7 +96,11 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
       const popup = `
         <div style="font-family:system-ui,sans-serif;min-width:210px;max-width:260px">
           <div style="font-weight:700;font-size:14px;margin-bottom:2px;line-height:1.3">${station.name}</div>
-          <div style="color:#6b7280;font-size:11px;margin-bottom:8px">${station.address}</div>
+          <div style="color:#6b7280;font-size:11px;margin-bottom:6px">${station.address}</div>
+          ${isReal
+            ? '<div style="font-size:9px;color:#16a34a;font-weight:700;margin-bottom:6px">✓ Ověřená cena z mbenzin.cz</div>'
+            : '<div style="font-size:9px;color:#f59e0b;font-weight:600;margin-bottom:6px">~ Průměrný odhad — zadej cenu na detailu stanice</div>'
+          }
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${priceRows}</div>
           ${dist ? `<div style="font-size:11px;color:#9ca3af;margin-bottom:4px">📍 ${dist} km od vás</div>` : ''}
           <div style="font-size:11px;color:#9ca3af;margin-bottom:10px">⏰ ${station.opening_hours}</div>
@@ -101,7 +116,7 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
           </div>
           <a href="/stanice/${station.id}/"
              style="display:block;margin-top:6px;background:#f3f4f6;color:#374151;text-align:center;padding:7px;border-radius:7px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid #e5e7eb">
-            Detail stanice →
+            ${isReal ? 'Detail stanice →' : 'Zadat cenu →'}
           </a>
         </div>`;
 
