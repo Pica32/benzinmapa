@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-04-24T09:23:40Z",
+  "last_updated": "2026-04-24T10:20:49Z",
   "averages": {
-    "natural_95": 40.50,
-    "natural_98": 43.50,
-    "nafta": 42.20,
-    "lpg": 19.50
+    "natural_95": 40.5,
+    "natural_98": 43.5,
+    "nafta": 42.1,
+    "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
