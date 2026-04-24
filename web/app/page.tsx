@@ -2,7 +2,7 @@ import { getStats, getCheapestStations } from '@/lib/data';
 import HomeClient from './HomeClient';
 import CheapestTable from '@/components/CheapestTable';
 import Top4Cheapest from '@/components/Top4Cheapest';
-import { FaqJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
 import Link from 'next/link';
 import { CITIES } from '@/types';
 import type { Metadata } from 'next';
@@ -37,6 +37,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <OrganizationJsonLd />
       <FaqJsonLd faqs={FAQS} />
 
       {/* H1 – viditelný nadpis pro SEO (vizuálně zakomponovaný do stránky) */}

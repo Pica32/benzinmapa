@@ -86,6 +86,30 @@ export function CityPageJsonLd({ city, stations }: { city: string; stations: Sta
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
+export function OrganizationJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'BenzinMapa.cz',
+    url: 'https://benzinmapa.cz',
+    logo: 'https://benzinmapa.cz/favicon-32x32.png',
+    description: 'Největší srovnávač cen pohonných hmot v České republice. Aktuální ceny benzínu, nafty a LPG na 2 400+ čerpacích stanicích.',
+    areaServed: {
+      '@type': 'Country',
+      name: 'Česká republika',
+      sameAs: 'https://www.wikidata.org/wiki/Q213',
+    },
+    knowsAbout: ['ceny benzínu', 'ceny nafty', 'čerpací stanice', 'pohonné hmoty', 'Natural 95', 'LPG'],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'info@benzinmapa.cz',
+      availableLanguage: 'Czech',
+    },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   const data = {
     '@context': 'https://schema.org',
