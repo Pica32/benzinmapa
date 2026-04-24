@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, Suspense, lazy } from 'react';
 import { StationWithPrice, FuelType, Stats } from '@/types';
 import FilterBar from '@/components/FilterBar';
 import StatsBar from '@/components/StatsBar';
+import NearbyPanel from '@/components/NearbyPanel';
 
 const MapView = lazy(() => import('@/components/MapView'));
 
@@ -21,6 +22,8 @@ export default function HomeClient({ stats }: HomeClientProps) {
   const [search, setSearch] = useState('');
   const [userLat, setUserLat] = useState<number | undefined>();
   const [userLng, setUserLng] = useState<number | undefined>();
+  const [locationSource, setLocationSource] = useState<'ip' | 'gps' | null>(null);
+  const [locating, setLocating] = useState(false);
 
   // Načti data na klientovi – HTML zůstane malé, mapa se načte po renderování
   useEffect(() => {
@@ -38,15 +41,33 @@ export default function HomeClient({ stats }: HomeClientProps) {
     }).catch(() => setLoading(false));
   }, []);
 
+  // IP geolokace – automaticky při načtení stránky (přibližná poloha, bez oprávnění)
+  useEffect(() => {
+    fetch('https://ip-api.com/json?fields=status,lat,lon')
+      .then(r => r.json())
+      .then(d => {
+        if (d.status === 'success' && userLat == null) {
+          setUserLat(d.lat);
+          setUserLng(d.lon);
+          setLocationSource('ip');
+        }
+      })
+      .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleLocate = useCallback(() => {
-    if (window.location.protocol !== 'https:') {
-      alert('Poloha funguje pouze na HTTPS.\nNastavte SSL certifikát ve Wedos klientu – je zdarma.');
-      return;
-    }
     if (!navigator.geolocation) { alert('Prohlížeč nepodporuje geolokaci.'); return; }
+    setLocating(true);
     navigator.geolocation.getCurrentPosition(
-      pos => { setUserLat(pos.coords.latitude); setUserLng(pos.coords.longitude); },
+      pos => {
+        setUserLat(pos.coords.latitude);
+        setUserLng(pos.coords.longitude);
+        setLocationSource('gps');
+        setLocating(false);
+      },
       err => {
+        setLocating(false);
         if (err.code === 1) alert('Přístup k poloze zamítnut. Povolte v nastavení prohlížeče.');
         else alert('Polohu nelze získat. Zkuste znovu.');
       },
@@ -77,7 +98,20 @@ export default function HomeClient({ stats }: HomeClientProps) {
         selectedBrands={selectedBrands} onBrandsChange={setSelectedBrands}
         onLocate={handleLocate}
         search={search} onSearchChange={setSearch}
+        locating={locating}
+        locationSource={locationSource}
       />
+
+      {userLat != null && userLng != null && locationSource != null && stations.length > 0 && (
+        <NearbyPanel
+          stations={stations}
+          userLat={userLat}
+          userLng={userLng}
+          fuelType={fuelType}
+          locationSource={locationSource}
+          onRequestGps={handleLocate}
+        />
+      )}
 
       <div style={{ height: '65vh', minHeight: '420px', maxHeight: '720px' }} className="relative w-full">
         <Suspense fallback={

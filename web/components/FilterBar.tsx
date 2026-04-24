@@ -13,6 +13,8 @@ interface FilterBarProps {
   onLocate: () => void;
   search: string;
   onSearchChange: (s: string) => void;
+  locating?: boolean;
+  locationSource?: 'ip' | 'gps' | null;
 }
 
 export default function FilterBar({
@@ -20,6 +22,7 @@ export default function FilterBar({
   maxPrice, onMaxPriceChange,
   selectedBrands, onBrandsChange,
   onLocate, search, onSearchChange,
+  locating, locationSource,
 }: FilterBarProps) {
   const fuels: FuelType[] = ['natural_95', 'natural_98', 'nafta', 'lpg'];
 
@@ -50,10 +53,16 @@ export default function FilterBar({
           {/* Locate button */}
           <button
             onClick={onLocate}
-            className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors"
+            disabled={locating}
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:opacity-70 text-white text-sm font-medium rounded-lg transition-colors"
           >
-            <MapPin size={16} />
-            <span className="hidden sm:inline">Moje poloha</span>
+            {locating
+              ? <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              : <MapPin size={16} />
+            }
+            <span className="hidden sm:inline">
+              {locating ? 'Hledám...' : locationSource === 'gps' ? 'GPS ✓' : 'GPS poloha'}
+            </span>
           </button>
         </div>
 
