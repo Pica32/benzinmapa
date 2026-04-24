@@ -25,6 +25,10 @@ const FAQS = [
   { q: 'Jak funguje barevné označení stanic na mapě?', a: 'Zelená = nejlevnějších 20 % stanic, oranžová = průměrná cena, červená = nejdražších 20 %. Barvy se mění podle zvoleného typu paliva.' },
   { q: 'Jaký je průměr ceny nafty v ČR dnes?', a: 'Průměrná cena nafty v ČR je zobrazena v horní liště webu. Data jsou stahována každých 6 hodin a průměrována přes všechny sledované stanice.' },
   { q: 'Kolik čerpacích stanic sledujete?', a: 'Sledujeme přes 2 400 čerpacích stanic v celé České republice – od velkých sítí (Benzina, MOL, Shell, OMV) po nezávislé provozovatele.' },
+  { q: 'Které značky čerpacích stanic jsou nejlevnější?', a: 'Dlouhodobě nejnižší ceny mívají nezávislé sítě jako Eurobit, Robin Oil nebo Tank-ONO a supermarketové čerpačky (Kaufland, Lidl). Naopak Shell a OMV jsou zpravidla o 2–4 Kč/l dražší než průměr.' },
+  { q: 'Vyplatí se tankovat LPG místo benzínu?', a: 'LPG bývá přibližně o 50 % levnější než Natural 95. Nevýhodou je vyšší spotřeba (~25 %) a nutnost přestavby auta. Při ročním nájezdu nad 25 000 km se přestavba obvykle vrátí do 5–7 let.' },
+  { q: 'Jak velký je rozdíl mezi nejlevnější a nejdražší čerpačkou?', a: 'Rozdíl mezi nejlevnější a nejdražší stanicí ve stejném městě bývá 3–6 Kč/l. Při plné nádrži 50 litrů to znamená úsporu 150–300 Kč za jedno tankování.' },
+  { q: 'Jsou dálniční čerpárny opravdu dražší?', a: 'Ano. Čerpací stanice u dálnic mají zpravidla o 1,5–2,5 Kč/l vyšší cenu než průměr. Výjimkou jsou MOL a Benzina ORLEN u hlavních tahů, kde ceny bývají konkurenceschopné.' },
 ];
 
 export default async function HomePage() {
@@ -109,6 +113,64 @@ export default async function HomePage() {
           </div>
         </section>
 
+        {/* Průvodce úsporou */}
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Jak ušetřit za pohonné hmoty</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5">
+              <div className="text-2xl mb-2">📍</div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Srovnejte ceny v okolí</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Rozdíl mezi nejlevnější a nejdražší stanicí ve stejném městě bývá 3–6 Kč/l.
+                Použijte mapu a filtr „Nejlevnější Natural 95" nebo „Nejlevnější nafta" —
+                seřadíme stanice od nejlevnější.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5">
+              <div className="text-2xl mb-2">🏪</div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Supermarkety a nezávislé sítě</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Čerpací stanice u hypermarketů (Kaufland, Lidl) a nezávislí provozovatelé
+                (Eurobit, Robin Oil, Tank-ONO) jsou dlouhodobě o 1–4 Kč/l levnější
+                než velké značkové sítě Shell nebo OMV.
+              </p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5">
+              <div className="text-2xl mb-2">📈</div>
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">Sledujte vývoj cen</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                Ceny benzínu a nafty se mění každý týden podle ceny ropy Brent a kurzu
+                CZK/USD. Na stránce{' '}
+                <Link href="/vyvoj-ceny" className="text-green-700 dark:text-green-400 underline">vývoj cen</Link>
+                {' '}sledujte 90denní trend a tankujte při poklesech.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Srovnání značek */}
+        <section>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Srovnání značek čerpacích stanic</h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+            Průměrné odchylky od národního průměru ceny Natural 95 v ČR podle dat BenzinMapa.cz:
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+            {[
+              { brand: 'Eurobit / Robin Oil', diff: '−2 Kč', color: 'text-green-700 dark:text-green-400' },
+              { brand: 'Kaufland / Lidl', diff: '−1,5 Kč', color: 'text-green-600 dark:text-green-400' },
+              { brand: 'MOL', diff: '±0 Kč', color: 'text-gray-600 dark:text-gray-300' },
+              { brand: 'Benzina ORLEN', diff: '+0,5 Kč', color: 'text-gray-600 dark:text-gray-300' },
+              { brand: 'OMV', diff: '+2 Kč', color: 'text-red-600 dark:text-red-400' },
+              { brand: 'Shell', diff: '+2,5 Kč', color: 'text-red-600 dark:text-red-400' },
+            ].map(({ brand, diff, color }) => (
+              <div key={brand} className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+                <div className={`text-lg font-black ${color}`}>{diff}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">{brand}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* O nás */}
         <section className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-8 border border-green-100 dark:border-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">O BenzinMapa.cz</h2>
@@ -117,9 +179,16 @@ export default async function HomePage() {
             v celé České republice – od velkých sítí Benzina ORLEN, MOL, Shell a OMV po nezávislé
             provozovatele jako EuroOil, Robin Oil nebo Eurobit, kteří mívají nejnižší ceny.
           </p>
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            Data sbíráme automaticky třikrát denně — v 5:00, 10:00 a 15:00 SELČ. Reálné ceny
+            čerpáme z komunitního zdroje mbenzin.cz a párujeme je s databází stanic
+            z OpenStreetMap. Pro stanice bez nahlášené ceny zobrazujeme odhad na základě
+            národního průměru a historických odchylek dané značky.
+          </p>
           <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Data aktualizujeme automaticky každých 6 hodin. Interaktivní mapa a filtry vám
-            pomohou najít nejlevnější čerpačku v okolí a ušetřit 2–5 Kč na každém litru.
+            Interaktivní mapa, filtry podle paliva a tabulky nejlevnějších stanic vám
+            pomohou najít nejlevnější čerpačku v okolí a ušetřit 2–5 Kč na každém litru —
+            u 50litrové nádrže až 250 Kč za tankování.
           </p>
         </section>
 
