@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta -->
+    <title>{{ title }} | {{ site_name }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="keywords" content="{{ keywords|join(', ') }}">
+    <meta name="author" content="{{ site_name }}">
+    {{ robots_meta }}
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ canonical_url }}">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="cs" href="{{ canonical_url }}">
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url }}">
+    
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ meta_description }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:site_name" content="{{ site_name }}">
+    <meta property="og:locale" content="cs_CZ">
+    {% if image_url %}
+    <meta property="og:image" content="{{ image_url }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    {% endif %}
+    <meta property="article:published_time" content="{{ published_iso }}">
+    <meta property="article:section" content="{{ category }}">
+    {% for tag in tags[:5] %}
+    <meta property="article:tag" content="{{ tag }}">
+    {% endfor %}
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ meta_description[:200] }}">
+    {% if image_url %}
+    <meta name="twitter:image" content="{{ image_url }}">
+    {% endif %}
+    
+    <!-- JSON-LD Structured Data -->
+    {{ jsonld_script|safe }}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://bitcoinchurch.cz/favicon.png">
+    <link rel="shortcut icon" href="https://bitcoinchurch.cz/favicon.png">
+    <link rel="apple-touch-icon" href="https://bitcoinchurch.cz/favicon.png">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-color: #f7931a;
+            --secondary-color: #4a4a4a;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --link-color: #0066cc;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a2e;
+                --text-color: #e0e0e0;
+                --border-color: #333355;
+                --link-color: #6fa8dc;
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .site-title:hover {
+            text-decoration: underline;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb-separator {
+            margin: 0 8px;
+        }
+        
+        /* Article */
+        article {
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .article-meta {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .article-perex {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.1), rgba(247, 147, 26, 0.05));
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .article-body {
+            font-size: 1.05rem;
+        }
+        
+        .article-body h2 {
+            font-size: 1.5rem;
+            margin: 35px 0 15px;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+        
+        .article-body h3 {
+            font-size: 1.25rem;
+            margin: 25px 0 12px;
+            color: var(--text-color);
+        }
+        
+        .article-body p {
+            margin-bottom: 18px;
+        }
+        
+        .article-body ul, .article-body ol {
+            margin: 18px 0;
+            padding-left: 25px;
+        }
+        
+        .article-body li {
+            margin-bottom: 10px;
+        }
+        
+        .article-body a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        .article-body a:hover {
+            border-bottom-color: var(--link-color);
+        }
+        
+        .article-body strong {
+            font-weight: 600;
+        }
+        
+        .article-body blockquote {
+            margin: 20px 0;
+            padding: 15px 20px;
+            background: rgba(247, 147, 26, 0.08);
+            border-left: 4px solid var(--primary-color);
+            font-style: italic;
+        }
+        
+        /* Key Takeaways */
+        .key-takeaways {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .key-takeaways h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .key-takeaways ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-takeaways li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .key-takeaways li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+        
+        /* Entity Context */
+        .entity-context {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+        
+        .entity-context h4 {
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .entity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .entity-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        
+        /* Related Articles */
+        .related-articles {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+        }
+        
+        .related-articles h3 {
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        
+        .related-articles ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .related-articles li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .related-articles li:last-child {
+            border-bottom: none;
+        }
+        
+        .related-articles a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        
+        .related-articles a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Source */
+        .source-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+        
+        .source-info a {
+            color: var(--link-color);
+        }
+        
+        /* Tags */
+        .article-tags {
+            margin: 30px 0;
+        }
+        
+        .article-tags span {
+            display: inline-block;
+            background: var(--border-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .article-body h2 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* DISKUZE STYLY */
+        .comments-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--primary-color);
+        }
+        
+        .comments-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .comments-info {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+        
+        .comment-form {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .captcha-group input {
+            width: 120px;
+        }
+        
+        .honeypot {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background: #e8850f;
+        }
+        
+        .comments-list {
+            margin-top: 25px;
+        }
+        
+        .comment {
+            background: var(--card-bg);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author {
+            color: var(--primary-color);
+        }
+        
+        .comment-date {
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+        }
+        
+        .comment-text {
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .no-comments {
+            color: var(--secondary-color);
+            font-style: italic;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        /* Články z externích zdrojů - jiná barva */
+        .article-external {
+            border-left: 4px solid #3498db;
+        }
+        
+        .article-external .article-meta::before {
+            content: "📡 ";
+        }
+        
+        .source-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+        }
+        
+        .source-badge.internal {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{{ site_url }}" class="site-title">₿ {{ site_name }}</a>
+        </header>
+        
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Drobečková navigace">
+            <a href="{{ site_url }}">Domů</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="{{ news_base_url }}/">Novinky</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>{{ title|truncate(50) }}</span>
+        </nav>
+        
+        <article itemscope itemtype="https://schema.org/NewsArticle">
+            <meta itemprop="mainEntityOfPage" content="{{ canonical_url }}">
+            
+            <h1 itemprop="headline">{{ title }}</h1>
+            
+            <div class="article-meta">
+                <time itemprop="datePublished" datetime="{{ published_iso }}">
+                    📅 {{ published_at }}
+                </time>
+                <span>📰 {{ source }}</span>
+                {% if category %}
+                <span itemprop="articleSection">📁 {{ category }}</span>
+                {% endif %}
+            </div>
+            
+            {% if perex %}
+            <div class="article-perex" itemprop="description">
+                {{ perex }}
+            </div>
+            {% endif %}
+            
+            <div class="article-body" itemprop="articleBody">
+                {{ body_html|safe }}
+            </div>
+            
+            {% if key_takeaways %}
+            <div class="key-takeaways">
+                <h3>📌 Klíčové body</h3>
+                <ul>
+                    {% for point in key_takeaways %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if entities %}
+            <div class="entity-context">
+                <h4>🏷️ Zmíněné entity a kontext</h4>
+                <div class="entity-list">
+                    {% for entity in entities[:10] %}
+                    <span class="entity-tag">{{ entity }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if tags %}
+            <div class="article-tags">
+                {% for tag in tags %}
+                <span>#{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            {% if related_articles %}
+            <div class="related-articles">
+                <h3>📚 Související články</h3>
+                <ul>
+                    {% for related in related_articles %}
+                    <li>
+                        <a href="/news/{{ related.filename }}">{{ related.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <div class="source-info">
+                <p>
+                    <strong>Zdroj:</strong> 
+                    <a href="{{ source_url }}" rel="nofollow noopener" target="_blank">
+                        {{ source_url|truncate(60) }}
+                    </a>
+                </p>
+                <p>
+                    <em>Autor: Bitcoin Priest - Tento článek překladem a shrnutím původní zprávy..</em>
+                </p>
+            </div>
+            
+            <!-- DISKUZE -->
+            <section class="comments-section" id="diskuze">
+                <h3>💬 Diskuze</h3>
+                <p class="comments-info">Máte názor? Podělte se o něj s ostatními čtenáři.</p>
+                
+                <div class="comment-form-wrapper">
+                    <form id="commentForm" class="comment-form" onsubmit="return submitComment(event)">
+                        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+                        
+                        <div class="form-group">
+                            <label for="authorName">Jméno / Přezdívka *</label>
+                            <input type="text" id="authorName" name="author" required maxlength="50" placeholder="Váš nick">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="commentText">Váš komentář *</label>
+                            <textarea id="commentText" name="comment" required maxlength="2000" rows="4" placeholder="Napište svůj názor..."></textarea>
+                        </div>
+                        
+                        <!-- Jednoduchá matematická CAPTCHA -->
+                        <div class="form-group captcha-group">
+                            <label for="captchaAnswer">Ověření: <span id="captchaQuestion"></span> = ?</label>
+                            <input type="number" id="captchaAnswer" name="captcha" required placeholder="Odpověď">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Odeslat komentář</button>
+                    </form>
+                </div>
+                
+                <div id="commentsContainer" class="comments-list">
+                    <p class="no-comments">Zatím žádné komentáře. Buďte první!</p>
+                </div>
+            </section>
+        </article>
+        
+        <footer>
+            <p>
+                <a href="{{ news_base_url }}/">← Zpět na novinky</a> | 
+                <a href="{{ news_base_url }}/archive.html">Archiv</a> | 
+                <a href="{{ site_url }}">{{ site_name }}</a>
+            </p>
+            <p>© {{ current_year }} {{ site_name }}. Všechna práva vyhrazena.</p>
+        </footer>
+    </div>
+    
+    <!-- DISKUZE SCRIPT -->
+    <script>
+    // Captcha
+    let captchaA, captchaB;
+    function generateCaptcha() {
+        captchaA = Math.floor(Math.random() * 10) + 1;
+        captchaB = Math.floor(Math.random() * 10) + 1;
+        document.getElementById('captchaQuestion').textContent = captchaA + ' + ' + captchaB;
+    }
+    generateCaptcha();
+    
+    // Article ID z URL
+    const articleId = window.location.pathname.split('/').pop().replace('.html', '');
+    
+    // Načti komentáře
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem('comments_' + articleId) || '[]');
+        const container = document.getElementById('commentsContainer');
+        
+        if (comments.length === 0) {
+            container.innerHTML = '<p class="no-comments">Zatím žádné komentáře. Buďte první!</p>';
+            return;
+        }
+        
+        container.innerHTML = comments.map(c => `
+            <div class="comment">
+                <div class="comment-header">
+                    <strong class="comment-author">${escapeHtml(c.author)}</strong>
+                    <span class="comment-date">${new Date(c.date).toLocaleString('cs-CZ')}</span>
+                </div>
+                <p class="comment-text">${escapeHtml(c.text)}</p>
+            </div>
+        `).join('');
+    }
+    
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    function submitComment(e) {
+        e.preventDefault();
+        
+        // Honeypot check
+        if (document.querySelector('.honeypot').value) {
+            alert('Spam detekován!');
+            return false;
+        }
+        
+        // Captcha check
+        const answer = parseInt(document.getElementById('captchaAnswer').value);
+        if (answer !== captchaA + captchaB) {
+            alert('Špatná odpověď na ověřovací otázku. Zkuste to znovu.');
+            generateCaptcha();
+            return false;
+        }
+        
+        const author = document.getElementById('authorName').value.trim();
+        const text = document.getElementById('commentText').value.trim();
+        
+        if (!author || !text) {
+            alert('Vyplňte všechna povinná pole.');
+            return false;
+        }
+        
+        // Uložit komentář
+        const comments = JSON.parse(localStorage.getItem('comments_' + articleId) || '[]');
+        comments.push({
+            author: author,
+            text: text,
+            date: new Date().toISOString()
+        });
+        localStorage.setItem('comments_' + articleId, JSON.stringify(comments));
+        
+        // Reset form
+        document.getElementById('commentForm').reset();
+        generateCaptcha();
+        loadComments();
+        
+        alert('Komentář byl přidán!');
+        return false;
+    }
+    
+    // Init
+    loadComments();
+    </script>
+</body>
+</html>

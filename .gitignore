@@ -1,0 +1,47 @@
+# Tajné soubory – NIKDY na GitHub
+heslo.md
+*.env
+.env
+.env.local
+.env.*
+scraper/.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Node / Next.js
+node_modules/
+web/.next/
+web/out/
+web/.vercel/
+*.tsbuildinfo
+
+# Vygenerované články (jsou na FTP, nepotřebujeme v gitu)
+scraper/output_articles/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Osobní poznámky
+asd.txt
+Nový textový dokument.txt
+
+# Affiliate a osobní poznámky
+Affiliate LINKY Duležité !!.txt
+1.png
+2.png
+ico.png

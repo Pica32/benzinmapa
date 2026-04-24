@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta -->
+    <title>{{ page_title|default('Novinky z kryptosvěta') }} | {{ site_name }}</title>
+    <meta name="description" content="{{ page_description|default('Aktuální zprávy o Bitcoinu, kryptoměnách a blockchain technologiích v češtině. Denní přehled novinek z kryptosvěta.') }}">
+    <meta name="keywords" content="bitcoin novinky, kryptoměny, blockchain, BTC, ethereum, krypto zprávy, česky">
+    <meta name="author" content="{{ site_name }}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ canonical_url|default(news_base_url + '/') }}">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="cs" href="{{ canonical_url|default(news_base_url + '/') }}">
+    <link rel="alternate" hreflang="x-default" href="{{ canonical_url|default(news_base_url + '/') }}">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site_name }} - Novinky" href="{{ news_base_url }}/feed.xml">
+    
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title|default('Novinky z kryptosvěta') }} | {{ site_name }}">
+    <meta property="og:description" content="{{ page_description|default('Aktuální zprávy o Bitcoinu a kryptoměnách v češtině.') }}">
+    <meta property="og:url" content="{{ canonical_url|default(news_base_url + '/') }}">
+    <meta property="og:site_name" content="{{ site_name }}">
+    <meta property="og:locale" content="cs_CZ">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ page_title|default('Novinky z kryptosvěta') }}">
+    <meta name="twitter:description" content="{{ page_description|default('Aktuální zprávy o Bitcoinu a kryptoměnách.') }}">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "{{ site_url }}/#website",
+                "name": "{{ site_name }}",
+                "url": "{{ site_url }}",
+                "description": "{{ site_description }}",
+                "inLanguage": "cs",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "{{ site_url }}/search?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "CollectionPage",
+                "@id": "{{ canonical_url|default(news_base_url + '/') }}",
+                "name": "{{ page_title|default('Novinky z kryptosvěta') }}",
+                "description": "{{ page_description|default('Aktuální zprávy o Bitcoinu a kryptoměnách.') }}",
+                "url": "{{ canonical_url|default(news_base_url + '/') }}",
+                "isPartOf": {
+                    "@id": "{{ site_url }}/#website"
+                },
+                "inLanguage": "cs"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Domů",
+                        "item": "{{ site_url }}"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "{{ page_title|default('Novinky') }}",
+                        "item": "{{ canonical_url|default(news_base_url + '/') }}"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://bitcoinchurch.cz/favicon.png">
+    <link rel="shortcut icon" href="https://bitcoinchurch.cz/favicon.png">
+    <link rel="apple-touch-icon" href="https://bitcoinchurch.cz/favicon.png">
+    
+    <!-- Styles -->
+    <style>
+        :root {
+            --primary-color: #f7931a;
+            --secondary-color: #4a4a4a;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --border-color: #e0e0e0;
+            --link-color: #0066cc;
+            --card-bg: #f8f9fa;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a2e;
+                --text-color: #e0e0e0;
+                --border-color: #333355;
+                --link-color: #6fa8dc;
+                --card-bg: #252545;
+            }
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 30px;
+        }
+        
+        .site-logo {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .site-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .site-title:hover {
+            text-decoration: underline;
+        }
+        
+        .site-tagline {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+        
+        /* Navigation */
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        nav a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        nav a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        /* Page Title */
+        .page-header {
+            margin-bottom: 30px;
+        }
+        
+        .page-header h1 {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            color: var(--secondary-color);
+        }
+        
+        /* Article List */
+        .article-list {
+            list-style: none;
+        }
+        
+        .article-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .article-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-item h2 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .article-item h2 a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .article-item h2 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .article-summary {
+            color: var(--text-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .article-source {
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        
+        .article-source span {
+            background: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        /* Pagination */
+        .pagination {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .pagination a, .pagination span {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        
+        .pagination a {
+            background: var(--card-bg);
+            color: var(--link-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        .pagination a:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .pagination span.current {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            color: var(--secondary-color);
+        }
+        
+        .empty-state h2 {
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Market Dashboard */
+        .market-dashboard {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 40px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .market-dashboard h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .market-dashboard iframe {
+            width: 100%;
+            min-height: 350px;
+            border: none;
+            border-radius: 8px;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        footer .footer-links {
+            margin-bottom: 15px;
+        }
+        
+        footer .footer-links a {
+            margin: 0 10px;
+        }
+        
+        /* Last Update */
+        .last-update {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 20px 0;
+            }
+            
+            .site-title {
+                font-size: 1.5rem;
+            }
+            
+            .article-item {
+                padding: 18px;
+            }
+            
+            .article-item h2 {
+                font-size: 1.15rem;
+            }
+            
+            nav a {
+                margin: 0 8px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* EXTERNÍ ZDROJE - jiná barva */
+        .article-item.external-source {
+            border-left: 4px solid #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, transparent 100%);
+        }
+        
+        .article-item.external-source h2 a {
+            color: #2980b9;
+        }
+        
+        .article-item.external-source h2 a:hover {
+            color: #3498db;
+        }
+        
+        .source-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .source-badge.external {
+            background: #3498db;
+            color: white;
+        }
+        
+        .source-badge.internal {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Legenda zdrojů */
+        .source-legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 12px 15px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .source-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .legend-dot.internal { background: var(--primary-color); }
+        .legend-dot.external { background: #3498db; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="site-logo">₿</div>
+            <a href="{{ site_url }}" class="site-title">{{ site_name }}</a>
+            <p class="site-tagline">{{ site_description }}</p>
+        </header>
+        
+        <nav aria-label="Hlavní navigace">
+            <a href="{{ news_base_url }}/" {% if not is_archive %}class="active"{% endif %}>🌍 Novinky</a>
+	    <a href="https://bitcoinchurch.cz/novinky"}>🏠 Novinky z CZK</a>
+            <a href="{{ news_base_url }}/archive.html" {% if is_archive %}class="active"{% endif %}>📚 Archiv</a>
+            <a href="{{ site_url }}">🏛️ Hlavní stránka</a>
+        </nav>
+        
+        <main>
+            <div class="page-header">
+                <h1>{% if is_archive %}Archiv článků{% else %}Aktuální novinky z kryptosvěta{% endif %}</h1>
+                <p>{% if is_archive %}Starší zprávy a články.{% else %}Denní přehled novinek o Bitcoinu, kryptoměnách a blockchain technologiích.{% endif %}</p>
+            </div>
+            
+            <p class="last-update">
+                Poslední aktualizace: {{ generated_at }}
+            </p>
+            
+            {% if articles %}
+            <ul class="article-list">
+                {% for article in articles %}
+                <li class="article-item {% if article.bot_source == 'external' %}external-source{% endif %}" itemscope itemtype="https://schema.org/NewsArticle" data-bot="{{ article.bot_source|default('news-bot') }}">
+                    <meta itemprop="mainEntityOfPage" content="{{ news_base_url }}/{{ article.filename }}">
+                    
+                    {% if article.bot_source == 'external' %}
+                    <span class="source-badge external">📡 Externí zdroj</span>
+                    {% endif %}
+                    
+                    <h2>
+                        <a href="/news/{{ article.filename }}" itemprop="headline">
+                            {{ article.title }}
+                        </a>
+                    </h2>
+                    
+                    <div class="article-meta">
+                        <time itemprop="datePublished" datetime="{{ article.published_at }}">
+                            📅 {{ article.published_at }}
+                        </time>
+                        {% if article.source %}
+                        <span class="article-source">
+                            <span>{{ article.source }}</span>
+                        </span>
+                        {% endif %}
+                        {% if article.score %}
+                        <span title="Skóre důležitosti">⭐ {{ "%.1f"|format(article.score) }}</span>
+                        {% endif %}
+                    </div>
+                    
+                    {% if article.summary %}
+                    <p class="article-summary" itemprop="description">
+                        {{ article.summary|truncate(200) }}
+                    </p>
+                    {% endif %}
+                    
+                    <a href="/news/{{ article.filename }}" class="read-more">
+                        Číst více →
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="empty-state">
+                <h2>Zatím žádné články</h2>
+                <p>Nové články se brzy objeví.</p>
+            </div>
+            {% endif %}
+            
+            {% if not is_archive and articles|length >= 10 %}
+            <div class="pagination">
+                <a href="{{ news_base_url }}/archive.html">Zobrazit starší články →</a>
+            </div>
+            {% endif %}
+        </main>
+        
+        <!-- Market Dashboard -->
+        <section class="market-dashboard">
+            <h2>📊 Tržní přehled</h2>
+            <iframe 
+                src="https://bitcoinchurch.cz/news/market-dashboard.php" 
+                width="100%" 
+                height="400" 
+                frameborder="0" 
+                loading="lazy"
+                title="Krypto market dashboard"
+                style="border-radius: 12px; max-width: 100%;">
+            </iframe>
+        </section>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="{{ news_base_url }}/">Novinky</a>
+                <a href="{{ news_base_url }}/archive.html">Archiv</a>
+                <a href="{{ news_base_url }}/rss.xml">RSS</a>
+                <a href="{{ news_base_url }}/sitemap.xml">Sitemap</a>
+                <a href="{{ site_url }}">{{ site_name }}</a>
+            </div>
+            <p>© {{ current_year }} {{ site_name }}. Všechna práva vyhrazena.</p>
+            <p>
+                <small>Autorem článků je Bitcoin Priest a jedná se o překlady a shrnutí zpráv z důvěryhodných zdrojů.<a href="https://x.com/KokosenkaJ47737" target="_blank" rel="noopener noreferrer">Kontaktujte mě ZDE</a>
+
+
+
+
+
+
+</small>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

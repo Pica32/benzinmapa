@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* Leaflet fix – must be loaded globally */
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --background: #f9fafb;
+  --foreground: #111827;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --foreground: #f9fafb;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Remove Leaflet attribution style conflicts */
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #9ca3af; }

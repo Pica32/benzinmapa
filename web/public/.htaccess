@@ -1,0 +1,101 @@
+Options -Indexes
+DirectoryIndex index.html
+
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # www → bez www (301)
+    RewriteCond %{HTTP_HOST} ^www\.benzinmapa\.cz$ [NC]
+    RewriteRule ^(.*)$ https://benzinmapa.cz/$1 [R=301,L]
+
+    # HTTP → HTTPS redirect
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # Zakaz TRACE metody
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F,L]
+
+    # Zakaz nebezpecnych HTTP metod
+    RewriteCond %{REQUEST_METHOD} ^(TRACK|CONNECT) [NC]
+    RewriteRule .* - [F,L]
+
+    # Soubory/složky existují → servíruj přímo
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # /cesta → /cesta/ pokud existuje složka
+    RewriteCond %{REQUEST_URI} !/$
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/ -d
+    RewriteRule ^(.*)$ /$1/ [R=301,L]
+
+    # /cesta/ → servíruj index.html
+    RewriteCond %{REQUEST_URI} /$
+    RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}index.html -f
+    RewriteRule ^(.*)$ /$1index.html [L]
+
+    ErrorDocument 404 /404.html
+</IfModule>
+
+<IfModule mod_headers.c>
+    # ── Security headers ───────────────────────────────────────
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # HSTS – říká browserům: vždy použij HTTPS (platí 1 rok)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # CSP – povoluje pouze vlastní zdroje + nutné CDN
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.tile.openstreetmap.org https://overpass-api.de; frame-src 'none'; object-src 'none'; base-uri 'self';"
+
+    # Permissions Policy – omez přístup k senzitivním API
+    Header always set Permissions-Policy "geolocation=(self), camera=(), microphone=(), payment=(), usb=(), accelerometer=(), gyroscope=()"
+
+    # Odstran Server informace
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+
+    # Cache pro staticke assety
+    <FilesMatch "\.(js|css|woff2|woff|ttf|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(jpg|jpeg|png|webp|avif|ico)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    <FilesMatch "\.json$">
+        Header set Cache-Control "public, max-age=21600, stale-while-revalidate=3600"
+    </FilesMatch>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "public, max-age=3600, stale-while-revalidate=600"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/javascript        "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/css               "access plus 1 year"
+    ExpiresByType text/html              "access plus 1 hour"
+    ExpiresByType application/json       "access plus 6 hours"
+    ExpiresByType image/png              "access plus 30 days"
+    ExpiresByType image/jpeg             "access plus 30 days"
+    ExpiresByType image/webp             "access plus 30 days"
+    ExpiresByType image/svg+xml          "access plus 30 days"
+    ExpiresByType image/x-icon           "access plus 30 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# Zakaž přístup k citlivým souborům
+<FilesMatch "(\.env|\.git|composer\.json|package\.json|webpack\.config|tsconfig|\.htpasswd)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
