@@ -8,6 +8,7 @@ import { FUEL_LABELS, FuelType } from '@/types';
 import GpsButtons from './GpsButtons';
 import PriceReport from '@/components/PriceReport';
 import StationMiniMap from '@/components/StationMiniMap';
+import ShareButtons from '@/components/ShareButtons';
 
 export const revalidate = 21600;
 export const dynamicParams = false; // stanice mimo top 300 → pěkná 404
@@ -240,6 +241,12 @@ export default async function StationPage({ params }: Props) {
             <MapPin size={10} />
             {station.address} &nbsp;·&nbsp; GPS: {lat}, {lng}
           </div>
+        </div>
+
+        {/* SDÍLENÍ */}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 mb-5 shadow-sm">
+          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Sdílet tuto stanici</p>
+          <ShareButtons url={`https://benzinmapa.cz/stanice/${id}`} title={`${station.name} – ceny paliv | BenzinMapa.cz`} />
         </div>
 
         {/* HLÁŠENÍ CEN UŽIVATELI */}

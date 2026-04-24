@@ -58,12 +58,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://benzinmapa.cz/',
-    // Self-referential hreflang – vyžadováno SEO auditory
-    languages: {
-      'cs':    'https://benzinmapa.cz/',
-      'cs-CZ': 'https://benzinmapa.cz/',
-      'x-default': 'https://benzinmapa.cz/',
-    },
   },
 };
 

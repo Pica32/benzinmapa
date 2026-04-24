@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Clock, ChevronLeft } from 'lucide-react';
 import { FaqJsonLd } from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -398,6 +399,7 @@ export default async function BlogPostPage({ params }: Props) {
             <span>·</span>
             <span>{post.readTime} čtení</span>
           </div>
+          <ShareButtons url={`https://benzinmapa.cz/blog/${slug}`} title={post.title} />
         </header>
 
         <div className="prose prose-gray dark:prose-invert max-w-none prose-headings:font-bold prose-h2:text-xl prose-h3:text-lg prose-a:text-green-700">

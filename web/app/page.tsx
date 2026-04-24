@@ -14,11 +14,7 @@ export const metadata: Metadata = {
   description: 'Aktuální ceny pohonných hmot dnes na 2 400+ čerpacích stanicích. Interaktivní mapa. Natural 95, nafta, LPG. Najděte nejlevnější čerpačku ve svém okolí.',
   alternates: {
     canonical: 'https://benzinmapa.cz/',
-    languages: {
-      'cs': 'https://benzinmapa.cz/',
-      'cs-CZ': 'https://benzinmapa.cz/',
-      'x-default': 'https://benzinmapa.cz/',
-    },
+    languages: { 'x-default': 'https://benzinmapa.cz/' },
   },
 };
 
