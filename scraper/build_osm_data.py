@@ -4,12 +4,13 @@ build_osm_data.py — OSM stanice + reálné individuální ceny z mbenzin.cz
 
 Strategie:
   1. Stáhne průměrné ceny (záloha pro nenamatchované stanice).
-  2. Scrapuje stránky mbenzin.cz/pumpy/ → reálné ceny konkrétních stanic.
+  2. Scrapuje stránky mbenzin.cz → reálné ceny konkrétních stanic.
   3. Stáhne všechny stanice z OpenStreetMap.
   4. Páruje mbenzin → OSM přes GPS (< 400 m) nebo shodu jméno+město.
   5. Nenamatchované stanice dostanou průměr + brand-offset.
 """
-import requests, json, os, math, re, time
+import sys, requests, json, os, math, re, time
+sys.stdout.reconfigure(encoding='utf-8')
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 
@@ -186,19 +187,50 @@ def _get_gps_from_element(el) -> tuple:
     return None, None
 
 
+def _find_station_base_url(session) -> str | None:
+    """Zjistí správnou URL pro seznam stanic na mbenzin.cz."""
+    candidates = [
+        'https://www.mbenzin.cz/pumpy',
+        'https://www.mbenzin.cz/pumpy/',
+        'https://www.mbenzin.cz/cerpaci-stanice',
+        'https://www.mbenzin.cz/cerpaci-stanice/',
+        'https://www.mbenzin.cz/stanice',
+        'https://www.mbenzin.cz/',
+    ]
+    for url in candidates:
+        try:
+            r = session.get(url, timeout=10)
+            if r.status_code == 200:
+                soup = BeautifulSoup(r.text, 'html.parser')
+                # Stránka se stanicemi má tabulku s cenami
+                for table in soup.find_all('table'):
+                    hdr = table.find('tr')
+                    if hdr and any(k in hdr.get_text() for k in ('Natural', 'Nafta', 'Benzin', 'LPG')):
+                        print(f'  mbenzin base URL: {url}')
+                        return url
+        except Exception:
+            pass
+    print('  mbenzin: zadna URL se stanicemi nenalezena')
+    return None
+
+
 def scrape_mbenzin_stations() -> list:
     """
-    Scrapuje stránky mbenzin.cz/pumpy/ a vrátí seznam stanic s reálnými cenami.
+    Scrapuje stránky mbenzin.cz a vrátí seznam stanic s reálnými cenami.
     Každá stanice: {name, city, lat, lon, nat95, nafta, nat98, lpg}
     """
     results = []
     session = requests.Session()
     session.headers.update(H)
 
+    base_url = _find_station_base_url(session)
+    if not base_url:
+        return results
+
+    sep = '&' if '?' in base_url else '?'
+
     for page in range(1, 100):
-        url = ('https://www.mbenzin.cz/pumpy/'
-               if page == 1
-               else f'https://www.mbenzin.cz/pumpy/?strana={page}')
+        url = base_url if page == 1 else f'{base_url}{sep}strana={page}'
         try:
             r = session.get(url, timeout=15)
             if r.status_code != 200:
@@ -340,9 +372,9 @@ def match_mbenzin_to_osm(mb_list: list, osm_list: list) -> dict:
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 
-print('═' * 60)
-print('BenzinMapa.cz — aktualizace cen')
-print('═' * 60)
+print('=' * 60)
+print('BenzinMapa.cz -- aktualizace cen')
+print('=' * 60)
 
 print('\n[1/4] Průměrné ceny z mbenzin.cz...')
 AVG = fetch_mbenzin_averages()
@@ -419,15 +451,17 @@ for station in stations:
 
     if sid in match_map:
         mb = match_map[sid]
-        # LPG: bereme z mbenzin nebo z OSM tagu
-        lpg_val = mb.get('lpg')
+        # Zaokrouhlíme scraped ceny na 0.10 Kč (standardní formát čerpacích stanic)
+        def rp_mb(v):
+            return round_price(max(30.0, min(65.0, v))) if v else None
+        lpg_val = rp_mb(mb.get('lpg'))
         if lpg_val is None and (tags.get('lpg') == 'yes' or any(k in bk for k in LPG_BRANDS)):
             lpg_val = round_price(max(17.0, min(22.0, AVG['lpg'])))
         prices.append({
             'station_id':  sid,
-            'natural_95':  mb.get('nat95'),
-            'natural_98':  mb.get('nat98'),
-            'nafta':       mb.get('nafta'),
+            'natural_95':  rp_mb(mb.get('nat95')),
+            'natural_98':  rp_mb(mb.get('nat98')),
+            'nafta':       rp_mb(mb.get('nafta')),
             'lpg':         lpg_val,
             'source':      'mbenzin.cz',
             'reported_at': ts,
@@ -453,9 +487,9 @@ for station in stations:
 
 real_count = sum(1 for p in prices if p['source'] == 'mbenzin.cz')
 est_count  = len(prices) - real_count
-print(f'\n  Výsledek: {len(stations)} stanic')
-print(f'  ✓ Reálné ceny (mbenzin.cz):  {real_count}')
-print(f'  ~ Odhad (průměr + offset):    {est_count}')
+print(f'\n  Vysledek: {len(stations)} stanic')
+print(f'  OK Realne ceny (mbenzin.cz): {real_count}')
+print(f'  ~  Odhad (prumer + offset):  {est_count}')
 
 # ── statistiky ────────────────────────────────────────────────────────────────
 nat95_vals = [p['natural_95'] for p in prices if p['natural_95']]
@@ -512,6 +546,6 @@ for fn in ['stations_latest.json', 'prices_latest.json', 'stats_latest.json']:
     kb = os.path.getsize(os.path.join(out, fn)) // 1024
     print(f'  {fn}: {kb} kB')
 
-print(f'\nHotovo! {real_count} reálné + {est_count} odhadové ceny')
-print(f'Průměry: Natural 95={AVG["nat95"]} Kč | Nafta={AVG["nafta"]} Kč')
-print('═' * 60)
+print(f'\nHotovo! {real_count} realne + {est_count} odhadove ceny')
+print(f'Prumery: Natural 95={AVG["nat95"]} Kc | Nafta={AVG["nafta"]} Kc')
+print('=' * 60)
