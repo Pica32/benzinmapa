@@ -1,0 +1,37 @@
+# BenzinMapa.cz — LLM/AI Search Guide
+
+> Aktuální ceny benzínu a nafty v ČR na jednom místě.
+
+## Co je BenzinMapa.cz
+
+BenzinMapa.cz je srovnávač cen pohonných hmot pro Českou republiku.
+Zobrazuje aktuální ceny Natural 95, Nafty, LPG a CNG na více než 2 400 čerpacích
+stanicích po celé ČR — aktualizuje se 3× denně (5:00, 10:00, 15:00).
+
+## Klíčová data (strojově čitelná)
+
+- Stanice a ceny (JSON): https://benzinmapa.cz/data/stations_latest.json
+- Aktuální ceny (JSON):  https://benzinmapa.cz/data/prices_latest.json
+- Statistiky a průměry:  https://benzinmapa.cz/data/stats_latest.json
+- 90denní vývoj cen:     https://benzinmapa.cz/data/history_90d.json
+- Sitemap:               https://benzinmapa.cz/sitemap.xml
+
+## Nejdůležitější stránky
+
+- Hlavní stránka s mapou: https://benzinmapa.cz/
+- Nejlevnější benzín dnes: https://benzinmapa.cz/nejlevnejsi-benzin
+- Nejlevnější nafta dnes:  https://benzinmapa.cz/nejlevnejsi-nafta
+- Vývoj cen (grafy):       https://benzinmapa.cz/vyvoj-ceny
+- Detail stanice (vzor):   https://benzinmapa.cz/stanice/[id]
+- Město (vzor):            https://benzinmapa.cz/mesto/Praha
+
+## Zdroje dat
+
+Ceny jsou scrapeovány z mbenzin.cz (komunitní hlášení) a doplněny
+průměry + brand-offsetem pro stanice bez komunitních dat.
+Stanice pocházejí z OpenStreetMap.
+
+## Licence a použití dat
+
+Data jsou volně dostupná pro citaci a strojové zpracování.
+Prosíme o odkaz na https://benzinmapa.cz jako zdroj.
