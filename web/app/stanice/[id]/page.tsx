@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { MapPin, Clock, Fuel, ChevronLeft, Navigation, Copy } from 'lucide-react';
 import { FUEL_LABELS, FuelType } from '@/types';
 import GpsButtons from './GpsButtons';
+import PriceReport from '@/components/PriceReport';
+import StationMiniMap from '@/components/StationMiniMap';
 
 export const revalidate = 21600;
 export const dynamicParams = false; // stanice mimo top 300 → pěkná 404
@@ -195,24 +197,23 @@ export default async function StationPage({ params }: Props) {
 
         {/* Mapa */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-5 shadow-sm">
-          <iframe
-            title={`Mapa – ${station.name}`}
-            width="100%"
-            height="280"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.openstreetmap.org/export/embed.html?bbox=${Number(lng)-0.012},${Number(lat)-0.008},${Number(lng)+0.012},${Number(lat)+0.008}&layer=mapnik&marker=${lat},${lng}`}
-            className="w-full block"
-          />
+          <div className="w-full" style={{ height: 280 }}>
+            <StationMiniMap lat={station.lat} lng={station.lng} name={station.name} />
+          </div>
           <div className="px-4 py-2 text-xs text-gray-400 flex items-center gap-1">
             <MapPin size={10} />
             {station.address} &nbsp;·&nbsp; GPS: {lat}, {lng}
           </div>
         </div>
 
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-green-700 hover:text-green-800 dark:text-green-400 font-medium">
-          <ChevronLeft size={16} /> Zpět na mapu
-        </Link>
+        {/* HLÁŠENÍ CEN UŽIVATELI */}
+        <PriceReport stationId={id} />
+
+        <div className="mt-5">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-green-700 hover:text-green-800 dark:text-green-400 font-medium">
+            <ChevronLeft size={16} /> Zpět na mapu
+          </Link>
+        </div>
 
       </div>
     </>

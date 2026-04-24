@@ -118,9 +118,12 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
     let cancelled = false;
 
     (async () => {
-      // Import Leaflet + CSS
+      // Import Leaflet + MarkerCluster + CSS
       const L = (await import('leaflet')).default;
       await import('leaflet/dist/leaflet.css');
+      await import('leaflet.markercluster');
+      await import('leaflet.markercluster/dist/MarkerCluster.css');
+      await import('leaflet.markercluster/dist/MarkerCluster.Default.css');
       if (cancelled) return;
 
       LRef.current = L;
@@ -129,11 +132,10 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
         center: [49.82, 15.47],
         zoom: 8,
         zoomControl: true,
-        preferCanvas: true,
-        scrollWheelZoom: false,   // vypnuto dokud uživatel neklikne
+        preferCanvas: false,      // cluster vyžaduje SVG/DOM markery
+        scrollWheelZoom: false,
       });
 
-      // Scroll kolečkem scrolluje stránku – zoom mapy se aktivuje až po kliknutí
       containerRef.current!.addEventListener('click', () => {
         map.scrollWheelZoom.enable();
       });
@@ -147,7 +149,23 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
       }).addTo(map);
 
       mapRef.current = map;
-      layerRef.current = L.layerGroup().addTo(map);
+      // MarkerClusterGroup — automaticky shlukuje při oddálení, rozkládá při přiblížení
+      layerRef.current = (L as any).markerClusterGroup({
+        maxClusterRadius: 60,
+        disableClusteringAtZoom: 13,
+        spiderfyOnMaxZoom: true,
+        showCoverageOnHover: false,
+        iconCreateFunction: (cluster: any) => {
+          const count = cluster.getChildCount();
+          const size = count < 10 ? 36 : count < 50 ? 44 : 52;
+          return L.divIcon({
+            className: '',
+            html: `<div style="width:${size}px;height:${size}px;background:#16a34a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:${size < 44 ? 12 : 14}px;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.3)">${count}</div>`,
+            iconSize: [size, size],
+            iconAnchor: [size / 2, size / 2],
+          });
+        },
+      }).addTo(map);
 
       // Render markers for the first time after map is ready
       renderMarkers();

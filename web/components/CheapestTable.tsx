@@ -66,6 +66,10 @@ export default function CheapestTable({ stations, fuelType, city }: Props) {
                   {i === 0 && (
                     <span className="ml-1 text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full">nejlevnější</span>
                   )}
+                  {s.price?.source === 'mbenzin.cz'
+                    ? <div className="text-[9px] text-green-500">✓ ověřeno</div>
+                    : <div className="text-[9px] text-gray-400">~ odhad</div>
+                  }
                 </td>
                 <td className="px-4 py-3 text-right text-gray-500 dark:text-gray-400 hidden md:table-cell">
                   {formatPrice(s.price?.natural_95 ?? null)}

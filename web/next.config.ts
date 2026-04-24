@@ -1,16 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Statický export – funguje na Wedos sdíleném hostingu (bez Node.js)
-  output: 'export',
   trailingSlash: true,
   images: {
-    // Pro statický export musíme vypnout optimalizaci obrázků (není dostupný server)
     unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'upload.wikimedia.org' },
     ],
+  },
+  async redirects() {
+    return [
+      { source: '/blog', destination: '/aktualne', permanent: true },
+      { source: '/blog/:slug', destination: '/aktualne/:slug', permanent: true },
+    ];
   },
   compress: true,
   poweredByHeader: false,

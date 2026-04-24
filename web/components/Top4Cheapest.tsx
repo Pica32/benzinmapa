@@ -50,10 +50,16 @@ export default function Top4Cheapest({ stations }: Props) {
                       {s.city}
                     </div>
                   </div>
-                  <span className={`font-black text-xl tabular-nums flex-shrink-0 ${i === 0 ? 'text-yellow-300' : 'text-white'}`}>
-                    {s.price!.nafta!.toFixed(2).replace('.', ',')}
-                    <span className="text-xs font-normal text-green-300 ml-0.5">Kč</span>
-                  </span>
+                  <div className="text-right flex-shrink-0">
+                    <span className={`font-black text-xl tabular-nums ${i === 0 ? 'text-yellow-300' : 'text-white'}`}>
+                      {s.price!.nafta!.toFixed(2).replace('.', ',')}
+                      <span className="text-xs font-normal text-green-300 ml-0.5">Kč</span>
+                    </span>
+                    {s.price!.source === 'mbenzin.cz'
+                      ? <div className="text-[9px] text-green-400 text-right">✓ ověřeno</div>
+                      : <div className="text-[9px] text-green-700 text-right">~ odhad</div>
+                    }
+                  </div>
                 </Link>
               ))}
             </div>
@@ -81,10 +87,16 @@ export default function Top4Cheapest({ stations }: Props) {
                       {s.city}
                     </div>
                   </div>
-                  <span className={`font-black text-xl tabular-nums flex-shrink-0 ${i === 0 ? 'text-yellow-300' : 'text-white'}`}>
-                    {s.price!.natural_95!.toFixed(2).replace('.', ',')}
-                    <span className="text-xs font-normal text-green-300 ml-0.5">Kč</span>
-                  </span>
+                  <div className="text-right flex-shrink-0">
+                    <span className={`font-black text-xl tabular-nums ${i === 0 ? 'text-yellow-300' : 'text-white'}`}>
+                      {s.price!.natural_95!.toFixed(2).replace('.', ',')}
+                      <span className="text-xs font-normal text-green-300 ml-0.5">Kč</span>
+                    </span>
+                    {s.price!.source === 'mbenzin.cz'
+                      ? <div className="text-[9px] text-green-400 text-right">✓ ověřeno</div>
+                      : <div className="text-[9px] text-green-700 text-right">~ odhad</div>
+                    }
+                  </div>
                 </Link>
               ))}
             </div>

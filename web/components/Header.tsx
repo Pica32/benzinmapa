@@ -24,7 +24,7 @@ export default function Header() {
               { href: '/nejlevnejsi-benzin', label: 'Nejlevnější benzín', icon: TrendingDown },
               { href: '/nejlevnejsi-nafta', label: 'Nejlevnější nafta', icon: TrendingDown },
               { href: '/vyvoj-ceny/', label: 'Vývoj cen', icon: BarChart2 },
-              { href: '/blog/', label: 'Blog', icon: BookOpen },
+              { href: '/aktualne/', label: 'Aktuálně', icon: BookOpen },
             ].map(({ href, label, icon: Icon }) => (
               <Link
                 key={href}

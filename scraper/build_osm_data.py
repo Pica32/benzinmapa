@@ -37,7 +37,7 @@ BRAND_OFFSET = {
 }
 LPG_BRANDS = {'mol', 'eurooil', 'robin oil', 'km - prona', 'prim'}
 PREMIUM_BRANDS = {'shell', 'omv', 'mol', 'benzina', 'orlen', 'eni', 'agip'}
-FALLBACK_AVG = {'nat95': 40.49, 'nafta': 42.30, 'nat98': 43.50, 'lpg': 19.50}
+FALLBACK_AVG = {'nat95': 40.50, 'nafta': 42.30, 'nat98': 43.50, 'lpg': 19.50}
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -128,8 +128,8 @@ def fetch_mbenzin_averages() -> dict:
                     n95 = float(cells[1].replace(',', '.').replace('\xa0', ''))
                     naf = float(cells[2].replace(',', '.').replace('\xa0', ''))
                     if 35 <= n95 <= 55 and 35 <= naf <= 55:
-                        avg = {'nat95': n95, 'nafta': naf,
-                               'nat98': round(n95 + 3.01, 2), 'lpg': FALLBACK_AVG['lpg']}
+                        avg = {'nat95': round_price(n95), 'nafta': round_price(naf),
+                               'nat98': round_price(n95 + 3.0), 'lpg': round_price(FALLBACK_AVG['lpg'])}
                         print(f'  Průměry mbenzin.cz: Natural 95={n95} Kč | Nafta={naf} Kč')
                         return avg
                 except (ValueError, IndexError):
@@ -515,10 +515,10 @@ for fuel, vals, pool in [
 stats = {
     'last_updated': ts,
     'averages': {
-        'natural_95': safe_avg(nat95_vals) or AVG['nat95'],
-        'natural_98': AVG['nat98'],
-        'nafta':      safe_avg(nafta_vals) or AVG['nafta'],
-        'lpg':        safe_avg(lpg_vals)   or AVG['lpg'],
+        'natural_95': round_price(AVG['nat95']),
+        'natural_98': round_price(AVG['nat98']),
+        'nafta':      round_price(AVG['nafta']),
+        'lpg':        round_price(AVG['lpg']),
     },
     'cheapest_today': cheapest,
     'trend_7d': {'natural_95': -0.35, 'nafta': -0.57, 'lpg': 0.0},
