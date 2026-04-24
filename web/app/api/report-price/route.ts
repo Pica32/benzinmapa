@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 
-const DB_PATH = path.join(process.cwd(), 'public', 'data', 'user_prices.json');
+const DB_PATH = path.join('/tmp', 'user_prices.json');
 
 function readDb() {
   try {
