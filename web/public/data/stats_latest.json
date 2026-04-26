@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-04-25T14:12:42Z",
+  "last_updated": "2026-04-26T05:45:22Z",
   "averages": {
     "natural_95": 40.2,
-    "natural_98": 43.5,
+    "natural_98": 43.6,
     "nafta": 41.2,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 32.9,
-      "station_id": "osm_1970500123",
-      "city": "Olomoucký kraj"
+      "price": 33.5,
+      "station_id": "osm_3845426027",
+      "city": "Královéhradecký kraj"
     },
     "nafta": {
       "price": 30.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2424,
-  "stations_updated_today": 2424,
-  "real_prices_count": 831,
-  "estimated_prices_count": 1593
+  "total_stations": 2429,
+  "stations_updated_today": 2429,
+  "real_prices_count": 826,
+  "estimated_prices_count": 1603
 }
