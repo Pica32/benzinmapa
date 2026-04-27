@@ -42,3 +42,20 @@ jobs:
           git add web/public/data/
           git diff --cached --quiet || git commit -m "ceny: aktualizace $(date -u +'%Y-%m-%d %H:%M') UTC"
           git push
+
+      - name: Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+
+      - name: Instalace závislostí
+        run: npm ci
+        working-directory: web
+
+      - name: Deploy na Vercel
+        run: npx vercel --prod --yes --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
