@@ -62,26 +62,36 @@ export function getStationsByRegion(region: string): StationWithPrice[] {
 }
 
 const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
+
+// Preferovaná minima — filtrují nereálná čísla (LPG místo Natural apod.)
 const PRICE_MIN: Record<FuelType, number> = {
   natural_95: 35,
   natural_98: 38,
-  nafta:      35,
+  nafta:      34,
   lpg:        15,
 };
 
+// Pokud by preferované minimum vyřadilo >80 % stanic, sníž práh na 10. percentil
+function adaptiveMin(prices: number[], preferred: number): number {
+  if (!prices.length) return preferred;
+  const aboveMin = prices.filter(p => p >= preferred).length;
+  if (aboveMin / prices.length >= 0.20) return preferred; // dost stanic prošlo → nech limit
+  const sorted = [...prices].sort((a, b) => a - b);
+  return sorted[Math.floor(sorted.length * 0.10)]; // 10. percentil jako záchranný práh
+}
+
 export function getCheapestStations(fuelType: FuelType, limit = 10): StationWithPrice[] {
   const cutoff = Date.now() - TWO_DAYS_MS;
-  const min = PRICE_MIN[fuelType];
-  return getStationsWithPrices()
-    .filter(s => {
-      const price = s.price?.[fuelType];
-      return (
-        price != null &&
-        price >= min &&
-        s.price?.source === 'mbenzin.cz' &&
-        new Date(s.price.reported_at).getTime() > cutoff
-      );
-    })
+  const allWithPrices = getStationsWithPrices().filter(s =>
+    s.price?.[fuelType] != null &&
+    s.price?.source === 'mbenzin.cz' &&
+    new Date(s.price.reported_at).getTime() > cutoff
+  );
+  const allPrices = allWithPrices.map(s => s.price![fuelType] as number);
+  const min = adaptiveMin(allPrices, PRICE_MIN[fuelType]);
+
+  return allWithPrices
+    .filter(s => (s.price![fuelType] as number) >= min)
     .sort((a, b) => (a.price![fuelType] ?? 999) - (b.price![fuelType] ?? 999))
     .slice(0, limit);
 }
