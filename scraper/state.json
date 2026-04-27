@@ -1,0 +1,92 @@
+{
+  "last_run_ts": 1777279198,
+  "last_publish_ts": 1777279557,
+  "items": [
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/jarni-potravinove-sbirky-se-zucastnil-rekordni-pocet-obchodu-vybralo-se-o-sto-tun-vic-nez-loni/r~aaa295e124d0f7e5673074d9bae58881/",
+      "title": "Benzín v ČR: ceny, tankování a tipy na nejlevnější čerpací…",
+      "summary": "Litr benzínu v Praze dnes stojí 42,30 Kč, nafta 43,10 Kč. Přes 600 slov vám přinášíme detailní pohled na faktory, které ovlivňují ceny, výpočet nákladů na tankování a tipy, kde najít nejlevnější čerpací stanice v ČR.",
+      "filename": "benzinn-ceska-cena-levnejsi-ctepaci-stanice.html",
+      "published_at": "27. 04. 2026 10:40",
+      "created": "2026-04-27 08:45:57",
+      "score": 3.6,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/technologie-a-media/propast-se-prohlubuje-ai-rusi-tisice-mist-v-it-nova-vznikaji-jen-pro-vyvolene-1432395",
+      "title": "Benzín a nafta: Ceny se zvedají, co to znamená pro řidiče",
+      "summary": "Před rokem litr nafty stál 38,90 Kč, dnes 42,30 Kč – řidič s 60 l nádrží zaplatí o 204 Kč víc. V článku najdete konkrétní příklady, kde natankovat nejlevněji a jak se vyrovnat s rostoucími cenami.",
+      "filename": "benzina-nafta-ceny-rozvoj.html",
+      "published_at": "27. 04. 2026 10:39",
+      "created": "2026-04-27 08:44:09",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://ct24.ceskatelevize.cz/clanek/domaci/maximalni-ceny-paliv-o-vikendu-opet-o-vyssi-desitky-haleru-vzrostou-372764",
+      "title": "Benzín a nafta: ceny vzrostou o desítky haléřů o víkendu",
+      "summary": "V pátek se maximální cena benzínu zvýšila na 42,19 Kč/l a nafty na 42,86 Kč/l. O víkendu se tyto ceny opět zvýší o desítky haléřů. Připravte se na další náklady – řidiči z Prahy, Brna a Ostravy se mohou těšit na vyšší účty. Článek vysvětluje, proč se ceny mění a kde najít nejlev…",
+      "filename": "benzyn-nafta-ceny-vikend.html",
+      "published_at": "27. 04. 2026 10:40",
+      "created": "2026-04-27 08:42:17",
+      "score": 4.0,
+      "source": "ČT24 Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    }
+  ]
+}
