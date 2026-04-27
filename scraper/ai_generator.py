@@ -637,7 +637,7 @@ def build_context_block() -> str:
         parts.append(f"Fear & Greed Index: {v} ({c})")
     
     # Regionální kontext
-    region_hint = REGION_CONTEXT.get(TARGET_REGION, REGION_CONTEXT["GLOBAL"])
+    region_hint = REGION_CONTEXT.get(TARGET_REGION, REGION_CONTEXT.get("GLOBAL", ""))
     parts.append(f"Region: {TARGET_REGION} - {region_hint}")
     
     return " | ".join(parts) if parts else "Bez dodatečného kontextu."
