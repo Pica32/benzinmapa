@@ -63,7 +63,8 @@ def parse_price(text: str):
         return None
     try:
         v = float(cleaned)
-        return v if 25.0 <= v <= 65.0 else None
+        # Natural 95 a nafta mají reálné minimum ~35 Kč v ČR (LPG je ~18-22 Kč)
+        return v if 35.0 <= v <= 65.0 else None
     except ValueError:
         return None
 
@@ -481,7 +482,7 @@ for station in stations:
     if sid in match_map:
         mb = match_map[sid]
         def rp(v):
-            return round_price(max(30.0, min(65.0, v))) if v else None
+            return round_price(max(35.0, min(65.0, v))) if v else None
         lpg_val = rp(mb.get('lpg'))
         if lpg_val is None and (tags.get('lpg') == 'yes' or any(k in bk for k in LPG_BRANDS)):
             lpg_val = round_price(AVG['lpg'])
