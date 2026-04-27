@@ -67,7 +67,8 @@ def ftp_upload(local_paths: List[str]) -> None:
         return
     
     if not FTP_HOST or not FTP_USER or not FTP_PASS:
-        raise RuntimeError("Chybí FTP_HOST/FTP_USER/FTP_PASS v .env")
+        print(f"[{now_str()}] Varování: FTP credentials chybí, přeskakuji upload")
+        return
     
     print(f"[{now_str()}] FTP: Připojování k {FTP_HOST}...")
     
