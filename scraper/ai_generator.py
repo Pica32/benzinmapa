@@ -396,7 +396,7 @@ def openrouter_call(
                 "Content-Type": "application/json",
                 "User-Agent": USER_AGENT,
                 "HTTP-Referer": SITE_URL,
-                "X-Title": "bitcoinchurch-news-bot",
+                "X-Title": "benzinmapa-news-bot",
             }
             
             r = requests.post(

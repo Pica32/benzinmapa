@@ -33,7 +33,7 @@ jobs:
         env:
           AI_PROVIDER: openrouter
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_MODEL: deepseek/deepseek-r1:free
+          OPENROUTER_MODEL: meta-llama/llama-3.1-8b-instruct:free
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASS: ${{ secrets.FTP_PASS }}
