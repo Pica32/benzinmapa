@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-27T07:50:57Z",
+  "last_updated": "2026-04-27T10:12:42Z",
   "averages": {
     "natural_95": 40.3,
     "natural_98": 43.7,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.6,
-      "station_id": "osm_11240649260",
-      "city": "Královéhradecký kraj"
+      "price": 36.9,
+      "station_id": "osm_1600747761",
+      "city": "Středočeský kraj"
     },
     "nafta": {
       "price": 36.3,
@@ -30,6 +30,6 @@
   },
   "total_stations": 2429,
   "stations_updated_today": 2429,
-  "real_prices_count": 827,
-  "estimated_prices_count": 1602
+  "real_prices_count": 824,
+  "estimated_prices_count": 1605
 }
