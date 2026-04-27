@@ -405,12 +405,26 @@ stations_by_id = enrich_stations_with_gps(session, stations_by_id)
 mb_list = list(stations_by_id.values())
 
 print('\n[4/5] Cerpaci stanice z OpenStreetMap...')
-osm_resp = requests.get(
-    OVERPASS, params={'data': QUERY},
-    headers={'User-Agent': 'BenzinMapa.cz/1.0 data-builder'},
-    timeout=100
-)
-els = osm_resp.json().get('elements', [])
+els = []
+for attempt in range(4):
+    try:
+        osm_resp = requests.get(
+            OVERPASS, params={'data': QUERY},
+            headers={'User-Agent': 'BenzinMapa.cz/1.0 data-builder'},
+            timeout=120
+        )
+        osm_resp.raise_for_status()
+        els = osm_resp.json().get('elements', [])
+        if els:
+            break
+        print(f'  OSM: prazdna odpoved (pokus {attempt+1}/4), cekam 30s...')
+        time.sleep(30)
+    except Exception as e:
+        print(f'  OSM chyba (pokus {attempt+1}/4): {e}, cekam 30s...')
+        time.sleep(30)
+if not els:
+    print('  VAROVANI: OSM data nedostupna, pouzivam prazdny seznam stanic')
+
 print(f'  OSM stanic: {len(els)}')
 
 ts = datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z')
