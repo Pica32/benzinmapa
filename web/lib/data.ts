@@ -62,15 +62,26 @@ export function getStationsByRegion(region: string): StationWithPrice[] {
 }
 
 const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
+const PRICE_MIN: Record<FuelType, number> = {
+  natural_95: 35,
+  natural_98: 38,
+  nafta:      35,
+  lpg:        15,
+};
 
 export function getCheapestStations(fuelType: FuelType, limit = 10): StationWithPrice[] {
   const cutoff = Date.now() - TWO_DAYS_MS;
+  const min = PRICE_MIN[fuelType];
   return getStationsWithPrices()
-    .filter(s =>
-      s.price?.[fuelType] != null &&
-      s.price?.source === 'mbenzin.cz' &&
-      new Date(s.price.reported_at).getTime() > cutoff
-    )
+    .filter(s => {
+      const price = s.price?.[fuelType];
+      return (
+        price != null &&
+        price >= min &&
+        s.price?.source === 'mbenzin.cz' &&
+        new Date(s.price.reported_at).getTime() > cutoff
+      );
+    })
     .sort((a, b) => (a.price![fuelType] ?? 999) - (b.price![fuelType] ?? 999))
     .slice(0, limit);
 }
