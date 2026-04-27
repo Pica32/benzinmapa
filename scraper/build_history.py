@@ -45,14 +45,18 @@ def fetch_brent():
            '?api_key=DEMO_KEY&frequency=daily&data[0]=value'
            '&facets[product][]=EPCBRENT&sort[0][column]=period'
            '&sort[0][direction]=desc&length=100')
-    r = requests.get(url, timeout=15)
-    rows = r.json().get('response', {}).get('data', [])
-    data = {}
-    for row in rows:
-        if row.get('value') is not None:
-            data[row['period']] = float(row['value'])
-    print(f'Reálné ceny Brent: {len(data)} dní (EIA.gov)')
-    return data
+    try:
+        r = requests.get(url, timeout=15)
+        rows = r.json().get('response', {}).get('data', [])
+        data = {}
+        for row in rows:
+            if row.get('value') is not None:
+                data[row['period']] = float(row['value'])
+        print(f'Reálné ceny Brent: {len(data)} dní (EIA.gov)')
+        return data
+    except Exception as e:
+        print(f'Varování: EIA.gov nedostupné ({e}), Brent data přeskočena')
+        return {}
 
 fuel_real = fetch_fuel_prices()
 brent_real = fetch_brent()
