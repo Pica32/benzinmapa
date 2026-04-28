@@ -79,8 +79,9 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
       const dotColor = isReal ? markerColor : '#9ca3af';
       const icon = L.divIcon({
         className: '',
-        html: `<div style="background:#fff;color:${isReal ? '#111827' : '#9ca3af'};border-radius:20px;padding:3px 8px 3px 6px;font-size:11px;font-weight:${isReal ? '700' : '600'};border:2px solid ${isReal ? '#e5e7eb' : '#d1d5db'};box-shadow:0 2px 6px rgba(0,0,0,.22);white-space:nowrap;cursor:pointer;line-height:1.4;opacity:${isReal ? '1' : '0.8'}"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${dotColor};vertical-align:middle;margin-right:5px;margin-bottom:1px"></span>${isReal ? '' : '~'}${price.toFixed(2).replace('.', ',')}</div>`,
-        iconAnchor: [26, 12],
+        html: `<div style="position:absolute;transform:translate(-50%,-50%);background:${markerColor};color:#fff;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 6px rgba(0,0,0,.28);white-space:nowrap;cursor:pointer;line-height:1.4;opacity:${isReal ? '1' : '0.75'}">${isReal ? '' : '~'}${price.toFixed(2).replace('.', ',')}</div>`,
+        iconSize: [0, 0],
+        iconAnchor: [0, 0],
         popupAnchor: [0, -16],
       });
 
