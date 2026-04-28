@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-04-28T06:07:00Z",
+  "last_updated": "2026-04-28T08:46:30Z",
   "averages": {
-    "natural_95": 40.3,
+    "natural_95": 40.4,
     "natural_98": 43.7,
-    "nafta": 41.4,
+    "nafta": 41.5,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.7,
-      "station_id": "osm_13625149816",
-      "city": "Jihočeský kraj"
+      "price": 36.5,
+      "station_id": "mb_19481",
+      "city": "Nové Město na Moravě"
     },
     "nafta": {
-      "price": 36.3,
-      "station_id": "osm_1618906179",
-      "city": "Královéhradecký kraj"
+      "price": 35.9,
+      "station_id": "mb_19020",
+      "city": "Soběslav"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2429,
-  "stations_updated_today": 2429,
-  "real_prices_count": 825,
-  "estimated_prices_count": 1604
+  "total_stations": 2550,
+  "stations_updated_today": 2550,
+  "real_prices_count": 945,
+  "estimated_prices_count": 1605
 }
