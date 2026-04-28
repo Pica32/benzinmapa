@@ -1,7 +1,93 @@
 {
-  "last_run_ts": 1777301728,
-  "last_publish_ts": 1777302037,
+  "last_run_ts": 1777361450,
+  "last_publish_ts": 1777361863,
   "items": [
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/technika-a-design/evropa-resi-penalty-cina-vyrabi-auta-sefdesigner-jozef-kaban-popisuje-stret-dvou-svetu/r~aaa294deb0b5e38bedff2efbd127fb0a/",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "V ČR se cena benzínu zvedla na 42,30 Kč/l, nafta na 43,10 Kč/l. Přesvědčte se, kolik zaplatíte na 55 l, jaký dopad má to na peněženku řidiče a kde najít nejlevnější čerpací stanice v Praze, Brně a Ostravě.",
+      "filename": "benzinn-ceska-cena-42-30-kc-l.html",
+      "published_at": "28. 04. 2026 09:30",
+      "created": "2026-04-28 07:37:43",
+      "score": 3.6,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/auto-stellantis-se-v-krizi-zacne-soustredit-na-ctyri-klicove-znacky-dalsich-deset-automobilek-se-prizpusobi-40575551",
+      "title": "Benzín v ČR: ceny, tankování a co čekat v roce 2026",
+      "summary": "Litr benzínu v Praze stojí 38,90 Kč, nafta 42,30 Kč. Přesné výpočty, proč se ceny zvedají a kde najít nejlevnější stánky v ČR. Připravte se na budoucí změny cen paliv.",
+      "filename": "benzin-ceny-paliv-2026.html",
+      "published_at": "28. 04. 2026 09:30",
+      "created": "2026-04-28 07:35:01",
+      "score": 3.95,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/prumysl-a-energetika/regulace-cen-benzinu-a-nafty-bude-pokracovat-i-v-kvetnu-oznamila-schillerova-1432421",
+      "title": "Benzín a nafta: 400 Kč úspora na plné nádrži v květnu",
+      "summary": "V květnu se na české čerpací sítě vrací regulace marží a snížení spotřební daně na naftu. Díky tomu řidič s 60 l nádrží ušetří až 400 Kč. Přinášíme aktuální ceny, výpočty a tipy, kde natankovat nejlevněji.",
+      "filename": "benzina-nafta-400-kc-uspora-kvetn.html",
+      "published_at": "28. 04. 2026 09:30",
+      "created": "2026-04-28 07:33:01",
+      "score": 4.25,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://ct24.ceskatelevize.cz/clanek/svet/hodnota-majetku-ruskych-miliardaru-i-pres-sankce-rekordne-vzrostla-pise-forbes-372710",
       "title": "Benzín a nafta v ČR: ceny, tankování a výhled na 2026",
