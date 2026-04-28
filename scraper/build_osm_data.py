@@ -334,13 +334,12 @@ def enrich_stations_with_gps(session, stations_by_id: dict) -> dict:
 
 # ── GPS + name matching ───────────────────────────────────────────────────────
 
-def match_mbenzin_to_osm(mb_stations: list, osm_list: list) -> dict:
+def match_mbenzin_to_osm(mb_stations: list, osm_list: list) -> tuple:
     """
-    Vrátí dict {osm_id: mbenzin_dict}.
+    Vrátí (dict {osm_id: mbenzin_dict}, list unmatched_mbenzin_stations).
     Priorita:
       1. GPS vzdálenost < 300 m
       2. normalize(name+city) přesná shoda
-      3. normalize(brand) + normalize(city) — fuzzy brand matching
     """
     matched = {}
     used_mb = set()
@@ -378,10 +377,14 @@ def match_mbenzin_to_osm(mb_stations: list, osm_list: list) -> dict:
                 used_mb.add(i)
                 break
 
+    # Unmatched mbenzin stanice s GPS — přidáme přímo do mapy
+    unmatched = [mb for i, mb in enumerate(mb_stations) if i not in used_mb and mb.get('lat')]
+
     real = len(matched)
     total = len(osm_list)
     print(f'  Parovani: {real}/{total} OSM stanic ({real*100//total if total else 0}%) ma realne ceny')
-    return matched
+    print(f'  Mbenzin-only stanic (nejsou v OSM): {len(unmatched)}')
+    return matched, unmatched
 
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
@@ -471,7 +474,27 @@ for el in els:
     osm_tags_map[sid] = tags
 
 print('\n[5/5] Parovani a sestaveni cen...')
-match_map = match_mbenzin_to_osm(mb_list, stations)
+match_map, mb_only = match_mbenzin_to_osm(mb_list, stations)
+
+# Přidej mbenzin-only stanice (nejsou v OSM, ale mají GPS + ceny na mbenzin.cz)
+for mb in mb_only:
+    if not mb.get('lat') or not mb.get('lon'):
+        continue
+    lat, lng = mb['lat'], mb['lon']
+    city = mb.get('city', '').strip()
+    region = get_region(lat, lng)
+    sid = f'mb_{mb["id"]}'
+    name = mb.get('name', 'Čerpací stanice')
+    # Odvoď brand z názvu (první slovo)
+    brand = name.split()[0] if name else 'Nezávislá'
+    address = f'{name}, {city}' if city else name
+    stations.append({
+        'id': sid, 'name': name[:60], 'brand': brand[:30],
+        'lat': round(lat, 6), 'lng': round(lng, 6),
+        'address': address[:80], 'city': city[:40] or region,
+        'region': region, 'services': [], 'opening_hours': 'Ověřte na místě',
+    })
+    match_map[sid] = mb
 
 prices = []
 for station in stations:
