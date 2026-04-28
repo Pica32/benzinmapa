@@ -82,6 +82,32 @@ def normalize(s: str) -> str:
     return re.sub(r'[^a-z0-9]', '', s.lower().translate(_TRANS))
 
 
+def slugify(s: str) -> str:
+    """Lidsky čitelný slug: 'ICOM Pelhřimov' → 'icom-pelhrimov'"""
+    return re.sub(r'-{2,}', '-', re.sub(r'[^a-z0-9]+', '-', s.lower().translate(_TRANS))).strip('-')
+
+
+def make_mb_slug(mb: dict, used_slugs: set) -> str:
+    """
+    Generuje slug pro mb-only stanici: name-city, při duplicitě přidá ulici z URL.
+    Příklad: mb-icom-pelhrimov, nebo mb-icom-pelhrimov-skrysovska
+    """
+    name = slugify(mb.get('name', 'stanice'))
+    city = slugify(mb.get('city', ''))
+    base = f'mb-{name}-{city}' if city else f'mb-{name}'
+    if base not in used_slugs:
+        return base
+    # Přidej ulici z detail_url: .../ICOM-Skrysovska-1680/17561 → skrysovska
+    parts = mb.get('detail_url', '').rstrip('/').split('/')
+    if len(parts) >= 2:
+        street = slugify(parts[-2])  # 'ICOM-Skrysovska-1680' → 'icom-skrysovska-1680'
+        candidate = f'{base}-{street}'
+        if candidate not in used_slugs:
+            return candidate
+    # Fallback na mbenzin ID
+    return f'{base}-{mb["id"]}'
+
+
 def get_offset(brand_raw: str) -> float:
     bk = (brand_raw or '').lower()
     for k, v in BRAND_OFFSET.items():
@@ -477,15 +503,16 @@ print('\n[5/5] Parovani a sestaveni cen...')
 match_map, mb_only = match_mbenzin_to_osm(mb_list, stations)
 
 # Přidej mbenzin-only stanice (nejsou v OSM, ale mají GPS + ceny na mbenzin.cz)
+used_slugs = {s['id'] for s in stations}  # zabraň kolizi s osm_ ID
 for mb in mb_only:
     if not mb.get('lat') or not mb.get('lon'):
         continue
     lat, lng = mb['lat'], mb['lon']
     city = mb.get('city', '').strip()
     region = get_region(lat, lng)
-    sid = f'mb_{mb["id"]}'
+    sid = make_mb_slug(mb, used_slugs)
+    used_slugs.add(sid)
     name = mb.get('name', 'Čerpací stanice')
-    # Odvoď brand z názvu (první slovo)
     brand = name.split()[0] if name else 'Nezávislá'
     address = f'{name}, {city}' if city else name
     stations.append({
