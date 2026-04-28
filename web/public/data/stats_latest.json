@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-28T08:46:30Z",
+  "last_updated": "2026-04-28T10:09:35Z",
   "averages": {
     "natural_95": 40.4,
     "natural_98": 43.7,
@@ -9,12 +9,12 @@
   "cheapest_today": {
     "natural_95": {
       "price": 36.5,
-      "station_id": "mb_19481",
+      "station_id": "mb-hunsgas-nove-mesto-na-morave",
       "city": "Nové Město na Moravě"
     },
     "nafta": {
       "price": 35.9,
-      "station_id": "mb_19020",
+      "station_id": "mb-tomegas-sobeslav",
       "city": "Soběslav"
     },
     "lpg": {
@@ -30,6 +30,6 @@
   },
   "total_stations": 2550,
   "stations_updated_today": 2550,
-  "real_prices_count": 945,
-  "estimated_prices_count": 1605
+  "real_prices_count": 947,
+  "estimated_prices_count": 1603
 }
