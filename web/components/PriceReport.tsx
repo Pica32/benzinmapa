@@ -36,11 +36,17 @@ function saveConfirmed(set: Set<string>) {
 
 const FUEL_ORDER: FuelType[] = ['natural_95', 'nafta', 'natural_98', 'lpg'];
 
-export default function PriceReport({ stationId }: { stationId: string }) {
+interface PriceReportProps {
+  stationId: string;
+  initialFuel?: FuelType;
+  forceOpen?: boolean;
+}
+
+export default function PriceReport({ stationId, initialFuel, forceOpen }: PriceReportProps) {
   const [subs, setSubs] = useState<UserSub[]>([]);
   const [confirmed, setConfirmed] = useState<Set<string>>(new Set());
   const [open, setOpen] = useState(false);
-  const [formFuel, setFormFuel] = useState<FuelType>('natural_95');
+  const [formFuel, setFormFuel] = useState<FuelType>(initialFuel ?? 'natural_95');
   const [formPrice, setFormPrice] = useState('');
   const [sending, setSending] = useState(false);
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
@@ -52,6 +58,14 @@ export default function PriceReport({ stationId }: { stationId: string }) {
   }, [stationId]);
 
   useEffect(() => { load(); }, [load]);
+
+  useEffect(() => {
+    if (forceOpen) setOpen(true);
+  }, [forceOpen]);
+
+  useEffect(() => {
+    if (initialFuel) setFormFuel(initialFuel);
+  }, [initialFuel]);
 
   // Odsouhlasené ceny s 3+ potvrzeními — pro zobrazení vedle oficálních cen
   const verified = subs.filter(s => s.confirmations >= 3);

@@ -20,6 +20,17 @@ function getPriceColor(price: number, allPrices: number[]): string {
   return '#d97706';
 }
 
+function isPriceStale(reportedAt: string): boolean {
+  return Date.now() - new Date(reportedAt).getTime() > 2 * 24 * 60 * 60 * 1000;
+}
+
+function formatDateCZ(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString('cs-CZ', {
+    day: 'numeric', month: 'numeric', year: 'numeric',
+    hour: '2-digit', minute: '2-digit',
+  });
+}
+
 function kmBetween(lat1: number, lng1: number, lat2: number, lng2: number): string {
   const R = 6371;
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -61,14 +72,14 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
         : null;
 
       const isReal = station.price?.source === 'mbenzin.cz';
+      const stale = isReal && station.price?.reported_at ? isPriceStale(station.price.reported_at) : false;
 
       // Na mapě: šedé kolečko pro odhady, barevné pro reálné ceny
       const markerColor = isReal ? color : '#9ca3af';
+      const dotColor = isReal ? markerColor : '#9ca3af';
       const icon = L.divIcon({
         className: '',
-        html: isReal
-          ? `<div style="background:${markerColor};color:#fff;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:700;border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.35);white-space:nowrap;cursor:pointer;line-height:1.4">${price.toFixed(2).replace('.', ',')}</div>`
-          : `<div style="background:#e5e7eb;color:#6b7280;border-radius:20px;padding:3px 8px;font-size:11px;font-weight:600;border:2px solid #d1d5db;white-space:nowrap;cursor:pointer;line-height:1.4;opacity:0.8">~${price.toFixed(2).replace('.', ',')}</div>`,
+        html: `<div style="background:#fff;color:${isReal ? '#111827' : '#9ca3af'};border-radius:20px;padding:3px 8px 3px 6px;font-size:11px;font-weight:${isReal ? '700' : '600'};border:2px solid ${isReal ? '#e5e7eb' : '#d1d5db'};box-shadow:0 2px 6px rgba(0,0,0,.22);white-space:nowrap;cursor:pointer;line-height:1.4;display:flex;align-items:center;gap:5px;opacity:${isReal ? '1' : '0.8'}"><span style="width:8px;height:8px;border-radius:50%;background:${dotColor};flex-shrink:0;display:inline-block"></span>${isReal ? '' : '~'}${price.toFixed(2).replace('.', ',')}</div>`,
         iconAnchor: [26, 12],
         popupAnchor: [0, -16],
       });
@@ -93,17 +104,23 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
       const gmaps = `https://www.google.com/maps/dir/?api=1&destination=${station.lat},${station.lng}`;
       const waze  = `https://waze.com/ul?ll=${station.lat},${station.lng}&navigate=yes`;
 
+      const reportedLabel = (isReal && station.price?.reported_at)
+        ? `Naposledy: ${formatDateCZ(station.price.reported_at)}`
+        : '';
+
       const popup = `
         <div style="font-family:system-ui,sans-serif;min-width:210px;max-width:260px">
           <div style="font-weight:700;font-size:14px;margin-bottom:2px;line-height:1.3">${station.name}</div>
-          <div style="color:#6b7280;font-size:11px;margin-bottom:6px">${station.address}</div>
-          ${isReal
-            ? '<div style="font-size:9px;color:#16a34a;font-weight:700;margin-bottom:6px">✓ Ověřená cena z mbenzin.cz</div>'
-            : '<div style="font-size:9px;color:#f59e0b;font-weight:600;margin-bottom:6px">~ Průměrný odhad — zadej cenu na detailu stanice</div>'
+          <div style="color:#6b7280;font-size:11px;margin-bottom:4px">${station.address}</div>
+          ${station.opening_hours ? `<div style="font-size:11px;color:#6b7280;margin-bottom:4px">⏰ ${station.opening_hours}</div>` : ''}
+          ${stale
+            ? `<div style="font-size:9px;color:#dc2626;font-weight:700;margin-bottom:4px;background:#fef2f2;border:1px solid #fecaca;border-radius:4px;padding:3px 6px">⚠ Cena nebyla dlouho aktualizována<br><span style="font-weight:400">${reportedLabel}</span></div>`
+            : isReal
+              ? `<div style="font-size:9px;color:#16a34a;font-weight:700;margin-bottom:4px">✓ Ověřená cena · ${reportedLabel}</div>`
+              : '<div style="font-size:9px;color:#f59e0b;font-weight:600;margin-bottom:4px">~ Průměrný odhad — zadej cenu na detailu stanice</div>'
           }
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">${priceRows}</div>
-          ${dist ? `<div style="font-size:11px;color:#9ca3af;margin-bottom:4px">📍 ${dist} km od vás</div>` : ''}
-          <div style="font-size:11px;color:#9ca3af;margin-bottom:10px">⏰ ${station.opening_hours}</div>
+          ${dist ? `<div style="font-size:11px;color:#9ca3af;margin-bottom:6px">📍 ${dist} km od vás</div>` : ''}
           <div style="display:flex;gap:6px">
             <a href="${gmaps}" target="_blank" rel="noopener"
                style="flex:1;background:#16a34a;color:#fff;text-align:center;padding:7px 4px;border-radius:7px;font-size:11px;font-weight:700;text-decoration:none">
@@ -115,8 +132,8 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
             </a>
           </div>
           <a href="/stanice/${station.id}/"
-             style="display:block;margin-top:6px;background:#f3f4f6;color:#374151;text-align:center;padding:7px;border-radius:7px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid #e5e7eb">
-            ${isReal ? 'Detail stanice →' : 'Zadat cenu →'}
+             style="display:block;margin-top:6px;background:${stale ? '#fef2f2' : '#f3f4f6'};color:${stale ? '#dc2626' : '#374151'};text-align:center;padding:7px;border-radius:7px;font-size:11px;font-weight:600;text-decoration:none;border:1px solid ${stale ? '#fecaca' : '#e5e7eb'}">
+            ${stale ? '⚠ Zadat aktuální cenu →' : isReal ? 'Detail stanice →' : 'Zadat cenu →'}
           </a>
         </div>`;
 

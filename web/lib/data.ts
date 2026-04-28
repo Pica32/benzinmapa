@@ -63,6 +63,10 @@ export function getStationsByRegion(region: string): StationWithPrice[] {
 
 const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
 
+export function isPriceStale(reportedAt: string): boolean {
+  return Date.now() - new Date(reportedAt).getTime() > TWO_DAYS_MS;
+}
+
 // Preferovaná minima — filtrují nereálná čísla (LPG místo Natural apod.)
 const PRICE_MIN: Record<FuelType, number> = {
   natural_95: 35,

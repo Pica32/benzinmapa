@@ -9,10 +9,16 @@ interface Props {
   city?: string;
 }
 
+const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
+
 export default function CheapestTable({ stations, fuelType, city }: Props) {
-  // Jen stanice s reálnými cenami z mbenzin.cz
+  const cutoff = Date.now() - TWO_DAYS_MS;
   const sorted = [...stations]
-    .filter(s => s.price?.[fuelType] != null && s.price?.source === 'mbenzin.cz')
+    .filter(s =>
+      s.price?.[fuelType] != null &&
+      s.price?.source === 'mbenzin.cz' &&
+      new Date(s.price.reported_at).getTime() > cutoff
+    )
     .sort((a, b) => (a.price![fuelType] ?? 999) - (b.price![fuelType] ?? 999))
     .slice(0, 10);
 
