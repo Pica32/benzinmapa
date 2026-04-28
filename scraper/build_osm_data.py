@@ -74,8 +74,8 @@ def round_price(v: float) -> float:
 
 
 _TRANS = str.maketrans(
-    'áéíóúůčšžřěďťňÁÉÍÓÚŮČŠŽŘĚĎŤŇ',
-    'aeiouucsrzedtnAEIOUUCSRZEDTN'
+    'áéíóúůýčšžřěďťňÁÉÍÓÚŮÝČŠŽŘĚĎŤŇ',
+    'aeiouuycszredtnAEIOUUYCSZREDTN'
 )
 
 def normalize(s: str) -> str:
