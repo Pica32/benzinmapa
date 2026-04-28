@@ -25,20 +25,41 @@ export default function HomeClient({ stats }: HomeClientProps) {
   const [locationSource, setLocationSource] = useState<'ip' | 'gps' | null>(null);
   const [locating, setLocating] = useState(false);
 
-  // Načti data na klientovi – HTML zůstane malé, mapa se načte po renderování
+  // Načti data na klientovi – jeden request (map_data.json = stations + prices)
   useEffect(() => {
-    Promise.all([
-      fetch('/data/stations_latest.json').then(r => r.json()),
-      fetch('/data/prices_latest.json').then(r => r.json()),
-    ]).then(([sData, pData]) => {
-      const priceMap = new Map<string, any>();
-      for (const p of pData.prices) priceMap.set(p.station_id, p);
-      const merged: StationWithPrice[] = sData.stations.map((s: any) => ({
-        ...s, price: priceMap.get(s.id) ?? null,
-      }));
-      setStations(merged);
-      setLoading(false);
-    }).catch(() => setLoading(false));
+    fetch('/data/map_data.json')
+      .then(r => r.json())
+      .then((data: any) => {
+        const merged: StationWithPrice[] = data.stations.map((s: any) => {
+          const p = s.p;
+          return {
+            ...s,
+            price: p ? {
+              station_id:  s.id,
+              natural_95:  p.n95 ?? null,
+              natural_98:  p.n98 ?? null,
+              nafta:       p.naf ?? null,
+              lpg:         p.lpg ?? null,
+              source:      p.src,
+              reported_at: p.at ?? '',
+            } : null,
+          };
+        });
+        setStations(merged);
+        setLoading(false);
+      })
+      .catch(() => {
+        // fallback na původní soubory
+        Promise.all([
+          fetch('/data/stations_latest.json').then(r => r.json()),
+          fetch('/data/prices_latest.json').then(r => r.json()),
+        ]).then(([sData, pData]) => {
+          const priceMap = new Map<string, any>();
+          for (const p of pData.prices) priceMap.set(p.station_id, p);
+          setStations(sData.stations.map((s: any) => ({ ...s, price: priceMap.get(s.id) ?? null })));
+          setLoading(false);
+        }).catch(() => setLoading(false));
+      });
   }, []);
 
   // IP geolokace – automaticky při načtení stránky (přibližná poloha, bez oprávnění)

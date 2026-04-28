@@ -613,6 +613,33 @@ stats = {
 out = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'web', 'public', 'data'))
 os.makedirs(out, exist_ok=True)
 
+# Sestavíme price_map pro rychlé vyhledávání
+price_map = {p['station_id']: p for p in prices}
+
+# map_data.json — jeden request místo dvou (stations + prices spojeny)
+map_stations = []
+for s in stations:
+    p = price_map.get(s['id'])
+    entry = {
+        'id': s['id'], 'name': s['name'], 'brand': s['brand'],
+        'lat': s['lat'], 'lng': s['lng'],
+        'address': s['address'], 'city': s['city'], 'region': s['region'],
+        'services': s['services'], 'opening_hours': s['opening_hours'],
+    }
+    if p:
+        entry['p'] = {}  # zkrácené klíče pro menší JSON
+        if p.get('natural_95'): entry['p']['n95'] = p['natural_95']
+        if p.get('natural_98'): entry['p']['n98'] = p['natural_98']
+        if p.get('nafta'):      entry['p']['naf'] = p['nafta']
+        if p.get('lpg'):        entry['p']['lpg'] = p['lpg']
+        entry['p']['src'] = p['source']
+        if p.get('reported_at'): entry['p']['at'] = p['reported_at']
+    map_stations.append(entry)
+
+with open(os.path.join(out, 'map_data.json'), 'w', encoding='utf-8') as f:
+    json.dump({'last_updated': ts, 'stations': map_stations}, f, ensure_ascii=False, separators=(',', ':'))
+
+# Zachovat původní soubory pro zpětnou kompatibilitu (SSR stránky stanic)
 with open(os.path.join(out, 'stations_latest.json'), 'w', encoding='utf-8') as f:
     json.dump({'last_updated': ts, 'stations': stations}, f, ensure_ascii=False)
 
@@ -623,7 +650,7 @@ with open(os.path.join(out, 'stats_latest.json'), 'w', encoding='utf-8') as f:
     json.dump(stats, f, ensure_ascii=False, indent=2)
 
 print()
-for fn in ['stations_latest.json', 'prices_latest.json', 'stats_latest.json']:
+for fn in ['map_data.json', 'stations_latest.json', 'prices_latest.json', 'stats_latest.json']:
     kb = os.path.getsize(os.path.join(out, fn)) // 1024
     print(f'  {fn}: {kb} kB')
 
