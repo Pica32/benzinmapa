@@ -28,25 +28,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p95 = station.price?.natural_95;
   const pNafta = station.price?.nafta;
   const today = new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' });
-  const priceStr = [
-    p95 ? `Natural 95: ${formatPrice(p95)}/l` : '',
-    pNafta ? `nafta: ${formatPrice(pNafta)}/l` : '',
-  ].filter(Boolean).join(', ');
+
+  // Krátký cenový popis pro description (max ~80 znaků)
+  const priceStr = p95
+    ? `Natural 95 ${formatPrice(p95)}${pNafta ? `, nafta ${formatPrice(pNafta)}` : ''}`
+    : pNafta ? `Nafta ${formatPrice(pNafta)}` : '';
+
+  // Description max ~155 znaků aby nepřekročila 1000px
+  const desc = `Ceny paliv ${station.name} v ${station.city} dnes (${today}). ${priceStr ? priceStr + '. ' : ''}Mapa, navigace, GPS souřadnice a otevírací doba.`;
 
   return {
-    title: `${station.name} – ceny paliv ${today} | ${station.city}`,
-    description: `Aktuální ceny pohonných hmot – ${station.name}, ${station.address}, ${station.city}. ${priceStr}. Otevírací doba: ${station.opening_hours}. Navigace, GPS souřadnice a mapa.`,
+    title: `${station.name} ${station.city} – ceny paliv dnes | BenzinMapa`,
+    description: desc.slice(0, 155),
     alternates: { canonical: `https://benzinmapa.cz/stanice/${id}/` },
     openGraph: {
-      title: `${station.name} – ceny paliv | ${station.city}`,
-      description: `${priceStr ? priceStr + '. ' : ''}${station.address}, ${station.city}. Aktuální ceny, mapa a navigace.`,
+      title: `${station.name} ${station.city} – ceny paliv`,
+      description: desc.slice(0, 155),
       type: 'website',
       url: `https://benzinmapa.cz/stanice/${id}/`,
     },
     keywords: [
-      `${station.name}`, `${station.brand} ${station.city}`,
-      `čerpací stanice ${station.city}`, `benzín ${station.city}`,
-      `nafta ${station.city}`, `ceny paliv ${station.city}`,
+      `${station.name} ${station.city}`,
+      `čerpací stanice ${station.city}`,
+      `ceny benzínu ${station.city}`,
+      `nafta ${station.city}`,
+      `${station.brand} ceny paliv`,
     ],
   };
 }
@@ -195,35 +201,58 @@ export default async function StationPage({ params }: Props) {
         {/* SEO textový obsah */}
         <section className="mt-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 shadow-sm">
           <h2 className="text-base font-bold text-gray-900 dark:text-white mb-3">
-            O čerpací stanici {station.name}
+            Čerpací stanice {station.name} v {station.city} – informace a ceny paliv
           </h2>
+
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-            Čerpací stanice <strong>{station.name}</strong> se nachází na adrese <strong>{station.address}</strong> v <strong>{station.city}</strong>
-            {station.region ? `, ${station.region}` : ''}.
-            {station.price?.source === 'mbenzin.cz' && station.price.natural_95
-              ? ` Aktuální cena Natural 95 je ${formatPrice(station.price.natural_95)} Kč/l`
-              : ''
+            Čerpací stanice <strong>{station.name}</strong> se nachází na adrese {station.address} ve městě {station.city}
+            {station.region && station.region !== station.city ? ` (${station.region})` : ''}.
+            {station.opening_hours && station.opening_hours !== 'Ověřte na místě' && station.opening_hours !== 'Overtes na miste'
+              ? ` Otevírací doba: ${station.opening_hours}.`
+              : ' Otevírací dobu doporučujeme ověřit přímo na místě nebo na webu provozovatele.'
             }
-            {station.price?.nafta ? `, nafta ${formatPrice(station.price.nafta)} Kč/l` : ''}.
-            {station.opening_hours && station.opening_hours !== 'Neznámá' ? ` Otevírací doba: ${station.opening_hours}.` : ''}
           </p>
+
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-            Stanici {station.name} provozuje síť <strong>{station.brand}</strong>.
+            {station.price?.source === 'mbenzin.cz'
+              ? <>
+                  Aktuální ceny pohonných hmot na této stanici:
+                  {station.price.natural_95 ? ` Natural 95 – ${formatPrice(station.price.natural_95)} Kč/l` : ''}
+                  {station.price.nafta ? `, nafta – ${formatPrice(station.price.nafta)} Kč/l` : ''}
+                  {station.price.lpg ? `, LPG – ${formatPrice(station.price.lpg)} Kč/l` : ''}.
+                  {' '}Data jsou ověřena z komunitního zdroje a aktualizována každých 6 hodin.
+                </>
+              : `Ceny pohonných hmot na stanici ${station.name} jsou průběžně aktualizovány. Pokud znáte aktuální cenu, zadejte ji výše a pomozte ostatním řidičům v ${station.city}.`
+            }
+          </p>
+
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+            Stanici provozuje síť <strong>{station.brand}</strong>.
             {station.services.length > 0
-              ? ` Na stanici jsou k dispozici tyto služby: ${station.services.map(s => ({ wc: 'WC', mycka: 'myčka aut', obcerstveni: 'občerstvení', lpg: 'LPG', cnr: 'CNG' }[s] ?? s)).join(', ')}.`
+              ? ` Na stanici jsou k dispozici: ${station.services.map(s => ({ wc: 'WC', mycka: 'myčka aut', obcerstveni: 'občerstvení', lpg: 'LPG', cnr: 'CNG' }[s] ?? s)).join(', ')}.`
               : ''
             }
-            {' '}GPS souřadnice: {lat}°N, {lng}°E.
+            {' '}GPS souřadnice stanice jsou {lat}°N, {lng}°E.
+            Navigaci na čerpací stanici {station.name} spustíte tlačítky Google Maps, Waze nebo Apple Maps výše.
           </p>
+
+          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+            Ceny benzínu a nafty se v {station.city} pohybují v závislosti na světových cenách ropy a aktuálním kurzu koruny.
+            BenzinMapa sleduje ceny na více než 2 400 čerpacích stanicích v celé České republice a aktualizuje je třikrát denně.
+            Nejlevnější benzín nebo naftu ve vašem okolí najdete pomocí interaktivní mapy a filtru na hlavní stránce.
+          </p>
+
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Ceny pohonných hmot na BenzinMapa.cz jsou aktualizovány automaticky každých 6 hodin.
-            Pokud znáte aktuální cenu, nahlaste ji prostřednictvím formuláře výše — pomůžete ostatním řidičům.
             Srovnání cen všech čerpacích stanic v {station.city} najdete na stránce{' '}
             <Link
               href={`/mesto/${station.city.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-')}`}
               className="text-green-700 dark:text-green-400 hover:underline"
             >
               ceny benzínu {station.city}
+            </Link>.
+            {' '}Celkový přehled nejlevnějších čerpacích stanic v ČR je dostupný na{' '}
+            <Link href="/" className="text-green-700 dark:text-green-400 hover:underline">
+              hlavní mapě BenzinMapa.cz
             </Link>.
           </p>
         </section>
