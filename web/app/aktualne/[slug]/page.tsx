@@ -15,6 +15,78 @@ const POSTS: Record<string, {
   content: string;
   faqs: { q: string; a: string }[];
 }> = {
+  'trumpova-celni-valka-a-ceny-benzinu-cr-2026': {
+    title: 'Trumpova celní válka a ceny benzínu v ČR: Co čekat do konce roku?',
+    excerpt: 'Americká cla způsobila propad ropy na šestileté minimum. Co to reálně znamená pro ceny na českých pumpách a proč efekt nepřichází tak rychle, jak byste čekali.',
+    date: '2026-04-29',
+    readTime: '7 min',
+    tag: 'Analýza',
+    content: `
+## Ropa se propadla. Proč to na pumpě ještě moc necítíme?
+
+Na začátku dubna 2026 klesla ropa Brent pod 60 USD za barel — nejníže od roku 2021. Příčina je dobře známá: Trumpova administrativa oznámila plošná cla na dovoz z desítek zemí, trhy se zalekly recese, a poptávka po ropě v cenových modelech šla dolů rychleji než liftí v mrakodrapu.
+
+Jenže řidič, který přijel zatankovat v druhém týdnu dubna, žádnou velkou slevu nezažil. Benzín byl sice o něco levnější než na začátku roku, ale ne o tolik, jak by se při pohledu na grafy ropy čekalo. Proč?
+
+### Zpoždění mezi ropou a pumpou je systémové
+
+Cesta ropy od barelu k litrové pístnici je dlouhá. Rafinérie nakupují ropu v kontraktech s výhledem týdnů až měsíců — jejich zásoby jsou nakoupeny za starší, vyšší ceny. Distributor pak prodává rafinovaný benzín velkoobchodně s vlastní marží a logistikou. Celý řetězec funguje jako setrvačník: zdražení dolehne na pumpu za zhruba 2–4 týdny, zlevnění o něco déle, protože nikdo nechce mít ztrátu na už nakoupených zásobách.
+
+V praxi to znamená, že pokud ropa zlevní dramaticky v první polovině dubna, plný dopad uvidíte na pumpách nejdříve koncem dubna nebo v květnu.
+
+### Co přesně Trumpova cla způsobila?
+
+Mechanismus je nepřímý. USA přímo neovlivňují českou čerpačku — ty jsou zásobovány z evropských rafinérií, především z Polska, Německa, Slovenska a z domácí rafinérie Litvínov (Orlen). Ale světový trh s ropou je propojený nádoba: pokud investoři čekají globální zpomalení ekonomiky kvůli obchodní válce, prodávají ropné futures a cena klesá globálně — včetně ropy Brent, podle které se cenotvorba v Evropě řídí.
+
+Přidejte k tomu OPEC+, který v dubnu překvapivě zvýšil těžbu místo snížení — zřejmě jako reakce na americký tlak na Saúdskou Arábii — a máte recept na propad ceny suroviny.
+
+### Kurz koruny: skrytý faktor
+
+Je tu ale háček, na který se zapomíná. Ropa se obchoduje v amerických dolarech. Pokud česká koruna oslabí vůči dolaru, zdražení importu může efekt zlevnění ropy kompletně vynulovat.
+
+V období celní nejistoty investoři přesouvají kapitál do bezpečných měn — dolar, frank — a z měn menších zemí včetně koruny. V prvních dvou týdnech dubna oslabila koruna o zhruba 2–3 %. Při ceně ropy 60 USD/barel a 2% oslabení koruny jde efekt zlevnění přibližně o třetinu dolů.
+
+Čistý výsledek: ropa je v dolarech historicky levná, ale v korunách o tolik levná není.
+
+### Maximální přípustné ceny — pojistka státu
+
+Jeden detail, který mnoho řidičů nezná: Ministerstvo financí ČR má ze zákona pravomoc stanovit maximální přípustné maloobchodní ceny pohonných hmot. Aktuálně platí:
+
+- **Natural 95:** max. 42,79 Kč/l s DPH
+- **Nafta:** max. 44,15 Kč/l s DPH
+
+Tyto limity platí pro všechny čerpací stanice v ČR bez výjimky. V praxi jsou aktuální průměrné ceny pod těmito stropy — ale v případě krize nebo spekulativního zdražování má stát nástroj, jak trh zkrotit.
+
+### Scénáře do konce roku 2026
+
+**Optimistický:** Celní válka se uklidní dohodou, ropa stabilizuje kolem 65–70 USD/barel, koruna zpevní. Benzín v ČR by mohl klesnout na 38–39 Kč/l.
+
+**Základní:** Cla zůstanou v platnosti, ropa osciluje 58–65 USD. Benzín se pohybuje kolem 39–41 Kč/l — mírné zlevnění oproti únoru, ale bez dramatického pohybu.
+
+**Pesimistický:** Eskalace obchodního konfliktu, globální zpomalení, ale zároveň oslabení koruny a případný výpadek dodávek. Benzín může paradoxně zdražit i při levné ropě.
+
+### Co to znamená pro vás prakticky?
+
+Celní válka a propad ropy jsou příležitost, ne jistota. Pár tipů:
+
+Sledujte vývoj kurzu CZK/USD — pokud koruna zpevňuje, dopad levné ropy se plněji přenese na pumpu. Pokud oslabuje, vyčkejte.
+
+Zbytečně neplňte nádrž na zásobu — při klesajících cenách to nedává smysl. Tankujte průběžně a využívejte BenzinMapa.cz pro výběr nejlevnější stanice v okolí.
+
+Velké sítě jako Shell nebo OMV reagují na zlevnění ropy pomaleji než nezávislé stanice — důvod je prostý, mají vyšší pevné náklady a marži. Pokud chcete těžit ze zlevnění rychleji, hledejte nezávislé provozovatele nebo supermarketové pumpy.
+
+### Závěr
+
+Trumpova cla způsobila reálný propad cen ropy. Na českou pumpu to dorazí — s odstupem týdnů a s korekcí o kurz koruny. Dramatické zlevnění o 5–6 Kč/l nečekejte. Reálné zlevnění o 1–2 Kč/l oproti vrcholu z první čtvrtiny roku je ale pravděpodobné, pokud obchodní napětí neeskaluje dál.
+    `,
+    faqs: [
+      { q: 'Proč ropa klesá, ale na pumpě to moc necítím?', a: 'Rafinérie a distributoři mají zásoby nakoupeny za starší ceny. Propad ceny ropy se do maloobchodní ceny promítá se zpožděním 2–4 týdnů. Navíc oslabení koruny vůči dolaru část efektu smaže.' },
+      { q: 'Mají Trumpova cla přímý vliv na ČR?', a: 'Nepřímý. ČR tankuje z evropských rafinérií, ne přímo z USA. Ale světová cena ropy Brent klesá kvůli obavám z globální recese — a ta ovlivňuje velkoobchodní ceny i v Evropě.' },
+      { q: 'Co jsou maximální přípustné ceny pohonných hmot?', a: 'Stát má zákonnou pravomoc stanovit cenový strop pro maloobchodní prodej paliv. Aktuálně: Natural 95 max. 42,79 Kč/l, nafta max. 44,15 Kč/l. Čerpačka, která by prodávala draho, porušuje zákon.' },
+      { q: 'Kdy bude benzín nejlevnější?', a: 'Historicky bývá nejlevnější na přelomu října a listopadu — nízká sezónní poptávka, přechod na zimní specifikaci. Pokud celní napětí ustoupí, může letos toto okno být výraznější než obvykle.' },
+    ],
+  },
+
   'tankovat-v-polsku-nebo-slovensku-2026': {
     title: 'Tankovat v Polsku nebo na Slovensku? Počítáme, kdy se to vyplatí',
     excerpt: 'Benzín za hranicí bývá levnější o 3–6 Kč. Ale vyplatí se zajet? Počítáme reálnou úsporu i se spotřebou na odbočku.',

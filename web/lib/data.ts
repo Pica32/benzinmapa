@@ -126,6 +126,7 @@ export function formatPrice(price: number | null): string {
 export function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
+  if (mins < 5) return 'aktuálně';
   if (mins < 60) return `před ${mins} min`;
   const hours = Math.floor(mins / 60);
   if (hours < 24) return `před ${hours} h`;

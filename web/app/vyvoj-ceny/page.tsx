@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { TrendingDown, TrendingUp, BarChart2, ExternalLink, AlertTriangle, Shield, Bitcoin } from 'lucide-react';
+import { TrendingDown, TrendingUp, BarChart2, ExternalLink, AlertTriangle, Shield, Bitcoin, Info } from 'lucide-react';
 import { FaqJsonLd } from '@/components/JsonLd';
 import { getStats } from '@/lib/data';
 import PriceCharts from './PriceCharts';
@@ -99,6 +99,53 @@ export default async function VyvojCenyPage() {
         </div>
 
         <PriceCharts />
+
+        {/* ── MAXIMÁLNÍ PŘÍPUSTNÉ CENY MF ────────────────────────── */}
+        <section className="my-8 bg-blue-50 dark:bg-gray-800 border border-blue-200 dark:border-blue-900 rounded-2xl p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <Info className="text-blue-600 dark:text-blue-400 flex-shrink-0" size={20} />
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+              Maximální přípustné ceny pohonných hmot (MF ČR)
+            </h2>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            Ministerstvo financí ČR stanovuje maximální přípustné maloobchodní ceny pohonných hmot.
+            Žádná čerpací stanice v ČR nesmí prodávat palivo nad tyto limity.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="bg-white dark:bg-gray-700 rounded-xl p-4 border border-blue-100 dark:border-gray-600">
+              <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Natural 95 — maximum</div>
+              <div className="text-3xl font-black text-blue-700 dark:text-blue-300">42,79 Kč</div>
+              <div className="text-xs text-gray-500 mt-0.5">s DPH / litr</div>
+              {stats && (
+                <div className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                  Průměr dnes: <strong className="text-gray-700 dark:text-gray-300">{stats.averages.natural_95.toFixed(2).replace('.', ',')} Kč</strong>
+                  {' '}— o <strong className="text-green-700 dark:text-green-400">{(42.79 - stats.averages.natural_95).toFixed(2).replace('.', ',')} Kč</strong> pod limitem
+                </div>
+              )}
+            </div>
+            <div className="bg-white dark:bg-gray-700 rounded-xl p-4 border border-blue-100 dark:border-gray-600">
+              <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">Nafta — maximum</div>
+              <div className="text-3xl font-black text-blue-700 dark:text-blue-300">44,15 Kč</div>
+              <div className="text-xs text-gray-500 mt-0.5">s DPH / litr</div>
+              {stats && (
+                <div className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                  Průměr dnes: <strong className="text-gray-700 dark:text-gray-300">{stats.averages.nafta.toFixed(2).replace('.', ',')} Kč</strong>
+                  {' '}— o <strong className="text-green-700 dark:text-green-400">{(44.15 - stats.averages.nafta).toFixed(2).replace('.', ',')} Kč</strong> pod limitem
+                </div>
+              )}
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            Zdroj:{' '}
+            <a href="https://mf.gov.cz/cs/kontrola-a-regulace/cenova-regulace-a-kontrola/maximalni-pripustne-ceny-benzinu-a-nafty"
+               target="_blank" rel="noopener noreferrer"
+               className="text-blue-600 hover:underline">
+              Ministerstvo financí ČR — Maximální přípustné ceny benzinu a nafty
+            </a>
+            . Limity jsou stanovovány na základě dovozu a vývoje světových cen ropy.
+          </p>
+        </section>
 
         <div className="my-6">
           <ShareButtons url="https://benzinmapa.cz/vyvoj-ceny/" title="Vývoj cen benzínu a nafty v ČR – reálná data a grafy" />

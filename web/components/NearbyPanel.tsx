@@ -16,6 +16,7 @@ function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number): nu
 
 function timeAgo(isoStr: string): string {
   const diff = (Date.now() - new Date(isoStr).getTime()) / 1000;
+  if (diff < 300) return 'aktuálně';
   if (diff < 3600) return `před ${Math.round(diff / 60)} min`;
   if (diff < 86400) return `před ${Math.round(diff / 3600)} h`;
   return `před ${Math.round(diff / 86400)} dny`;
