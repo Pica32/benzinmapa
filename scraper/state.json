@@ -1,7 +1,60 @@
 {
-  "last_run_ts": 1777447411,
-  "last_publish_ts": 1777447615,
+  "last_run_ts": 1777474873,
+  "last_publish_ts": 1777475095,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/peugeot-v-cesku-zlevnuje-suv-5008-a-uvadi-edici-summer-blue-usetri-vam-slusny-balik",
+      "title": "Benzín v ČR: Ceny, srovnání a tipy na nejlevnější tankování",
+      "summary": "Litr benzínu v Praze letos stál 42,30 Kč, nafta 44,10 Kč. Přes 600 slov vám přinášíme detailní analýzu, srovnání s minulým rokem, tipy na nejlevnější stánky a předpověď budoucích cen. Připravte se na tankování bez překvapení!",
+      "filename": "benzyn-v-cr-ceny-paliv.html",
+      "published_at": "29. 04. 2026 17:01",
+      "created": "2026-04-29 15:04:55",
+      "score": 3.9,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/krimi-seniora-v-marianskych-laznich-mel-ohrozovat-nozem-policiste-ho-po-vypatrani-zase-pustili-hned-sel-vyloupit-benzinku-40575863",
+      "title": "Benzín dnes 42,30 Kč – co to znamená pro české řidiče",
+      "summary": "Průměrná cena benzínu v ČR se v posledním měsíci zvýšila o 3,5 %. Řidič, který tankuje 60 l, zaplatí o 204 Kč víc. V článku najdete srovnání, kde najít nejlevnější čerpací stanice a co přináší budoucí vývoj cen.",
+      "filename": "benzinn-dnes-42-30-kc-co-to-znameni-pro-ceske-ridice.html",
+      "published_at": "29. 04. 2026 17:01",
+      "created": "2026-04-29 15:03:12",
+      "score": 4.15,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "MPO"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.novinky.cz/clanek/ekonomika-cena-benzinu-v-usa-je-nejvyse-od-zacatku-valky-s-iranem-40575800",
       "title": "Cena benzínu v ČR: co se děje a proč",
