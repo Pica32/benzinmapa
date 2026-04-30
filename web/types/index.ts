@@ -196,6 +196,11 @@ export const CITIES = [
   { name: 'Kojetín', slug: 'kojetin', lat: 49.3547, lng: 17.3049 },
   { name: 'Holešov', slug: 'holesov', lat: 49.3348, lng: 17.5791 },
   { name: 'Napajedla', slug: 'napajedla', lat: 49.1699, lng: 17.5143 },
+  { name: 'Praha 5', slug: 'praha-5', lat: 50.0620, lng: 14.3940 },
+  { name: 'Praha 6', slug: 'praha-6', lat: 50.1014, lng: 14.3731 },
+  { name: 'Praha 10', slug: 'praha-10', lat: 50.0691, lng: 14.4815 },
+  { name: 'Praha 4', slug: 'praha-4', lat: 50.0349, lng: 14.4556 },
+  { name: 'Praha 9', slug: 'praha-9', lat: 50.1108, lng: 14.5124 },
 ];
 
 export const REGIONS = [
