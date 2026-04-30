@@ -5,7 +5,7 @@ import { Newspaper, Clock } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Aktuálně – ceny pohonných hmot, analýzy a tipy | BenzinMapa.cz',
   description: 'Aktuální analýzy cen benzínu a nafty v ČR, tipy jak ušetřit za pohonné hmoty a srovnání čerpacích stanic. Praktické rady pro české řidiče.',
-  alternates: { canonical: 'https://benzinmapa.cz/aktualne' },
+  alternates: { canonical: 'https://benzinmapa.cz/aktualne/' },
 };
 
 const POSTS = [

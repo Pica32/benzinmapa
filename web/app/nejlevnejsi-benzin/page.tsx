@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Nejlevnější benzín Natural 95 v ČR – ${today}`,
     description: `Kde je dnes nejlevnější benzín Natural 95 v ČR?${avg ? ` Průměr dnes: ${formatPrice(avg)}/l.` : ''} Aktuální přehled nejlevnějších čerpacích stanic. Aktualizováno každých 6 hodin.`,
-    alternates: { canonical: 'https://benzinmapa.cz/nejlevnejsi-benzin' },
+    alternates: { canonical: 'https://benzinmapa.cz/nejlevnejsi-benzin/' },
     keywords: ['nejlevnější benzín', 'benzín cena dnes', 'levný benzín', 'natural 95 cena', 'ceny benzínu čerpací stanice', 'kde natankovat levně'],
     openGraph: {
       title: `Nejlevnější benzín Natural 95 v ČR – ${today}`,

@@ -4,7 +4,11 @@ import { CITIES } from '@/types';
 
 const BASE = 'https://benzinmapa.cz';
 
-const BLOG_SLUGS = [
+const AKTUALNE_SLUGS = [
+  'trumpova-celni-valka-a-ceny-benzinu-cr-2026',
+  'tankovat-v-polsku-nebo-slovensku-2026',
+  'proc-je-nafta-drazsi-nez-benzin-2026',
+  'vernostni-karty-cerpackich-stanic-srovnani',
   'proc-ceny-benzinu-rostou-2026',
   'co-ovlivnuje-ceny-pohonnych-hmot',
   'rozdil-natural-95-vs-98',
@@ -24,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: new Date(), changeFrequency: 'hourly', priority: 1.0 },
     { url: `${BASE}/nejlevnejsi-benzin`, lastModified: new Date(), changeFrequency: 'hourly', priority: 0.9 },
     { url: `${BASE}/nejlevnejsi-nafta`, lastModified: new Date(), changeFrequency: 'hourly', priority: 0.9 },
-    { url: `${BASE}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${BASE}/aktualne`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/vyvoj-ceny`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
   ];
 
@@ -45,12 +49,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: s.price?.source === 'mbenzin.cz' ? 0.75 : 0.6,
     }));
 
-  const blogPages: MetadataRoute.Sitemap = BLOG_SLUGS.map(slug => ({
-    url: `${BASE}/blog/${slug}`,
-    lastModified: new Date('2026-04-20'),
-    changeFrequency: 'weekly' as const,
-    priority: 0.6,
+  const aktualne: MetadataRoute.Sitemap = AKTUALNE_SLUGS.map(slug => ({
+    url: `${BASE}/aktualne/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.65,
   }));
 
-  return [...staticPages, ...cityPages, ...stationPages, ...blogPages];
+  return [...staticPages, ...cityPages, ...stationPages, ...aktualne];
 }

@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Nejlevnější nafta v ČR – ${today}`,
     description: `Kde je dnes nejlevnější nafta v ČR?${avg ? ` Průměr dnes: ${formatPrice(avg)}/l.` : ''} Aktuální přehled nejlevnějších čerpacích stanic. Aktualizováno každých 6 hodin.`,
-    alternates: { canonical: 'https://benzinmapa.cz/nejlevnejsi-nafta' },
+    alternates: { canonical: 'https://benzinmapa.cz/nejlevnejsi-nafta/' },
     keywords: ['nejlevnější nafta', 'nafta cena dnes', 'levná nafta', 'nafta ČR', 'ceny nafty čerpací stanice', 'kde natankovat naftu levně'],
     openGraph: {
       title: `Nejlevnější nafta v ČR – ${today}`,
