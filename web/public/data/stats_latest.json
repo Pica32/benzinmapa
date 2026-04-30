@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-04-30T06:05:58Z",
+  "last_updated": "2026-04-30T10:07:03Z",
   "averages": {
-    "natural_95": 40.6,
+    "natural_95": 40.7,
     "natural_98": 44.0,
-    "nafta": 41.8,
+    "nafta": 41.9,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.4,
-      "station_id": "osm_260046639",
-      "city": "Červený Kostelec"
+      "price": 35.9,
+      "station_id": "mb-arex-kaplice",
+      "city": "Kaplice"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2552,
-  "stations_updated_today": 2552,
-  "real_prices_count": 946,
-  "estimated_prices_count": 1606
+  "total_stations": 2550,
+  "stations_updated_today": 2550,
+  "real_prices_count": 945,
+  "estimated_prices_count": 1605
 }
