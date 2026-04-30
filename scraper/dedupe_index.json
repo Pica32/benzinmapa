@@ -1,6 +1,41 @@
 {
   "entries": [
     {
+      "url": "https://www.e15.cz/byznys/doprava-a-logistika/skode-auto-prudce-vzrostl-zisk-automobilku-tahla-poptavka-po-elektromobilech-1432497",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "simhash": 6810287877988801586,
+      "ngrams_hash": "2445fdff0183573b",
+      "entities": [
+        "pokud",
+        "ameriky",
+        "combie",
+        "česmad",
+        "kde",
+        "omv",
+        "čnb",
+        "opec",
+        "usd",
+        "jak",
+        "zdroj",
+        "mol",
+        "brent",
+        "pro",
+        "nafta",
+        "praze",
+        "benzina",
+        "jako",
+        "orlen",
+        "natural 95",
+        "brna",
+        "lpg",
+        "shell",
+        "kolik",
+        "natural",
+        "vznikla"
+      ],
+      "created_at": "2026-04-30T09:29:24.246419+02:00"
+    },
+    {
       "url": "https://www.autorevue.cz/peugeot-v-cesku-zlevnuje-suv-5008-a-uvadi-edici-summer-blue-usetri-vam-slusny-balik",
       "title": "Benzín v ČR: Ceny, srovnání a tipy na nejlevnější tankování",
       "simhash": 16000465641713425586,

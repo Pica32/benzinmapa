@@ -1,7 +1,35 @@
 {
-  "last_run_ts": 1777474873,
-  "last_publish_ts": 1777475095,
+  "last_run_ts": 1777534046,
+  "last_publish_ts": 1777534164,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/doprava-a-logistika/skode-auto-prudce-vzrostl-zisk-automobilku-tahla-poptavka-po-elektromobilech-1432497",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Benzín v ČR se v posledním měsíci zdražil na 42,30 Kč/l, nafta na 45,10 Kč/l. Přesné výpočty, srovnání s předchozím rokem a praktické rady, kde najít nejlevnější čerpací stanice. Čtěte, jak to ovlivní váš rozpočet.",
+      "filename": "benzinn-ceska-cena-42-30-kc-l.html",
+      "published_at": "30. 04. 2026 09:27",
+      "created": "2026-04-30 07:29:24",
+      "score": 5.55,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "OMV",
+        "Shell"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/peugeot-v-cesku-zlevnuje-suv-5008-a-uvadi-edici-summer-blue-usetri-vam-slusny-balik",
       "title": "Benzín v ČR: Ceny, srovnání a tipy na nejlevnější tankování",
