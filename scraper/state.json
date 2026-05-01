@@ -1,7 +1,35 @@
 {
-  "last_run_ts": 1777620301,
-  "last_publish_ts": 1777620417,
+  "last_run_ts": 1777644745,
+  "last_publish_ts": 1777644848,
   "items": [
+    {
+      "url": "https://ct24.ceskatelevize.cz/clanek/svet/ropa-kvuli-blizkemu-vychodu-dal-zdrazuje-brent-je-nejvys-od-roku-2022-372954",
+      "title": "Benzín a nafta v ČR: ceny roste, co to znamená pro řidiče",
+      "summary": "Brent se vrátil na nejvyšší úroveň od roku 2022, což přináší v ČR vyšší ceny benzínu a nafty. Přesné čísla, dopad na řidiče a tipy, kde natankovat nejlevněji, najdete v našem článku.",
+      "filename": "benzyn-nafta-ceny-rozmach.html",
+      "published_at": "01. 05. 2026 16:12",
+      "created": "2026-05-01 14:14:08",
+      "score": 8.8,
+      "source": "ČT24 Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/nazory-a-analyzy/ropa-za-100-dolaru-a-duchove-minulosti-ecb-se-boji-dalsi-osudove-chyby-1432478",
       "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
