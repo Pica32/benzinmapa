@@ -1,7 +1,33 @@
 {
-  "last_run_ts": 1777561054,
-  "last_publish_ts": 1777561164,
+  "last_run_ts": 1777620301,
+  "last_publish_ts": 1777620417,
   "items": [
+    {
+      "url": "https://www.e15.cz/nazory-a-analyzy/ropa-za-100-dolaru-a-duchove-minulosti-ecb-se-boji-dalsi-osudove-chyby-1432478",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Litr benzínu v Praze právě stojí 42,30 Kč, což je nárůst o 3,4 Kč oproti předchozímu měsíci. Přesné výpočty ukazují, že řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. V článku najdete srovnání cen, tipy na nejlevnější stanicemi a předpověď vývoje.",
+      "filename": "benzinn-ceska-cena-42-30-kc.html",
+      "published_at": "01. 05. 2026 09:25",
+      "created": "2026-05-01 07:26:57",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "MPO"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.novinky.cz/clanek/ekonomika-maximalni-ceny-paliv-od-patku-vyrazne-vzrostou-40576078",
       "title": "Benzín a nafta: ceny se zvednou na 43,89 a 44,55 Kč/l v pát…",
