@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-04-30T15:21:17Z",
+  "last_updated": "2026-05-01T06:24:26Z",
   "averages": {
-    "natural_95": 40.7,
-    "natural_98": 44.0,
-    "nafta": 41.9,
+    "natural_95": 40.8,
+    "natural_98": 44.1,
+    "nafta": 42.0,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.5,
-      "station_id": "mb-hunsgas-nove-mesto-na-morave",
-      "city": "Nové Město na Moravě"
+      "price": 35.9,
+      "station_id": "mb-arex-kaplice",
+      "city": "Kaplice"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2551,
-  "stations_updated_today": 2551,
-  "real_prices_count": 946,
-  "estimated_prices_count": 1605
+  "total_stations": 2546,
+  "stations_updated_today": 2546,
+  "real_prices_count": 947,
+  "estimated_prices_count": 1599
 }
