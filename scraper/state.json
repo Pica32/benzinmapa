@@ -1,7 +1,61 @@
 {
-  "last_run_ts": 1777705243,
-  "last_publish_ts": 1777705603,
+  "last_run_ts": 1777730630,
+  "last_publish_ts": 1777730828,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/elektricky-renault-5-turbo-se-muze-stat-lego-stavebnici-automobilka-vyzyva-fanousky-k-podpore",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Ceny benzínu a nafty v ČR se v posledních týdnech zvedly. Litr Natural 95 nyní stojí 42,30 Kč, nafta 42,10 Kč. Pro řidiče s 60 l nádrží to znamená přibližně 2 200 Kč navíc. Článek vysvětluje příčiny, dopad na různé typy řidičů a tipy, kde natankovat nejlevněji.",
+      "filename": "benzyn-v-cr-cena-42-30-kc-l.html",
+      "published_at": "02. 05. 2026 16:03",
+      "created": "2026-05-02 14:07:08",
+      "score": 4.1,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://ct24.ceskatelevize.cz/clanek/svet/ropa-zlevnuje-po-zpravach-o-novem-navrhu-iranu-na-jednani-s-usa-373009",
+      "title": "Benzín a nafta: Ceny klesají po zprávách o Íránu",
+      "summary": "Po zprávách o novém návrhu Íránu na jednání s USA se ceny ropy v pátek propadly o více než tři procenta. Benzín se pohybuje kolem 107 Kč/l, nafta 103 Kč/l. Česko se musí připravit na dopad na čerpací sítě, daňové změny a výhledy.",
+      "filename": "benzina-nafta-ceny-klesaji-po-iran.html",
+      "published_at": "02. 05. 2026 16:03",
+      "created": "2026-05-02 14:05:35",
+      "score": 6.3,
+      "source": "ČT24 Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/zahranicni/trump-s-potesenim-zvysi-cla-na-dovoz-automobilu-z-eu-brusel-podle-nej-neplni-dohodu-1432534",
       "title": "Benzín v ČR: ceny, tankování a dopad Trumpových cel",
@@ -514,7 +568,7 @@
       "created": "2026-04-27 08:45:57",
       "score": 3.6,
       "source": "Aktuálně Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -542,7 +596,7 @@
       "created": "2026-04-27 08:44:09",
       "score": 3.75,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
