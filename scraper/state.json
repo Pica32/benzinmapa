@@ -1,7 +1,61 @@
 {
-  "last_run_ts": 1777792688,
-  "last_publish_ts": 1777792887,
+  "last_run_ts": 1777817092,
+  "last_publish_ts": 1777817355,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/prumysl-a-energetika/nahledli-jsme-do-legendarni-tovarny-jawa-takhle-dnes-vznikaji-ceske-motorky-v-cele-s-perakem-1423532",
+      "title": "Benzín v ČR: Ceny, tankování a tipy na nejlevnější čerpací…",
+      "summary": "Litr benzínu v Praze stojí 38,90 Kč, nafta 42,30 Kč. Přes 600 slov odhalíme, proč ceny roste, kolik zaplatíte na průměrné nádrž a kde najít nejlevnější čerpací stanice. Připravte se na úsporu v každém tankování.",
+      "filename": "benzyn-v-cr-ceny-tankovani.html",
+      "published_at": "03. 05. 2026 16:04",
+      "created": "2026-05-03 14:09:15",
+      "score": 3.25,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/leapmotor-chtel-jit-s-dobou-zakaznici-volali-po-zavedenem-reseni-automobilka-je-vyslysela-160842",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Litr benzínu v Praze se dnes zvedl na 42,30 Kč, nafta 42,30 Kč. Přesné výpočty pro 55‑litrovou nádrž, srovnání s předchozím rokem a tipy, kde najít nejlevnější čerpací stanicu. Čtěte dál, abyste nevyhodili peníze.",
+      "filename": "benzinn-cena-42-30-kc-l.html",
+      "published_at": "03. 05. 2026 16:05",
+      "created": "2026-05-03 14:06:54",
+      "score": 4.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.auto.cz/dnes-je-svetovy-den-jazzu-znate-tyto-nevsedni-verze-hondy-jazz-160828",
       "title": "Benzín dnes 42,30 Kč/l – co to znamená pro řidiče",
@@ -511,7 +565,7 @@
       "created": "2026-04-28 07:33:01",
       "score": 4.25,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -539,7 +593,7 @@
       "created": "2026-04-27 15:00:37",
       "score": 3.7,
       "source": "ČT24 Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
