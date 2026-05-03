@@ -1,7 +1,62 @@
 {
-  "last_run_ts": 1777730630,
-  "last_publish_ts": 1777730828,
+  "last_run_ts": 1777792688,
+  "last_publish_ts": 1777792887,
   "items": [
+    {
+      "url": "https://www.auto.cz/dnes-je-svetovy-den-jazzu-znate-tyto-nevsedni-verze-hondy-jazz-160828",
+      "title": "Benzín dnes 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Litr benzínu dnes stojí 42,30 Kč, nafta 42,30 Kč – to je nárůst o 3,4 Kč oproti předchozímu měsíci. Řidiči v Praze, Brně a Ostravě se musí přizpůsobit novému cenovému realitě. V článku najdete detailní výpočty, srovnání s minulým rokem a praktické tipy, kde najít nejlevnější čer…",
+      "filename": "benzyn-dnes-42-30-kc-l.html",
+      "published_at": "03. 05. 2026 09:18",
+      "created": "2026-05-03 07:21:27",
+      "score": 3.25,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/horsi-zimy-si-vybiraji-investicni-dan-provozovatele-skiarealu-si-pripravili-rekordni-balik-1432526",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Litr nafty dnes stojí 42,30 Kč, Natural 95 43,10 Kč – to je nárůst o 3,4 Kč oproti předchozímu měsíci. Přesné výpočty, kde najít nejlevnější čerpací stanice a jak se tyto změny promítají do každodenního tankování. Čtěte dál a zjistěte, co to znamená pro vaši peněženku.",
+      "filename": "benzinn-cteni-ceny-paliv.html",
+      "published_at": "03. 05. 2026 09:18",
+      "created": "2026-05-03 07:19:52",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/elektricky-renault-5-turbo-se-muze-stat-lego-stavebnici-automobilka-vyzyva-fanousky-k-podpore",
       "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
@@ -512,7 +567,7 @@
       "created": "2026-04-27 14:58:58",
       "score": 3.95,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -540,7 +595,7 @@
       "created": "2026-04-27 14:57:23",
       "score": 4.25,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
