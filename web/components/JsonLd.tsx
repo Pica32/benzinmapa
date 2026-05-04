@@ -1,5 +1,56 @@
 import { StationWithPrice } from '@/types';
 
+export function BreadcrumbJsonLd({ items }: { items: { name: string; item?: string }[] }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((el, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: el.name,
+      ...(el.item && { item: el.item }),
+    })),
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
+export function ArticleJsonLd({ title, description, publishDate, image, url }: {
+  title: string;
+  description: string;
+  publishDate: string;
+  image?: string;
+  url: string;
+}) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: title,
+    description,
+    datePublished: publishDate,
+    dateModified: publishDate,
+    image: image ?? 'https://benzinmapa.cz/og-image.jpg',
+    url,
+    author: {
+      '@type': 'Organization',
+      name: 'BenzinMapa.cz',
+      url: 'https://benzinmapa.cz',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'BenzinMapa.cz',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://benzinmapa.cz/favicon-32x32.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export function WebsiteJsonLd() {
   const data = {
     '@context': 'https://schema.org',
@@ -46,12 +97,14 @@ export function GasStationJsonLd({ station }: { station: StationWithPrice }) {
           name: 'Natural 95',
           price: station.price.natural_95,
           priceCurrency: 'CZK',
+          priceValidUntil: new Date(Date.now() + 6 * 3600 * 1000).toISOString(),
         },
         ...(station.price?.nafta ? [{
           '@type': 'Offer',
           name: 'Nafta',
           price: station.price.nafta,
           priceCurrency: 'CZK',
+          priceValidUntil: new Date(Date.now() + 6 * 3600 * 1000).toISOString(),
         }] : []),
       ],
     }),
@@ -106,6 +159,7 @@ export function OrganizationJsonLd() {
       email: 'info@benzinmapa.cz',
       availableLanguage: 'Czech',
     },
+    sameAs: ['https://www.facebook.com/profile.php?id=61589320316796'],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

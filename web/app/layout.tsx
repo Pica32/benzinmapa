@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import PartnersFooter from '@/components/PartnersFooter';
-import { WebsiteJsonLd } from '@/components/JsonLd';
+import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
@@ -66,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="cs">
       <head>
         <WebsiteJsonLd />
+        <OrganizationJsonLd />
         {/* Apple touch icon – vyžadováno iOS a SEO auditory */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -84,6 +85,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-4">
             <span>© {new Date().getFullYear()} BenzinMapa.cz</span>
             <span>Ceny jsou orientační a aktualizovány každých 6 hodin.</span>
+            <a
+              href="https://www.facebook.com/profile.php?id=61589320316796"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition-colors"
+              aria-label="BenzinMapa.cz na Facebooku"
+            >
+              Facebook
+            </a>
           </div>
         </footer>
       </body>

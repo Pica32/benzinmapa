@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Clock, ChevronLeft } from 'lucide-react';
-import { FaqJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd, ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -585,6 +585,17 @@ export default async function AktualnePostPage({ params }: Props) {
 
   return (
     <>
+      <ArticleJsonLd
+        title={post.title}
+        description={post.excerpt}
+        publishDate={post.date}
+        url={`https://benzinmapa.cz/aktualne/${slug}`}
+      />
+      <BreadcrumbJsonLd items={[
+        { name: 'BenzinMapa.cz', item: 'https://benzinmapa.cz/' },
+        { name: 'Aktuálně', item: 'https://benzinmapa.cz/aktualne/' },
+        { name: post.title },
+      ]} />
       <FaqJsonLd faqs={post.faqs} />
       <article className="max-w-3xl mx-auto px-4 py-8">
         <nav className="text-sm text-gray-500 mb-6 flex gap-2">

@@ -1,5 +1,5 @@
 import { getCheapestStations, getStats, formatPrice } from '@/lib/data';
-import { FaqJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import type { Metadata } from 'next';
 import CheapestTable from '@/components/CheapestTable';
 import Link from 'next/link';
@@ -40,6 +40,10 @@ export default function NejlevnejsiNaftaPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: 'BenzinMapa.cz', item: 'https://benzinmapa.cz/' },
+        { name: 'Nejlevnější nafta v ČR', item: 'https://benzinmapa.cz/nejlevnejsi-nafta/' },
+      ]} />
       <FaqJsonLd faqs={FAQS} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <nav className="text-sm text-gray-500 mb-6 flex gap-2">
