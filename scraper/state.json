@@ -1,7 +1,63 @@
 {
-  "last_run_ts": 1777817092,
-  "last_publish_ts": 1777817355,
+  "last_run_ts": 1777880835,
+  "last_publish_ts": 1777881097,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/primoco-po-slabsim-roce-hlasi-rekordni-kvartal-vyrobce-dronu-tezi-ze-zakazek-a-chysta-expanzi-1432549",
+      "title": "Benzín v ČR: rekordní ceny, co to znamená pro řidiče",
+      "summary": "Ceny benzínu a nafty v ČR se v posledním čtvrtletí zvedly na rekordní úroveň. Průměrná cena Natural 95 dosáhla 38,90 Kč/l, nafta 42,30 Kč/l. Pro řidiče s 60 l nádrží to znamená přibližně 204 Kč navíc. V článku najdete detailní výpočet, tipy na nejlevnější stánky a předpověď vývo…",
+      "filename": "benzinn-ctvrtek-rekordni-ceny-rodic.html",
+      "published_at": "04. 05. 2026 09:47",
+      "created": "2026-05-04 07:51:37",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.autorevue.cz/renault-clio-uz-koupite-spohonem-na-lpg-fantasticky-dojezd-kombinuje-srozumnou-cenou",
+      "title": "Benzín v ČR: Ceny, tankování a nejlevnější stánky",
+      "summary": "V ČR se ceny benzínu a nafty zvyšují. Litr Natural 95 stojí 36,80 Kč, nafta 42,30 Kč. Přesné výpočty, kde najít nejlevnější stánky a jak ovlivní řidiče v Praze, Brně a Ostravě.",
+      "filename": "benzinn-ceny-cs.html",
+      "published_at": "04. 05. 2026 09:47",
+      "created": "2026-05-04 07:49:24",
+      "score": 3.8,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/prumysl-a-energetika/nahledli-jsme-do-legendarni-tovarny-jawa-takhle-dnes-vznikaji-ceske-motorky-v-cele-s-perakem-1423532",
       "title": "Benzín v ČR: Ceny, tankování a tipy na nejlevnější čerpací…",
@@ -507,7 +563,7 @@
       "created": "2026-04-28 07:37:43",
       "score": 3.6,
       "source": "Aktuálně Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -537,7 +593,7 @@
       "created": "2026-04-28 07:35:01",
       "score": 3.95,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
