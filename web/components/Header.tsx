@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Fuel, Map, BookOpen, TrendingDown, BarChart2 } from 'lucide-react';
+import { Fuel, Map, BookOpen, TrendingDown, BarChart2, Calculator } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -26,6 +26,7 @@ export default function Header() {
               { href: '/nejlevnejsi-lpg', label: 'LPG', icon: TrendingDown },
               { href: '/znacka/', label: 'Značky', icon: BarChart2 },
               { href: '/vyvoj-ceny/', label: 'Vývoj cen', icon: BarChart2 },
+              { href: '/kalkulacka-spotreby/', label: 'Kalkulačka', icon: Calculator },
               { href: '/aktualne/', label: 'Aktuálně', icon: BookOpen },
             ].map(({ href, label, icon: Icon }) => (
               <Link

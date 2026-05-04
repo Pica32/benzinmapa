@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/znacka`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.75 },
     { url: `${BASE}/maximalni-ceny-mf`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/benzin-vs-nafta`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/kalkulacka-spotreby`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/aktualne`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/vyvoj-ceny`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
   ];

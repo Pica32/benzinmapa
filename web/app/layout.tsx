@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import PartnersFooter from '@/components/PartnersFooter';
 import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
+import WebVitals from '@/components/WebVitals';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'] });
 
@@ -76,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://tile.openstreetmap.org" />
       </head>
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex flex-col`}>
+        <WebVitals />
         <Header />
         <main className="flex-1">
           {children}
