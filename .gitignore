@@ -1,5 +1,6 @@
 # Tajné soubory – NIKDY na GitHub
 heslo.md
+.claude/
 *.env
 .env
 .env.local
