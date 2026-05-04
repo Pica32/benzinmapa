@@ -1,4 +1,4 @@
-import { Station, StationPrice, StationWithPrice, Stats, FuelType } from '@/types';
+import { Station, StationPrice, StationWithPrice, Stats, FuelType, BrandPage } from '@/types';
 import fs from 'fs';
 import path from 'path';
 
@@ -51,6 +51,13 @@ export function getStationsByCity(city: string): StationWithPrice[] {
   return getStationsWithPrices().filter(s =>
     s.city.toLowerCase().includes(normalized) ||
     slugify(s.city) === normalized
+  );
+}
+
+export function getStationsByBrand(brand: BrandPage): StationWithPrice[] {
+  const keys = brand.brandKeys.map(k => k.toLowerCase());
+  return getStationsWithPrices().filter(s =>
+    keys.some(k => s.brand.toLowerCase().includes(k))
   );
 }
 

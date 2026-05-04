@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getStationsWithPrices } from '@/lib/data';
-import { CITIES } from '@/types';
+import { CITIES, BRAND_PAGES } from '@/types';
 
 const BASE = 'https://benzinmapa.cz';
 
@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/nejlevnejsi-benzin`, lastModified: new Date(), changeFrequency: 'hourly', priority: 0.9 },
     { url: `${BASE}/nejlevnejsi-nafta`, lastModified: new Date(), changeFrequency: 'hourly', priority: 0.9 },
     { url: `${BASE}/nejlevnejsi-lpg`, lastModified: new Date(), changeFrequency: 'hourly', priority: 0.85 },
+    { url: `${BASE}/znacka`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.75 },
     { url: `${BASE}/aktualne`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/vyvoj-ceny`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
   ];
@@ -57,5 +58,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...staticPages, ...cityPages, ...stationPages, ...aktualne];
+  const brandPages: MetadataRoute.Sitemap = BRAND_PAGES.map(b => ({
+    url: `${BASE}/znacka/${b.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily' as const,
+    priority: 0.75,
+  }));
+
+  return [...staticPages, ...cityPages, ...brandPages, ...stationPages, ...aktualne];
 }

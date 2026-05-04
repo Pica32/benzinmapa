@@ -61,6 +61,87 @@ export const BRANDS = [
   'Robin Oil', 'Terno', 'EuroOil', 'Tank-ONO', 'Slovnaft',
 ];
 
+export interface BrandPage {
+  slug: string;
+  name: string;
+  fullName: string;
+  brandKeys: string[];      // vzory pro matching v datech (lowercase contains)
+  description: string;
+  priceOffset: string;      // napr. "+2 Kč" / "−1,5 Kč"
+  priceOffsetNum: number;   // číslo pro srovnání
+  color: string;            // tailwind bg class
+  stationsCount?: number;   // přibližný počet stanic
+}
+
+export const BRAND_PAGES: BrandPage[] = [
+  {
+    slug: 'shell',
+    name: 'Shell',
+    fullName: 'Shell',
+    brandKeys: ['shell'],
+    description: 'Britsko-nizozemský energetický gigant Shell provozuje v ČR přes 130 čerpacích stanic. Zaměřuje se na prémiová paliva V-Power.',
+    priceOffset: '+2,0 Kč',
+    priceOffsetNum: 2.0,
+    color: 'bg-yellow-500',
+    stationsCount: 137,
+  },
+  {
+    slug: 'mol',
+    name: 'MOL',
+    fullName: 'MOL',
+    brandKeys: ['mol'],
+    description: 'Maďarská ropná společnost MOL má v ČR přes 270 čerpacích stanic. Patří mezi největší sítě v zemi.',
+    priceOffset: '±0 Kč',
+    priceOffsetNum: 0,
+    color: 'bg-red-600',
+    stationsCount: 276,
+  },
+  {
+    slug: 'orlen',
+    name: 'Orlen / Benzina',
+    fullName: 'Benzina ORLEN',
+    brandKeys: ['orlen', 'benzina'],
+    description: 'Polská skupina ORLEN vlastní českou Benzinu — největší čerpací síť v ČR s přes 400 stanicemi. Patří k nejrozšířenějším v celé střední Evropě.',
+    priceOffset: '+0,5 Kč',
+    priceOffsetNum: 0.5,
+    color: 'bg-red-700',
+    stationsCount: 395,
+  },
+  {
+    slug: 'omv',
+    name: 'OMV',
+    fullName: 'OMV',
+    brandKeys: ['omv'],
+    description: 'Rakouský ropný koncern OMV má v ČR přes 100 čerpacích stanic. Patří mezi prémiové sítě s vyššími cenami.',
+    priceOffset: '+1,5 Kč',
+    priceOffsetNum: 1.5,
+    color: 'bg-blue-600',
+    stationsCount: 104,
+  },
+  {
+    slug: 'eurooil',
+    name: 'EuroOil',
+    fullName: 'EuroOil',
+    brandKeys: ['eurooil', 'euroil'],
+    description: 'Česká síť EuroOil provozuje přes 200 čerpacích stanic napříč ČR. Patří mezi cenově dostupnější varianty.',
+    priceOffset: '−1,0 Kč',
+    priceOffsetNum: -1.0,
+    color: 'bg-orange-500',
+    stationsCount: 206,
+  },
+  {
+    slug: 'robin-oil',
+    name: 'Robin Oil',
+    fullName: 'Robin Oil',
+    brandKeys: ['robin oil', 'robin'],
+    description: 'Nezávislá česká síť Robin Oil nabízí jedny z nejnižších cen pohonných hmot v ČR. Oblíbená zejména v Čechách.',
+    priceOffset: '−2,0 Kč',
+    priceOffsetNum: -2.0,
+    color: 'bg-green-600',
+    stationsCount: 72,
+  },
+];
+
 export const CITIES = [
   // Největší města
   { name: 'Praha', slug: 'praha', lat: 50.0755, lng: 14.4378 },

@@ -24,6 +24,7 @@ export default function Header() {
               { href: '/nejlevnejsi-benzin', label: 'Nejlevnější benzín', icon: TrendingDown },
               { href: '/nejlevnejsi-nafta', label: 'Nejlevnější nafta', icon: TrendingDown },
               { href: '/nejlevnejsi-lpg', label: 'LPG', icon: TrendingDown },
+              { href: '/znacka/', label: 'Značky', icon: BarChart2 },
               { href: '/vyvoj-ceny/', label: 'Vývoj cen', icon: BarChart2 },
               { href: '/aktualne/', label: 'Aktuálně', icon: BookOpen },
             ].map(({ href, label, icon: Icon }) => (
