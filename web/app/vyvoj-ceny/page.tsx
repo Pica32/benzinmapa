@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { TrendingDown, TrendingUp, BarChart2, ExternalLink, AlertTriangle, Shield, Bitcoin, Info } from 'lucide-react';
-import { FaqJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { getStats } from '@/lib/data';
 import PriceCharts from './PriceCharts';
 import ShareButtons from '@/components/ShareButtons';
@@ -9,17 +9,17 @@ import ShareButtons from '@/components/ShareButtons';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Vývoj cen pohonných hmot v ČR – grafy, historie a inflace',
-  description: 'Reálná data vývoje cen benzínu a nafty v ČR za 90 dní. Jak inflace a zdražování paliv ničí úspory a jak se bránit. Grafy, analýzy, investiční tipy.',
+  title: 'Vývoj cen benzínu a nafty v ČR 2026 – grafy za 90 dní | BenzinMapa',
+  description: 'Reálná data vývoje cen benzínu Natural 95, nafty a LPG v ČR za posledních 90 dní. Grafy, historické průměry, maximální ceny MF ČR, prognóza vývoje 2026.',
   alternates: { canonical: 'https://benzinmapa.cz/vyvoj-ceny/' },
-  keywords: ['vývoj cen benzínu', 'nafta cena historie', 'inflace pohonné hmoty', 'bitcoin inflace', 'jak chránit úspory'],
+  keywords: ['vývoj cen benzínu', 'cena benzínu historie', 'nafta cena 2026', 'vývoj cen pohonných hmot', 'benzín prognóza ceny 2026', 'kdy zdraží benzín', 'grafy ceny paliv ČR'],
 };
 
 const FAQS = [
-  { q: 'Proč ceny pohonných hmot neustále rostou?', a: 'Ceny benzínu a nafty závisí na ceně ropy Brent, kurzu CZK/USD, spotřební dani v ČR (přes 14 Kč/l) a maržích čerpacích stanic. Inflace dále snižuje kupní sílu koruny, čímž zdražuje každé tankování.' },
-  { q: 'Co je inflace a jak ovlivňuje cenu benzínu?', a: 'Inflace je znehodnocování peněz – za stejnou částku koupíte méně. Česká koruna od roku 2020 ztratila přes 30 % kupní síly. Benzín, který stál v roce 2020 kolem 28 Kč/l, dnes stojí přes 40 Kč/l.' },
-  { q: 'Jak ochránit úspory před zdražováním pohonných hmot?', a: 'Bitcoin má pevně omezené množství 21 milionů mincí – nemůže být "dotisknut" jako koruny. Historicky roste rychleji než inflace a chrání hodnotu úspor. Nedoporučujeme vkládat více než si můžete dovolit ztratit.' },
-  { q: 'Kdy bude benzín levnější?', a: 'Závisí na ceně ropy Brent, rozhodnutích OPECu a kurzu CZK/USD. Sledujte naše grafy pro aktuální trend.' },
+  { q: 'Proč ceny pohonných hmot neustále rostou?', a: 'Ceny benzínu a nafty závisí na ceně ropy Brent, kurzu CZK/USD, spotřební dani v ČR (benzín 12,84 Kč/l, nafta 9,95 Kč/l) a maržích čerpacích stanic. Při oslabení koruny vůči dolaru zdražuje palivo i bez pohybu ceny ropy.' },
+  { q: 'Kdy bude benzín levnější?', a: 'Cena benzínu závisí na ceně ropy Brent, rozhodnutích OPECu a kurzu CZK/USD. Sledujte naše grafy – při klesajícím trendu ropy se snížení na pumpách projeví s 2–4 týdenním zpožděním.' },
+  { q: 'Co je prognóza cen benzínu pro rok 2026?', a: 'Analytici očekávají stabilizaci cen ropy v rozmezí 60–75 USD/barel. Při stávajícím kurzu CZK/USD by to odpovídalo cenám Natural 95 v ČR kolem 38–42 Kč/l. Přesná prognóza závisí na rozhodnutí OPECu a vývoji globální ekonomiky.' },
+  { q: 'Jak funguje vztah cena ropy – cena na pumpě?', a: 'Ropa (cena v USD/barel) → rafinérie → distribuce → čerpací stanice. Každý článek řetězce přidává marži. Spotřební daň (12,84 Kč/l u benzínu) a DPH 21 % tvoří více než 50 % ceny na pumpě. Proto cena ropy a cena na pumpě nekopírují pohyb 1:1.' },
 ];
 
 const TRADING_AFFILIATES = [
@@ -76,6 +76,10 @@ export default async function VyvojCenyPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[
+        { name: 'BenzinMapa.cz', item: 'https://benzinmapa.cz/' },
+        { name: 'Vývoj cen pohonných hmot v ČR', item: 'https://benzinmapa.cz/vyvoj-ceny/' },
+      ]} />
       <FaqJsonLd faqs={FAQS} />
 
       <div className="max-w-5xl mx-auto px-4 py-8">
