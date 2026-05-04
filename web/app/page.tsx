@@ -2,7 +2,7 @@ import { getStats, getCheapestStations } from '@/lib/data';
 import HomeClient from './HomeClient';
 import CheapestTable from '@/components/CheapestTable';
 import Top4Cheapest from '@/components/Top4Cheapest';
-import { FaqJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd } from '@/components/JsonLd';
 import Link from 'next/link';
 import { CITIES } from '@/types';
 import type { Metadata } from 'next';
@@ -10,8 +10,8 @@ import type { Metadata } from 'next';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Nejlevnější benzín a nafta v ČR dnes – mapa čerpacích stanic',
-  description: 'Aktuální ceny pohonných hmot dnes na 2 400+ čerpacích stanicích. Interaktivní mapa. Natural 95, nafta, LPG. Najděte nejlevnější čerpačku ve svém okolí.',
+  title: 'Ceny benzínu a nafty dnes v ČR – mapa 2 400+ čerpacích stanic | BenzinMapa',
+  description: 'Aktuální ceny benzínu a nafty dnes na 2 400+ čerpacích stanicích v ČR. Kde natankovat nejlevněji? Natural 95, nafta, LPG autogas – interaktivní mapa, tabulky, srovnání značek. Aktualizováno 3× denně.',
   alternates: {
     canonical: 'https://benzinmapa.cz/',
     languages: { 'x-default': 'https://benzinmapa.cz/' },
@@ -41,7 +41,6 @@ export default async function HomePage() {
 
   return (
     <>
-      <OrganizationJsonLd />
       <FaqJsonLd faqs={FAQS} />
 
       {/* H1 – viditelný nadpis pro SEO (vizuálně zakomponovaný do stránky) */}
@@ -70,6 +69,26 @@ export default async function HomePage() {
         <div className="grid md:grid-cols-2 gap-8">
           <CheapestTable stations={cheapestNafta}  fuelType="nafta"      />
           <CheapestTable stations={cheapestBenzin} fuelType="natural_95" />
+        </div>
+
+        {/* Rychlé odkazy na paliva */}
+        <div className="flex flex-wrap gap-3">
+          <Link href="/nejlevnejsi-benzin/" className="flex-1 min-w-[140px] bg-green-600 hover:bg-green-700 text-white rounded-xl p-4 text-center transition-colors">
+            <div className="text-lg font-black">Benzín</div>
+            <div className="text-xs text-green-100 mt-0.5">Natural 95 – přehled ČR</div>
+          </Link>
+          <Link href="/nejlevnejsi-nafta/" className="flex-1 min-w-[140px] bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-4 text-center transition-colors">
+            <div className="text-lg font-black">Nafta</div>
+            <div className="text-xs text-blue-100 mt-0.5">Diesel – přehled ČR</div>
+          </Link>
+          <Link href="/nejlevnejsi-lpg/" className="flex-1 min-w-[140px] bg-purple-600 hover:bg-purple-700 text-white rounded-xl p-4 text-center transition-colors">
+            <div className="text-lg font-black">LPG autogas</div>
+            <div className="text-xs text-purple-100 mt-0.5">Autogas – přehled ČR</div>
+          </Link>
+          <Link href="/vyvoj-ceny/" className="flex-1 min-w-[140px] bg-gray-700 hover:bg-gray-800 text-white rounded-xl p-4 text-center transition-colors">
+            <div className="text-lg font-black">Vývoj cen</div>
+            <div className="text-xs text-gray-300 mt-0.5">Graf za 90 dní</div>
+          </Link>
         </div>
 
         {/* Města – lokální SEO */}
@@ -185,11 +204,17 @@ export default async function HomePage() {
             z OpenStreetMap. Pro stanice bez nahlášené ceny zobrazujeme odhad na základě
             národního průměru a historických odchylek dané značky.
           </p>
-          <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-            Interaktivní mapa, filtry podle paliva a tabulky nejlevnějších stanic vám
-            pomohou najít nejlevnější čerpačku v okolí a ušetřit 2–5 Kč na každém litru —
-            u 50litrové nádrže až 250 Kč za tankování.
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+            Interaktivní mapa, filtry podle paliva (Natural 95, nafta, LPG autogas) a tabulky
+            nejlevnějších stanic vám pomohou najít nejlevnější čerpačku v okolí a ušetřit
+            2–5 Kč na každém litru — u 50litrové nádrže až 250 Kč za tankování.
           </p>
+          <div className="flex flex-wrap gap-3 mt-2">
+            <Link href="/nejlevnejsi-benzin/" className="text-sm text-green-700 dark:text-green-400 hover:underline font-medium">→ Nejlevnější benzín v ČR</Link>
+            <Link href="/nejlevnejsi-nafta/" className="text-sm text-green-700 dark:text-green-400 hover:underline font-medium">→ Nejlevnější nafta v ČR</Link>
+            <Link href="/nejlevnejsi-lpg/" className="text-sm text-green-700 dark:text-green-400 hover:underline font-medium">→ Nejlevnější LPG autogas</Link>
+            <Link href="/aktualne/" className="text-sm text-green-700 dark:text-green-400 hover:underline font-medium">→ Aktuality o cenách paliv</Link>
+          </div>
         </section>
 
       </div>
