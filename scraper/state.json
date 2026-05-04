@@ -1,7 +1,64 @@
 {
-  "last_run_ts": 1777880835,
-  "last_publish_ts": 1777881097,
+  "last_run_ts": 1777906943,
+  "last_publish_ts": 1777907619,
   "items": [
+    {
+      "url": "https://www.e15.cz/finexpert/bydleni/dalsi-dodavatel-zvysuje-ceny-energii-od-kvetna-zdrazuje-fixovane-ceniky-1432570",
+      "title": "Benzín v ČR: Ceny roste, co to znamená pro řidiče",
+      "summary": "V Praze se cena benzínu zvýšila na 42,30 Kč/l, nafta na 44,10 Kč/l. Přes 200 Kč navíc ročně pro řidiče s 60 l nádrží. Článek vysvětluje příčiny, dopad na různé typy řidičů a kde najít nejlevnější čerpací stanice.",
+      "filename": "benzin-ceny-rozruceni-rozumne.html",
+      "published_at": "04. 05. 2026 17:02",
+      "created": "2026-05-04 15:13:39",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "Pražská energetika",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/ekonomika-maximalni-ceny-paliv-vzrostou-o-ctyri-halere-40576447",
+      "title": "Benzín a nafta v ČR: ceny stoupají o 40 haléřů",
+      "summary": "Ministerstvo financí zvýšilo maximální ceny benzínu a nafty o 40 haléřů. V Praze, Brně a Ostravě se nyní můžete těšit na 44,29 Kč/l benzínu a 44,59 Kč/l nafty. Pro řidiče s 60 l nádrží to znamená přibližně 204 Kč navíc. Přinášíme detailní analýzu, proč se to stalo a kde najít le…",
+      "filename": "benzyn-nafta-ceny-40-haleru.html",
+      "published_at": "04. 05. 2026 17:02",
+      "created": "2026-05-04 15:09:35",
+      "score": 4.15,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/primoco-po-slabsim-roce-hlasi-rekordni-kvartal-vyrobce-dronu-tezi-ze-zakazek-a-chysta-expanzi-1432549",
       "title": "Benzín v ČR: rekordní ceny, co to znamená pro řidiče",
@@ -505,7 +562,7 @@
       "created": "2026-04-28 15:18:46",
       "score": 4.35,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -535,7 +592,7 @@
       "created": "2026-04-28 15:17:02",
       "score": 6.55,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
