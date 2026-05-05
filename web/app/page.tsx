@@ -10,7 +10,7 @@ import type { Metadata } from 'next';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Ceny benzínu a nafty dnes v ČR – mapa 2 400+ čerpacích stanic | BenzinMapa',
+  title: 'Ceny benzínu a nafty dnes v ČR – mapa čerpacích stanic',
   description: 'Aktuální ceny benzínu a nafty v ČR dnes. Kde natankovat nejlevněji? Natural 95, nafta, LPG – mapa 2 400+ čerpacích stanic. Aktualizováno 3× denně.',
   alternates: {
     canonical: 'https://benzinmapa.cz/',

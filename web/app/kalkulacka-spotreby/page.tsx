@@ -8,7 +8,7 @@ import { Calculator } from 'lucide-react';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Kalkulačka spotřeby paliva – náklady na km, rok, měsíc | BenzinMapa',
+  title: 'Kalkulačka spotřeby paliva – náklady na km a rok | BenzinMapa',
   description: 'Zdarma online kalkulačka spotřeby paliva. Spočítejte roční náklady na benzín, naftu nebo LPG. Srovnání paliv, náklady na km. Aktuální průměrné ceny v ČR.',
   alternates: { canonical: 'https://benzinmapa.cz/kalkulacka-spotreby/' },
   keywords: [

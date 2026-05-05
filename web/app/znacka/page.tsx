@@ -4,7 +4,7 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Ceny benzínu podle značky čerpačky – Shell, MOL, OMV, Orlen | BenzinMapa',
+  title: 'Ceny benzínu podle značky – Shell, MOL, OMV, Orlen | BenzinMapa',
   description: 'Srovnání cen benzínu a nafty podle značky čerpačky v ČR. Shell, MOL, ORLEN, OMV, EuroOil, Robin Oil – kdo je nejlevnější? Aktuální průměry.',
   alternates: { canonical: 'https://benzinmapa.cz/znacka/' },
   keywords: ['Shell ceny benzínu', 'MOL cena nafty', 'OMV benzín cena', 'Orlen ceny paliv', 'EuroOil benzín', 'srovnání značek čerpacích stanic'],

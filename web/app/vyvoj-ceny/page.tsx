@@ -9,7 +9,7 @@ import PriceCharts from './PriceChartsLazy';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Vývoj cen benzínu a nafty v ČR 2026 – grafy za 90 dní | BenzinMapa',
+  title: 'Vývoj cen benzínu a nafty v ČR – grafy 90 dní | BenzinMapa',
   description: 'Reálná data vývoje cen benzínu Natural 95, nafty a LPG v ČR za posledních 90 dní. Grafy, historické průměry, maximální ceny MF ČR, prognóza vývoje 2026.',
   alternates: { canonical: 'https://benzinmapa.cz/vyvoj-ceny/' },
   keywords: ['vývoj cen benzínu', 'cena benzínu historie', 'nafta cena 2026', 'vývoj cen pohonných hmot', 'benzín prognóza ceny 2026', 'kdy zdraží benzín', 'grafy ceny paliv ČR'],

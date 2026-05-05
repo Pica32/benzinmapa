@@ -7,7 +7,7 @@ import { Info, Shield, TrendingDown } from 'lucide-react';
 export const revalidate = 21600;
 
 export const metadata: Metadata = {
-  title: 'Maximální přípustné ceny benzínu a nafty MF ČR 2026 | BenzinMapa',
+  title: 'Maximální ceny benzínu a nafty MF ČR 2026 | BenzinMapa',
   description: 'Aktuální maximální přípustné ceny pohonných hmot stanovené Ministerstvem financí ČR. Natural 95, nafta, LPG – zákonné stropy pro všechny čerpací stanice v ČR.',
   alternates: { canonical: 'https://benzinmapa.cz/maximalni-ceny-mf/' },
   keywords: [

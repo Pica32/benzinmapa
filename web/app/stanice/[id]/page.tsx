@@ -256,14 +256,17 @@ export default async function StationPage({ params }: Props) {
           </p>
 
           <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Srovnání cen všech čerpacích stanic v {station.city} najdete na stránce{' '}
-            <Link
-              href={`/mesto/${station.city.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-')}`}
-              className="text-green-700 dark:text-green-400 hover:underline"
-            >
-              ceny benzínu {station.city}
-            </Link>.
-            {' '}Celkový přehled nejlevnějších čerpacích stanic v ČR je dostupný na{' '}
+            {cityExists ? (
+              <>
+                Srovnání cen všech čerpacích stanic v {station.city} najdete na stránce{' '}
+                <Link href={`/mesto/${citySlug}/`} className="text-green-700 dark:text-green-400 hover:underline">
+                  ceny benzínu {station.city}
+                </Link>.{' '}
+              </>
+            ) : (
+              <>Srovnání cen čerpacích stanic v okolí najdete na{' '}</>
+            )}
+            Celkový přehled nejlevnějších čerpacích stanic v ČR je dostupný na{' '}
             <Link href="/" className="text-green-700 dark:text-green-400 hover:underline">
               hlavní mapě BenzinMapa.cz
             </Link>.
@@ -274,12 +277,14 @@ export default async function StationPage({ params }: Props) {
           <Link href="/" className="inline-flex items-center gap-2 text-sm text-green-700 hover:text-green-800 dark:text-green-400 font-medium">
             <ChevronLeft size={16} /> Zpět na mapu
           </Link>
-          <Link
-            href={`/mesto/${station.city.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-')}`}
-            className="text-sm text-gray-500 hover:text-green-700 dark:text-gray-400"
-          >
-            Všechny stanice v {station.city} →
-          </Link>
+          {cityExists && (
+            <Link
+              href={`/mesto/${citySlug}/`}
+              className="text-sm text-gray-500 hover:text-green-700 dark:text-gray-400"
+            >
+              Všechny stanice v {station.city} →
+            </Link>
+          )}
         </div>
 
       </div>
