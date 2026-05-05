@@ -560,6 +560,220 @@ Při rozdílu v pořizovací ceně 40 000 Kč vychází návratnost dieselu při
       { q: 'Bude diesel zakázán?', a: 'EU plánuje zákaz prodeje nových spalovacích motorů od roku 2035. Do té doby jsou naftová auta plně legální.' },
     ],
   },
+
+  'kdy-je-benzin-nejlevnejsi-rano-vecer': {
+    title: 'Kdy tankovat: Ráno nebo večer? Kdy je benzín v ČR nejlevnější',
+    excerpt: 'Tankujete ve špatný čas? Průzkumy ukázají, že volba času tankování může ovlivnit cenu až o 2–3 Kč/litr. Prozradíme, kdy tankovat a proč na tom záleží.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Tipy',
+    content: `
+## Záleží vůbec na čase tankování?
+
+Krátká odpověď: ano, záleží. Ale ne tak, jak si možná myslíte.
+
+V Česku nejde o to, zda jdete tankovat ve 3 ráno nebo v 10 večer. Jde o to, **kdy čerpací stanice aktualizují ceny** a jak reagují na pohyb velkoobchodních cen pohonných hmot na pražské komoditní burze.
+
+### Velkoobchodní ceny se mění přes noc
+
+Čerpací stanice dostávají nové ceníky od distributorů typicky v nočních hodinách, zpravidla kolem půlnoci. Pokud velkoobchodní cena přes noc klesla, řetězce jako MOL, OMV nebo Shell aktualizují cenovníky ráno po otevření. Pokud cena vzrostla, čerpací stanice je v pořádku zadržet zdražení o den nebo dva.
+
+Výsledek: **Při klesajícím trendu cen ropy bývá palivo ráno levnější** než večer předchozího dne. Při rostoucím trendu se stanice spěchají zdražit ihned ráno.
+
+### Pravidlo středy a čtvrtka
+
+V anglosaských zemích (USA, Velká Británie) analytici opakovaně potvrzují, že ceny benzínu jsou nejnižší v úterý a středu, a nejvyšší v pátek a o víkendu. V ČR existuje podobný efekt:
+
+- **Pondělí–středa**: velkoobchodní zásoby se doplňují po víkendu, ceny jsou spíše stabilní nebo klesající
+- **Čtvrtek–sobota**: před víkendem poptávka stoupá (dovolené, výlety), ceny mají tendenci mírně vzrůst
+- **Neděle**: nejnižší obrat, ale stanice s nízkým provozem méně upravují ceny
+
+Rozdíl mezi nejlevnějším a nejdražším dnem v týdnu je v ČR typicky **0,20–0,80 Kč/litr** — ne dramatický, ale při 50litrové nádrži to dělá 10–40 Kč.
+
+### Ráno vs. večer — v čem je rozdíl
+
+Existuje fyzikální argument pro tankování ráno:
+
+Palivo je kapalina a kapaliny se rozpínají s teplotou. Ráno je palivo v podzemních nádobách chladnější a hustší — dostanete **fyzicky více energie** za stejný objem než v poledním vedru. Rozdíl je asi **0,5–1 %** hustoty, což odpovídá zhruba 0,20 Kč/litr „skrytou úsporou".
+
+V praxi je tento efekt malý a podzemní zásobníky mají stabilnější teplotu než povrch. Při teplém létě a horkém asfaltu ale může jít v polední hodiny o trochu více.
+
+### Co skutečně šetří — výběr čerpačky
+
+Pravdou je, že **výběr správné čerpačky ušetří 50× víc než výběr správné hodiny**. Rozdíl mezi nejlevnější a nejdražší stanicí ve stejném městě je 3–6 Kč/litr. Výběr dne týdne nebo denní hodiny vám ušetří nejvýše 0,80 Kč/litr.
+
+Konkrétně:
+- Supermarketové čerpačky (Kaufland, Lidl) a nezávislé sítě (Eurobit, Robin Oil) bývají o 1,5–3 Kč/litr levnější než Shell nebo OMV ve stejném okamžiku
+- Na BenzinMapa.cz najdete nejlevnější čerpačky ve vašem okolí aktualizované každých 6 hodin
+
+### Praktická doporučení
+
+**Tankujte dopoledne v první polovině týdne.** Ráno při klesajícím trendu je cena nejčerstvěji aktualizovaná. Pondělí–středa má statisticky nižší ceny než pátek a sobota.
+
+**Při silném zdražování ropy naopak tankujte brzy.** Pokud cena ropy prudce roste (Brexit, válka, embargo), čerpací stanice zdraží jakmile mohou. Tankování před „vlnou" zdražení vám může ušetřit 1–2 Kč/litr.
+
+**Nenechte nádrž klesnout pod čtvrtinu.** Řidiči s prázdnou nádrží tankují u nejbližší stanice bez ohledu na cenu — přesně na to big-box sítě u dálnic sázejí. Udržujte nádrž nad třetinou.
+
+**Sledujte vývoj cen.** Na stránce vývoj cen pohonných hmot uvidíte, zda je aktuální trend klesající nebo rostoucí — to je nejlepší signál pro načasování tankování.
+
+### Závěr
+
+Nejlevnější palivo ráno vs. večer — rozdíl je reálný, ale malý (do 1 Kč/litr). Výběr stanice a dne v týdnu vás ušetří víc. Největší úspora je vždy správná čerpačka ve správné lokalitě, ne správná hodina.
+    `,
+    faqs: [
+      { q: 'Je benzín ráno skutečně levnější než večer?', a: 'Fyzikálně ano — palivo je ráno chladnější a hustší, dostanete nepatrně více energie. Rozdíl je asi 0,2 Kč/litr. Cenovník čerpačky bývá ráno čerstvě aktualizovaný — při klesajícím trendu ropy může být levnější než večer předchozího dne.' },
+      { q: 'Kdy v týdnu je benzín nejlevnější?', a: 'Statisticky v pondělí až středu. Před víkendem (čtvrtek–sobota) poptávka stoupá a ceny mírně rostou. Rozdíl je v ČR typicky 0,20–0,80 Kč/litr mezi nejlevnějším a nejdražším dnem.' },
+      { q: 'Vyplatí se tankovat přes noc nebo brzy ráno?', a: 'Při klesajících cenách ropy ano — čerpačky přijímají nové ceníky přes noc, ráno tak mohou mít aktualizovanou (nižší) cenu. Při rostoucích cenách ropy naopak tankujte co nejdřív.' },
+      { q: 'Jak moc ušetřím výběrem správné denní hodiny?', a: 'Typicky 0,2–0,8 Kč/litr. Výběrem správné čerpačky ale ušetříte 2–5 Kč/litr — tedy 5–10× víc. Zaměřte se primárně na výběr stanice, ne hodiny.' },
+    ],
+  },
+
+  'emisni-povolenky-ets2-zdrazeni-benzin-nafta': {
+    title: 'ETS2 emisní povolenky: O kolik zdraží benzín a nafta v ČR od 2027?',
+    excerpt: 'Od roku 2027 (pravděpodobně 2028) vstoupí v platnost ETS2 — nový evropský systém emisních povolenek pro dopravu. Benzín a nafta mohou zdražit o 3–5 Kč/litr. Co to je a jak se připravit.',
+    date: '2026-05-05',
+    readTime: '7 min',
+    tag: 'Analýza',
+    content: `
+## Co je ETS2 a proč ho řidiči musí znát
+
+Evropská unie připravuje rozšíření systému emisních povolenek (EU ETS) na silniční dopravu a vytápění budov. Nový systém se označuje **ETS2** a původně měl vstoupit v platnost od roku 2027. Po politickém jednání byl odložen na **rok 2028**.
+
+Pro řidiče v ČR to konkrétně znamená: každý litr benzínu nebo nafty bude zatížen cenou za emitované CO₂. Tuto cenu nezaplatíte přímo — zahrne se do ceny paliva na pumpě.
+
+### Jak ETS2 funguje
+
+Systém ETS2 nebude řídit stát, ale trh. Funguje takto:
+
+1. Distributoři pohonných hmot (Čepro, Shell, OMV atd.) budou muset nakupovat **povolenky** za každou tunu CO₂, které jejich paliva při spalování uvolní
+2. Celkový počet povolenek je pevně omezený a rok od roku klesá
+3. Cena povolenky se určuje na burze — závisí na poptávce a nabídce
+4. Distributoři zdražení přenesou na čerpačky → čerpačky na zákazníky
+
+### O kolik zdraží benzín a nafta?
+
+Klíčová proměnná je cena povolenky. Analytici odhadují různé scénáře:
+
+| Cena ETS2 povolenky | Zdražení benzínu | Zdražení nafty |
+|---|---|---|
+| 30 EUR/t CO₂ | +2,1 Kč/litr | +2,3 Kč/litr |
+| 45 EUR/t CO₂ | +3,2 Kč/litr | +3,5 Kč/litr |
+| 80 EUR/t CO₂ | +5,7 Kč/litr | +6,2 Kč/litr |
+
+Evropská komise odhaduje, že v prvních letech bude cena kolem 45 EUR/t CO₂. To by znamenalo zdražení o přibližně **3–3,5 Kč/litr**.
+
+Někteří analytici varují, že pokud poptávka po povolenkách překročí očekávání, cena může být výrazně vyšší — podobně jako se ETS1 (pro průmysl) od svého spuštění zdesetinásobil.
+
+### Proč EU ETS2 zavádí
+
+EU potřebuje snížit emise CO₂ z dopravy — sektor v posledních 20 letech emise nesnížil, zatímco průmysl ano. Cenový signal (dražší fosilní palivo) má motivovat přechod na elektromobily, veřejnou dopravu a efektivnější vozy.
+
+Kritici namítají, že zdražení pohonných hmot dopadne nerovnoměrně — lidé mimo města s horší dostupností MHD nemají alternativu a budou platit více bez možnosti změny chování.
+
+### Kdy přesně to začne platit
+
+Původní datum bylo 1. ledna 2027. V listopadu 2025 se EU politicky shodla na odložení o rok — **1. ledna 2028**. Existuje záchranná klauzule: pokud by cena elektřiny nebo paliv v EU prudce vzrostla, vstup ETS2 lze odložit na 2029.
+
+### Sociální klimatický fond — kompenzace pro domácnosti
+
+EU zřídila Sociální klimatický fond (SCF), který má vybraté peníze z ETS2 redistribuovat domácnostem s nízkými příjmy. ČR by z fondu do roku 2032 měla obdržet přibližně **50 miliard korun** na kompenzace.
+
+Jak přesně budou kompenzace v ČR vyplaceny (přímé transfery, snížení daní, investice do tepelných čerpadel), zatím není rozhodnuto.
+
+### Jak se připravit jako řidič
+
+**Kupujte úspornější auto.** Každý litr méně = méně zdražení pocítíte. Auto se spotřebou 5 l/100 km bude po zavedení ETS2 levnější v provozu než auto s 9 l/100 km podstatně více než dnes.
+
+**Zvažte LPG nebo elektromobil.** LPG nebude pod ETS2 přímo (závislost na ceně ropy zůstane), elektromobily jsou mimo systém úplně.
+
+**Sledujte vývoj.** Cena ETS2 povolenky se bude tvořit na burze — bude zveřejňovaná stejně jako dnes cena ropy Brent. Na BenzinMapa.cz sledujeme vývoj cen pohonných hmot, po spuštění ETS2 zobrazíme i vliv na ceny.
+
+### Shrnutí
+
+ETS2 začne platit nejdříve v lednu 2028. Benzín a nafta zdraží odhadem o 3–3,5 Kč/litr při ceně povolenky 45 EUR/t CO₂. Zdražení bude postupné a bude doprovázeno kompenzacemi pro nízkopříjmové domácnosti z EU fondů. Řidiči s efektivnějšími auty nebo alternativními palivy dopad pocítí méně.
+    `,
+    faqs: [
+      { q: 'Co je ETS2 a kdy začne platit?', a: 'ETS2 je nový evropský systém emisních povolenek pro silniční dopravu a vytápění. Původně měl platit od 2027, byl odložen na 1. ledna 2028. Distributoři paliv budou muset nakupovat povolenky za CO₂ a zdražení přenesou na ceny na pumpách.' },
+      { q: 'O kolik ETS2 zdraží benzín a naftu v ČR?', a: 'Při očekávané ceně povolenky 45 EUR/tunu CO₂ jde o zdražení přibližně 3,2 Kč/litr u benzínu a 3,5 Kč/litr u nafty. Při vyšší ceně povolenky může zdražení dosáhnout 5–6 Kč/litr.' },
+      { q: 'Dostaneme kompenzace za zdražení z ETS2?', a: 'EU zřídila Sociální klimatický fond — ČR z něj do roku 2032 dostane přibližně 50 miliard korun. Jak přesně budou peníze distribuovány domácnostem, bude záviset na rozhodnutí české vlády.' },
+      { q: 'Vztahuje se ETS2 i na LPG a elektromobily?', a: 'LPG je pohonná hmota ze zemního plynu a bude pod ETS2 také — zdraží méně než benzín nebo nafta kvůli nižšímu obsahu CO₂. Elektromobily jsou zcela mimo systém — elektřina pro dopravu pod ETS2 nespadá.' },
+    ],
+  },
+
+  'biopaliva-benzin-nafta-2026-zdrazeni': {
+    title: 'Biopaliva v benzínu a naftě: Proč zdražila paliva od ledna 2026?',
+    excerpt: 'Od 1. ledna 2026 musí všechny pohonné hmoty v ČR obsahovat minimálně 1,25 % pokročilých biopaliv. Čepro proto zdražil o 30 haléřů. Co jsou pokročilá biopaliva, proč jsou dražší a co čekat dál?',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Vysvětlení',
+    content: `
+## Proč jsou biopaliva v benzínu a naftě od roku 2026?
+
+Od 1. ledna 2026 platí v České republice (a celé EU) nová povinnost: každý litr benzínu nebo nafty musí v energetickém vyjádření obsahovat minimálně **1,25 % pokročilých biopaliv**. Do roku 2030 se tato hodnota postupně zvýší na 5,5 %.
+
+Tato pravidla vycházejí z evropské směrnice RED III (Renewable Energy Directive), která má urychlit přechod na obnovitelné zdroje energie v dopravě.
+
+### Co jsou „pokročilá biopaliva"?
+
+Biopaliva existují ve dvou kategoriích:
+
+**Klasická biopaliva (1. generace):**
+- Ethanol z kukuřice nebo obilí → přimíchávaný do benzínu (E10 = 10 % ethanolu)
+- FAME z řepky → přimíchávaný do nafty (B7 = 7 % biosložky)
+- V ČR se přimíchávají už léta a jsou v ceně paliva zahrnuté
+
+**Pokročilá biopaliva (2. a 3. generace):**
+- Vyrábějí se z odpadů a vedlejších produktů — zbytky ze zemědělství, kuchyňský odpadní olej (UCOME), komunální odpady
+- NEKONKURUJÍ potravinové produkci (na rozdíl od klasických biopaliv z kukuřice)
+- Jsou výrazně dražší ve výrobě, ale z pohledu EU mají lepší emisní bilanci
+
+### O kolik dražší jsou pokročilá biopaliva?
+
+Cena pokročilých biopaliv je typicky **3–8× vyšší** než cena fosilní nafty nebo benzínu. Právě proto zdražení přimíchávání o 1,25 % zvýší cenu paliva na pumpě přibližně o **0,20–0,40 Kč/litr**.
+
+Česká firma Čepro (největší distributor pohonných hmot v ČR) oznámila, že od 1. ledna 2026 zdražila pohonné hmoty o přibližně **0,30 Kč/litr** právě kvůli povinnosti přimíchávat pokročilá biopaliva.
+
+### Harmonogram povinností do roku 2030
+
+| Rok | Podíl pokročilých biopaliv |
+|---|---|
+| 2026 | 1,25 % |
+| 2027 | 2,0 % |
+| 2028 | 3,0 % |
+| 2029 | 4,0 % |
+| 2030 | 5,5 % |
+
+Pokud se cena pokročilých biopaliv nesníží, může celkový dopad na ceny pohonných hmot do roku 2030 dosáhnout **1,5–2 Kč/litr**.
+
+### Kde se pokročilá biopaliva vyrábějí?
+
+Největší producenti v EU jsou Německo, Finsko a Nizozemsko. Suroviny se dovážejí z celého světa — kuchyňský odpadní olej (hlavně z Číny a Indonésie), zemědělské zbytky (sláma, piliny) a technické tuky.
+
+Kritici upozorňují, že dovoz surovin z Asie snižuje reálnou emisní výhodu a že trh s UCOME (použitý kuchyňský olej) je plný podvodů — někteří dodavatelé prodávali nový palmový olej jako „odpadní olej" s fiktivními certifikáty.
+
+### Liší se povinnost pro benzín a naftu?
+
+Ano, mírně. Nafta má vyšší podíl tzv. HVO (hydrogenovaný rostlinný olej — čistší technologie), benzín má vyšší podíl ethanolu. Detailní mix závisí na rafinérii a distributorovi.
+
+### Ovlivní biopaliva výkon nebo spotřebu mého auta?
+
+Při 1,25 % podílu pokročilých biopaliv je efekt na výkon a spotřebu **prakticky nulový**. Bioethanol má nižší energetický obsah než benzín (rozdíl cca 33 %), ale při 1,25 % přimíchání je dopad na spotřebu méně než 0,1 %.
+
+Klasický 10% ethanol (E10) v benzínu způsobuje zvýšení spotřeby přibližně o 1,5–3 %, což je při dnešních cenách asi 0,6–1,2 Kč/litr v nákladech navíc. To ale platí pro stávající povinné přimíchávání, ne pro nové požadavky z roku 2026.
+
+### Co čekat dál?
+
+Požadavky na podíl obnovitelných zdrojů v dopravě se budou podle EU plánů postupně zvyšovat. Kromě pokročilých biopaliv EU tlačí na rozvoj **e-fuels** (syntetická paliva vyrobená z elektřiny a CO₂) a **vodíkových paliv**.
+
+Pro běžné řidiče to znamená: ceny pohonných hmot budou v příštích letech obsahovat větší složku „zelené prémie" bez ohledu na cenu ropy. Sledování vývoje cen na BenzinMapa.cz pomůže orientovat se v tom, jaká část zdražení pochází z trhu s ropou a jaká z regulačních požadavků.
+    `,
+    faqs: [
+      { q: 'Proč zdražila paliva od ledna 2026?', a: 'Od 1. ledna 2026 platí povinnost přimíchávat do každého litru pohonných hmot 1,25 % pokročilých biopaliv. Tato paliva jsou 3–8× dražší než fosilní ropa. Čepro proto zdražil o přibližně 0,30 Kč/litr.' },
+      { q: 'Co jsou pokročilá biopaliva a liší se od klasických?', a: 'Pokročilá biopaliva (2. a 3. generace) se vyrábějí z odpadů — kuchyňský olej, zemědělské zbytky, komunální odpady. Nekonkurují potravinové produkci. Klasická biopaliva (ethanol z kukuřice, FAME z řepky) se přimíchávají v ČR už léta v podobě E10 (benzín) a B7 (nafta).' },
+      { q: 'Kolik bude přimíchávání biopaliv stát v roce 2030?', a: 'Pokud se cena pokročilých biopaliv nezmění, povinný 5,5% podíl v roce 2030 způsobí zdražení o přibližně 1,5–2 Kč/litr oproti dnešnímu stavu. Ke zdražení z biopaliv se přidá pravděpodobně i zdražení z emisních povolenek ETS2.' },
+      { q: 'Ovlivní pokročilá biopaliva motor nebo spotřebu mého auta?', a: 'Při podílu 1,25 % (rok 2026) je dopad na výkon a spotřebu prakticky nulový. Ani při 5,5 % (rok 2030) nebude dopad výrazný — stávající E10 benzín (10 % ethanolu) zvyšuje spotřebu o 1,5–3 % bez problémů pro většinu aut.' },
+    ],
+  },
 };
 
 export async function generateStaticParams() {

@@ -10,6 +10,30 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: 'biopaliva-benzin-nafta-2026-zdrazeni',
+    title: 'Biopaliva v benzínu a naftě: Proč zdražila paliva od ledna 2026?',
+    excerpt: 'Od 1. ledna 2026 musí všechny pohonné hmoty v ČR obsahovat minimálně 1,25 % pokročilých biopaliv. Čepro proto zdražil o 30 haléřů. Co jsou pokročilá biopaliva a co čekat dál?',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Vysvětlení',
+  },
+  {
+    slug: 'emisni-povolenky-ets2-zdrazeni-benzin-nafta',
+    title: 'ETS2 emisní povolenky: O kolik zdraží benzín a nafta v ČR od 2027?',
+    excerpt: 'Od roku 2028 vstoupí v platnost ETS2 — nový evropský systém emisních povolenek pro dopravu. Benzín a nafta mohou zdražit o 3–5 Kč/litr. Vysvětlujeme co to je a jak se připravit.',
+    date: '2026-05-05',
+    readTime: '7 min',
+    tag: 'Analýza',
+  },
+  {
+    slug: 'kdy-je-benzin-nejlevnejsi-rano-vecer',
+    title: 'Kdy tankovat: Ráno nebo večer? Kdy je benzín v ČR nejlevnější',
+    excerpt: 'Záleží na čase tankování? Průzkumy ukazují, že volba správného dne a hodiny může ovlivnit cenu o 1–3 Kč/litr. Prozradíme kdy tankovat a proč.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Tipy',
+  },
+  {
     slug: 'tankovat-v-polsku-nebo-slovensku-2026',
     title: 'Tankovat v Polsku nebo na Slovensku? Počítáme, kdy se to vyplatí',
     excerpt: 'Benzín za hranicí bývá levnější o 3–6 Kč. Ale vyplatí se zajet? Počítáme reálnou úsporu i se spotřebou na odbočku – pro přeshraniční regiony i pro vzdálenější řidiče.',

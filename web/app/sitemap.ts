@@ -5,6 +5,9 @@ import { CITIES, BRAND_PAGES } from '@/types';
 const BASE = 'https://benzinmapa.cz';
 
 const AKTUALNE_SLUGS = [
+  'biopaliva-benzin-nafta-2026-zdrazeni',
+  'emisni-povolenky-ets2-zdrazeni-benzin-nafta',
+  'kdy-je-benzin-nejlevnejsi-rano-vecer',
   'trumpova-celni-valka-a-ceny-benzinu-cr-2026',
   'tankovat-v-polsku-nebo-slovensku-2026',
   'proc-je-nafta-drazsi-nez-benzin-2026',
