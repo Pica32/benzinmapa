@@ -161,9 +161,12 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
               );
             });
           } else {
+            // Wrapper bez stylů — MapLibre ho transformuje; inner nese vizuální styl
             el = document.createElement('div');
-            el.style.cssText = `position:relative;background:${props.color};color:#fff;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 6px rgba(0,0,0,.28);white-space:nowrap;cursor:pointer;line-height:1.4;opacity:${props.isReal ? 1 : 0.75}`;
-            el.textContent = props.priceLabel;
+            const pill = document.createElement('div');
+            pill.style.cssText = `background:${props.color};color:#fff;border-radius:20px;padding:3px 9px;font-size:11px;font-weight:700;border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 6px rgba(0,0,0,.28);white-space:nowrap;cursor:pointer;line-height:1.4;opacity:${props.isReal ? 1 : 0.75}`;
+            pill.textContent = props.priceLabel;
+            el.appendChild(pill);
           }
 
           const marker = new MapLib.Marker({ element: el, anchor: 'center' })
