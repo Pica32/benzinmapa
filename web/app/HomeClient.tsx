@@ -26,32 +26,45 @@ export default function HomeClient({ stats }: HomeClientProps) {
   const [locationSource, setLocationSource] = useState<'ip' | 'gps' | null>(null);
   const [locating, setLocating] = useState(false);
 
-  // Načti data na klientovi – jeden request (map_data.json = stations + prices)
+  // Načti data přes Web Worker – parsování 2548 stanic proběhne mimo main thread
   useEffect(() => {
+    let worker: Worker | null = null;
+
+    const loadWithWorker = (data: any) => {
+      try {
+        worker = new Worker('/workers/station-parser.js');
+        worker.onmessage = (e) => {
+          if (e.data.ok) {
+            startTransition(() => {
+              setStations(e.data.stations);
+              setLoading(false);
+            });
+          } else {
+            loadFallbackParse(data);
+          }
+          worker?.terminate();
+        };
+        worker.onerror = () => { loadFallbackParse(data); worker?.terminate(); };
+        worker.postMessage({ data });
+      } catch {
+        loadFallbackParse(data);
+      }
+    };
+
+    const loadFallbackParse = (data: any) => {
+      startTransition(() => {
+        const stations: StationWithPrice[] = data.stations.map((s: any) => {
+          const p = s.p;
+          return { ...s, price: p ? { station_id: s.id, natural_95: p.n95 ?? null, natural_98: p.n98 ?? null, nafta: p.naf ?? null, lpg: p.lpg ?? null, source: p.src, reported_at: p.at ?? '' } : null };
+        });
+        setStations(stations);
+        setLoading(false);
+      });
+    };
+
     fetch('/data/map_data.json')
       .then(r => r.json())
-      .then((data: any) => {
-        // useTransition: mapování 2400+ stanic jako non-urgent = neuvolácuje main thread
-        startTransition(() => {
-          const merged: StationWithPrice[] = data.stations.map((s: any) => {
-            const p = s.p;
-            return {
-              ...s,
-              price: p ? {
-                station_id:  s.id,
-                natural_95:  p.n95 ?? null,
-                natural_98:  p.n98 ?? null,
-                nafta:       p.naf ?? null,
-                lpg:         p.lpg ?? null,
-                source:      p.src,
-                reported_at: p.at ?? '',
-              } : null,
-            };
-          });
-          setStations(merged);
-          setLoading(false);
-        });
-      })
+      .then(loadWithWorker)
       .catch(() => {
         Promise.all([
           fetch('/data/stations_latest.json').then(r => r.json()),
@@ -65,6 +78,8 @@ export default function HomeClient({ stats }: HomeClientProps) {
           });
         }).catch(() => setLoading(false));
       });
+
+    return () => { worker?.terminate(); };
   }, []);
 
   // IP geolokace – odložena o 4s aby neblokovala kritické načítání stránky
