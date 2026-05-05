@@ -107,9 +107,10 @@ interface MapViewProps {
   fuelType: FuelType;
   userLat?: number;
   userLng?: number;
+  panTo?: { lat: number; lng: number; zoom?: number };
 }
 
-export default function MapView({ stations, fuelType, userLat, userLng }: MapViewProps) {
+export default function MapView({ stations, fuelType, userLat, userLng, panTo }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<any>(null);
   const MapLibRef = useRef<any>(null);
@@ -313,6 +314,13 @@ export default function MapView({ stations, fuelType, userLat, userLng }: MapVie
       .addTo(map);
     map.easeTo({ center: [userLng, userLat], zoom: 13 });
   }, [userLat, userLng]);
+
+  // Navigace na místo z vyhledávání
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !panTo) return;
+    map.easeTo({ center: [panTo.lng, panTo.lat], zoom: panTo.zoom ?? 13, duration: 800 });
+  }, [panTo]);
 
   return (
     <div className="relative w-full h-full">

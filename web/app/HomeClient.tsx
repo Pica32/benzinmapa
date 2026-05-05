@@ -26,6 +26,7 @@ export default function HomeClient({ stats }: HomeClientProps) {
   const [userLng, setUserLng] = useState<number | undefined>();
   const [locationSource, setLocationSource] = useState<'ip' | 'gps' | null>(null);
   const [locating, setLocating] = useState(false);
+  const [panTo, setPanTo] = useState<{ lat: number; lng: number; zoom?: number } | undefined>();
 
   // Načti data přes Web Worker – parsování 2548 stanic proběhne mimo main thread
   useEffect(() => {
@@ -144,6 +145,10 @@ export default function HomeClient({ stats }: HomeClientProps) {
         selectedBrands={selectedBrands} onBrandsChange={setSelectedBrands}
         onLocate={handleLocate}
         search={search} onSearchChange={setSearch}
+        onMapPan={(lat, lng, zoom) => {
+          setPanTo({ lat, lng, zoom });
+          if (!mapActivated) setMapActivated(true);
+        }}
         locating={locating}
         locationSource={locationSource}
       />
@@ -213,7 +218,7 @@ export default function HomeClient({ stats }: HomeClientProps) {
               </div>
             </div>
           }>
-            <MapView stations={filtered} fuelType={fuelType} userLat={userLat} userLng={userLng} />
+            <MapView stations={filtered} fuelType={fuelType} userLat={userLat} userLng={userLng} panTo={panTo} />
           </Suspense>
         )}
 
