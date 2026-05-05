@@ -54,6 +54,7 @@ export default function FilterBar({
           <button
             onClick={onLocate}
             disabled={locating}
+            aria-label={locating ? 'Hledám GPS polohu...' : 'Zjistit moji GPS polohu'}
             className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 disabled:opacity-70 text-white text-sm font-medium rounded-lg transition-colors"
           >
             {locating
@@ -72,6 +73,8 @@ export default function FilterBar({
             <button
               key={f}
               onClick={() => onFuelChange(f)}
+              aria-label={`Zobrazit ceny paliva: ${FUEL_LABELS[f]}`}
+              aria-pressed={fuelType === f}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
                 fuelType === f
                   ? 'bg-green-600 text-white shadow-sm'
@@ -95,6 +98,7 @@ export default function FilterBar({
               step={0.5}
               value={maxPrice}
               onChange={e => onMaxPriceChange(Number(e.target.value))}
+              aria-label={`Maximální cena paliva: ${maxPrice.toFixed(1)} Kč`}
               className="w-28 accent-green-600"
             />
             <span className="text-xs font-semibold text-green-700 dark:text-green-400 w-16">
@@ -107,6 +111,8 @@ export default function FilterBar({
               <button
                 key={b}
                 onClick={() => toggleBrand(b)}
+                aria-label={`Filtrovat značku: ${b}`}
+                aria-pressed={selectedBrands.includes(b)}
                 className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-all ${
                   selectedBrands.includes(b)
                     ? 'bg-green-600 border-green-600 text-white'

@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Leaflet fix – must be loaded globally */
-@import "leaflet/dist/leaflet.css";
-
 :root {
   --background: #f9fafb;
   --foreground: #111827;

@@ -6,7 +6,7 @@ import PartnersFooter from '@/components/PartnersFooter';
 import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
 import WebVitals from '@/components/WebVitals';
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'] });
+const inter = Inter({ subsets: ['latin', 'latin-ext'], display: 'swap', preload: true });
 
 export const viewport: Viewport = {
   width: 'device-width',
