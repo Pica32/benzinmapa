@@ -34,6 +34,26 @@ function saveConfirmed(set: Set<string>) {
   localStorage.setItem('benzinmapa_confirmed', JSON.stringify([...set]));
 }
 
+// Lokální cache nahlášených cen — přežije reload, compensuje Vercel ephemeral /tmp/
+function getLocalSubs(stationId: string): UserSub[] {
+  try {
+    const raw = localStorage.getItem(`benzinmapa_subs_${stationId}`);
+    if (!raw) return [];
+    const parsed: UserSub[] = JSON.parse(raw);
+    const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+    return parsed.filter(s => new Date(s.submitted_at).getTime() > cutoff);
+  } catch {
+    return [];
+  }
+}
+
+function saveLocalSub(stationId: string, entry: UserSub) {
+  try {
+    const existing = getLocalSubs(stationId).filter(s => s.id !== entry.id);
+    localStorage.setItem(`benzinmapa_subs_${stationId}`, JSON.stringify([entry, ...existing].slice(0, 20)));
+  } catch {}
+}
+
 const FUEL_ORDER: FuelType[] = ['natural_95', 'nafta', 'natural_98', 'lpg'];
 
 interface PriceReportProps {
@@ -52,8 +72,21 @@ export default function PriceReport({ stationId, initialFuel, forceOpen }: Price
   const [msg, setMsg] = useState<{ text: string; ok: boolean } | null>(null);
 
   const load = useCallback(async () => {
-    const res = await fetch(`/api/user-prices/${stationId}`);
-    if (res.ok) setSubs(await res.json());
+    // Lokální data (localStorage) + server data — merge + dedup
+    const local = getLocalSubs(stationId);
+    try {
+      const res = await fetch(`/api/user-prices/${stationId}`);
+      const server: UserSub[] = res.ok ? await res.json() : [];
+      const seen = new Set<string>();
+      const merged = [...local, ...server].filter(s => {
+        if (seen.has(s.id)) return false;
+        seen.add(s.id);
+        return true;
+      });
+      setSubs(merged);
+    } catch {
+      setSubs(local);
+    }
     setConfirmed(getConfirmed());
   }, [stationId]);
 
@@ -87,7 +120,12 @@ export default function PriceReport({ stationId, initialFuel, forceOpen }: Price
     });
     const data = await res.json();
     setMsg({ text: res.ok ? 'Cena nahlášena, díky!' : (data.error ?? 'Chyba'), ok: res.ok });
-    if (res.ok) { setFormPrice(''); load(); }
+    if (res.ok) {
+      setFormPrice('');
+      // Uložíme entry do localStorage — zobrazí se okamžitě i bez serveru
+      if (data.entry) saveLocalSub(stationId, data.entry);
+      load();
+    }
     setSending(false);
   }
 

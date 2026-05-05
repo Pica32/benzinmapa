@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { randomUUID } from 'crypto';
 
+// Na Vercelu je public/ read-only — používáme /tmp/ pro runtime úložiště
 const DB_PATH = path.join('/tmp', 'user_prices.json');
 
 function readDb() {
@@ -14,7 +15,11 @@ function readDb() {
 }
 
 function writeDb(data: object) {
-  fs.writeFileSync(DB_PATH, JSON.stringify(data), 'utf-8');
+  try {
+    fs.writeFileSync(DB_PATH, JSON.stringify(data), 'utf-8');
+  } catch {
+    // /tmp/ zápis selhal — pokračujeme, entry se vrátí v response
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -60,7 +65,9 @@ export async function POST(req: NextRequest) {
     db.submissions[station_id] = stationSubs;
 
     writeDb(db);
-    return NextResponse.json({ ok: true, id: entry.id });
+    // Vrátíme celý entry (bez browser_id) — klient ho uloží do localStorage
+    const { browser_id: _bid, confirmed_by: _cb, ...publicEntry } = entry;
+    return NextResponse.json({ ok: true, entry: publicEntry });
   } catch (e) {
     return NextResponse.json({ error: 'Chyba serveru' }, { status: 500 });
   }

@@ -1,23 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { TrendingDown, TrendingUp, BarChart2, ExternalLink, AlertTriangle, Shield, Bitcoin, Info } from 'lucide-react';
 import { FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { getStats } from '@/lib/data';
 import ShareButtons from '@/components/ShareButtons';
-
-// Recharts (~220KB) se načte až po hydrataci — neblokuje FCP/LCP stránky
-const PriceCharts = dynamic(() => import('./PriceCharts'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-64 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
-      <div className="text-center space-y-2">
-        <div className="w-8 h-8 border-3 border-green-600 border-t-transparent rounded-full animate-spin mx-auto" />
-        <p className="text-sm text-gray-400">Načítám grafy...</p>
-      </div>
-    </div>
-  ),
-});
+import PriceCharts from './PriceChartsLazy';
 
 export const revalidate = 21600;
 
