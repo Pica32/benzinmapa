@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback, useEffect, Suspense, lazy } from 'react';
+import { useState, useCallback, useEffect, Suspense, lazy, useMemo, useTransition } from 'react';
 import { StationWithPrice, FuelType, Stats } from '@/types';
 import FilterBar from '@/components/FilterBar';
 import StatsBar from '@/components/StatsBar';
@@ -15,6 +15,7 @@ interface HomeClientProps {
 export default function HomeClient({ stats }: HomeClientProps) {
   const [stations, setStations] = useState<StationWithPrice[]>([]);
   const [loading, setLoading] = useState(true);
+  const [, startTransition] = useTransition();
 
   const [fuelType, setFuelType] = useState<FuelType>('natural_95');
   const [maxPrice, setMaxPrice] = useState(50);
@@ -30,50 +31,57 @@ export default function HomeClient({ stats }: HomeClientProps) {
     fetch('/data/map_data.json')
       .then(r => r.json())
       .then((data: any) => {
-        const merged: StationWithPrice[] = data.stations.map((s: any) => {
-          const p = s.p;
-          return {
-            ...s,
-            price: p ? {
-              station_id:  s.id,
-              natural_95:  p.n95 ?? null,
-              natural_98:  p.n98 ?? null,
-              nafta:       p.naf ?? null,
-              lpg:         p.lpg ?? null,
-              source:      p.src,
-              reported_at: p.at ?? '',
-            } : null,
-          };
+        // useTransition: mapování 2400+ stanic jako non-urgent = neuvolácuje main thread
+        startTransition(() => {
+          const merged: StationWithPrice[] = data.stations.map((s: any) => {
+            const p = s.p;
+            return {
+              ...s,
+              price: p ? {
+                station_id:  s.id,
+                natural_95:  p.n95 ?? null,
+                natural_98:  p.n98 ?? null,
+                nafta:       p.naf ?? null,
+                lpg:         p.lpg ?? null,
+                source:      p.src,
+                reported_at: p.at ?? '',
+              } : null,
+            };
+          });
+          setStations(merged);
+          setLoading(false);
         });
-        setStations(merged);
-        setLoading(false);
       })
       .catch(() => {
-        // fallback na původní soubory
         Promise.all([
           fetch('/data/stations_latest.json').then(r => r.json()),
           fetch('/data/prices_latest.json').then(r => r.json()),
         ]).then(([sData, pData]) => {
-          const priceMap = new Map<string, any>();
-          for (const p of pData.prices) priceMap.set(p.station_id, p);
-          setStations(sData.stations.map((s: any) => ({ ...s, price: priceMap.get(s.id) ?? null })));
-          setLoading(false);
+          startTransition(() => {
+            const priceMap = new Map<string, any>();
+            for (const p of pData.prices) priceMap.set(p.station_id, p);
+            setStations(sData.stations.map((s: any) => ({ ...s, price: priceMap.get(s.id) ?? null })));
+            setLoading(false);
+          });
         }).catch(() => setLoading(false));
       });
   }, []);
 
-  // IP geolokace – automaticky při načtení stránky (přibližná poloha, bez oprávnění)
+  // IP geolokace – odložena o 4s aby neblokovala kritické načítání stránky
   useEffect(() => {
-    fetch('https://ip-api.com/json?fields=status,lat,lon')
-      .then(r => r.json())
-      .then(d => {
-        if (d.status === 'success' && userLat == null) {
-          setUserLat(d.lat);
-          setUserLng(d.lon);
-          setLocationSource('ip');
-        }
-      })
-      .catch(() => {});
+    const t = setTimeout(() => {
+      fetch('https://ip-api.com/json?fields=status,lat,lon')
+        .then(r => r.json())
+        .then(d => {
+          if (d.status === 'success' && userLat == null) {
+            setUserLat(d.lat);
+            setUserLng(d.lon);
+            setLocationSource('ip');
+          }
+        })
+        .catch(() => {});
+    }, 4000);
+    return () => clearTimeout(t);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -96,7 +104,8 @@ export default function HomeClient({ stats }: HomeClientProps) {
     );
   }, []);
 
-  const filtered = stations.filter(s => {
+  // useMemo: přefiltrování 2400+ stanic jen při změně závislostí, ne při každém renderu
+  const filtered = useMemo(() => stations.filter(s => {
     const price = s.price?.[fuelType];
     if (price == null) return false;
     if (price > maxPrice) return false;
@@ -108,7 +117,7 @@ export default function HomeClient({ stats }: HomeClientProps) {
         s.address.toLowerCase().includes(q);
     }
     return true;
-  });
+  }), [stations, fuelType, maxPrice, selectedBrands, search]);
 
   return (
     <>

@@ -1,5 +1,3 @@
-'use client';
-
 const PARTNERS = [
   { name: 'Pergol.cz', url: 'https://pergol.cz', desc: 'Zahradní pergoly' },
   { name: 'Stromtek.cz', url: 'https://stromtek.cz', desc: 'Stromy a zahrada' },
