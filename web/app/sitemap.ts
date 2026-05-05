@@ -5,6 +5,10 @@ import { CITIES, BRAND_PAGES } from '@/types';
 const BASE = 'https://benzinmapa.cz';
 
 const AKTUALNE_SLUGS = [
+  'jak-spravne-tankovat-chyby-ridicu',
+  'premium-benzin-shell-vpower-stoji-za-to',
+  'ceny-benzinu-v-evrope-2026-srovnani',
+  'adblue-co-je-cena-kde-koupit-2026',
   'biopaliva-benzin-nafta-2026-zdrazeni',
   'emisni-povolenky-ets2-zdrazeni-benzin-nafta',
   'kdy-je-benzin-nejlevnejsi-rano-vecer',

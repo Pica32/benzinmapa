@@ -15,6 +15,374 @@ const POSTS: Record<string, {
   content: string;
   faqs: { q: string; a: string }[];
 }> = {
+  'adblue-co-je-cena-kde-koupit-2026': {
+    title: 'AdBlue: Co to je, kolik stojí a kde doplnit v ČR 2026',
+    excerpt: 'AdBlue potřebuje každý diesel Euro 5 a novější. Cena na stojanech se liší až 5×. Tank ONO má nejlevnější, Shell nejdražší. Kompletní průvodce pro řidiče.',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Průvodce',
+    content: `
+## Co je AdBlue a proč ho dieselové auto potřebuje
+
+AdBlue je vodný roztok močoviny (32,5 % čistá močovina + 67,5 % demineralizovaná voda). Používá se v systému SCR (Selective Catalytic Reduction), který redukuje emise oxidů dusíku (NOx) z dieselových motorů.
+
+Každý diesel s normou **Euro 5 a Euro 6** má systém SCR a potřebuje AdBlue. To zahrnuje téměř všechna naftová osobní auta prodaná v ČR po roce 2010.
+
+### Jak SCR systém funguje
+
+AdBlue se vstřikuje do výfukových plynů před katalyzátorem SCR. Při teplotě výfukových plynů se přemění na amoniak, který chemicky reaguje s NOx a rozloží ho na neškodný dusík (N₂) a vodu (H₂O).
+
+Bez AdBlue by emise NOx z moderních dieselů přesáhly zákonné limity — auto by bylo de facto provozováno nelegálně.
+
+### Co se stane, když AdBlue dojde?
+
+Moderní auta zobrazí varování přibližně 2 500–5 000 km před prázdnou nádrží. Pokud AdBlue skutečně dojde:
+
+- Motor přejde do nouzového režimu (omezení výkonu)
+- Při zastavení a opětovném nastartování auto nemusí najet
+- U některých značek (VW, BMW, Mercedes) po prázdné nádrži auto nenastartuje vůbec
+
+**Nikdy nepřehlížejte varování na palubní desce.**
+
+## Kolik AdBlue auto spotřebuje?
+
+Průměrná spotřeba AdBlue je **1–1,5 litru na každých 1 000 km**. Při ročním nájezdu 15 000 km potřebujete přibližně 15–22 litrů ročně.
+
+Nádrž na AdBlue má typicky objem 10–25 litrů. Malá auta (Škoda Fabia) mají menší nádrž a doplňují AdBlue častěji, velká SUV a dodávky mají větší zásobník.
+
+## Ceny AdBlue v ČR — kde je nejlevnější?
+
+Ceny se výrazně liší podle místa koupě:
+
+| Způsob nákupu | Cena za litr |
+|---|---|
+| Tank ONO — stojan | 6,90–8,90 Kč |
+| EuroOil / nezávislé sítě | 9–14 Kč |
+| MOL — stojan | 12–18 Kč |
+| Benzina ORLEN — stojan | 14–20 Kč |
+| Shell — stojan | 18–28 Kč |
+| OMV — stojan | 20–30 Kč |
+| Kanystr 5 l (autoservis, e-shop) | 30–60 Kč celkem (6–12 Kč/l) |
+| Kanystr 10 l (Kaufland, Lidl) | 60–90 Kč celkem (6–9 Kč/l) |
+
+Nejlevnější variantou jsou kanystr z hypermarketu nebo stojan v síti Tank ONO. Shell a OMV účtují na stojanech 3–4× více.
+
+### Proč je tak velký rozdíl?
+
+AdBlue je komodita — výroba je levná a standardizovaná (norma ISO 22241). Velký cenový rozdíl na stojanech je čistě marže čerpacích stanic. Prémiové sítě (Shell, OMV) účtují vysokou marži, protože mnozí řidiči netuší, že mohou doplnit jinde levněji.
+
+## Kde koupit AdBlue v ČR — praktický přehled
+
+**Na stojanech** (přímé čerpání do nádrže auta):
+- Tank ONO — nejlevnější v ČR, dostupné na většině stanic
+- EuroOil, Eurobit — dobré ceny
+- MOL, Benzina — průměrné ceny
+- Shell, OMV — drahé, ale dostupné všude
+
+**V kanystru** (vhodné pro zásobu):
+- Kaufland, Lidl — pravidelně v akcích za ~7–9 Kč/l
+- e-shopy (Mall, Alza, Amazon) — kanystry 5–20 l za dobré ceny
+- Autoservisy — obvykle dražší než hypermarket
+
+**Aplikace BenzinMapa.cz** — filtr „AdBlue" zobrazí stanice s AdBlue u vás v okolí.
+
+## Jak správně doplnit AdBlue
+
+1. Plnicí hrdlo AdBlue je **oddělené od palivového** — bývá menší, označené modrou barvou a nápisem „AdBlue" nebo „Urea"
+2. AdBlue **nesmí přijít do kontaktu s naftou** — způsobí poškození SCR systému (oprava 20 000–80 000 Kč)
+3. Nepřeplňujte nádrž — nechte alespoň 2 cm volno pro roztažnost kapaliny
+4. AdBlue **mrzne při −11 °C** — moderní auta mají vyhřívání nádrže, ale skladujte kanystr v teple
+5. AdBlue má **omezenou trvanlivost** — max. 18 měsíců v neotevřeném balení, 6 měsíců po otevření
+
+## Může AdBlue poškodit auto?
+
+AdBlue samotné auto nepoškodí, pokud se dostane do správné nádrže. Problémy nastanou, když:
+
+- **AdBlue v naftové nádrži** — ihned přestat používat, volat odtahovou službu, čerpání nastartovaného auta spaluje AdBlue v motoru a může způsobit těžké poškození
+- **Levné nebo falzifikované AdBlue** — kupujte pouze certifikované s označením ISO 22241, nekvalitní AdBlue poškodí SCR katalyzátor
+    `,
+    faqs: [
+      { q: 'Co je AdBlue a proč ho diesel potřebuje?', a: 'AdBlue je vodný roztok močoviny vstřikovaný do výfukových plynů. Systém SCR ho přemění na amoniak, který neutralizuje škodlivé oxidy dusíku (NOx). Potřebuje ho každý diesel s normou Euro 5 a Euro 6, tedy téměř všechna naftová auta po roce 2010.' },
+      { q: 'Kde je AdBlue nejlevnější v ČR?', a: 'Nejlevnější AdBlue na stojanech má Tank ONO (6,90–8,90 Kč/l). Shell a OMV jsou nejdražší (18–30 Kč/l). Kanystr v Kauflandu nebo Lidlu vyjde na 6–9 Kč/litr. Na BenzinMapa.cz najdete stanice s AdBlue filtrovaně podle polohy.' },
+      { q: 'Co se stane, když AdBlue v autě dojde?', a: 'Auto nejprve přejde do nouzového režimu s omezením výkonu. Pokud AdBlue skutečně dojde a vy zastavíte, mnoho moderních aut (VW, BMW, Mercedes) poté vůbec nenastartuje. Nikdy nepřehlížejte varování na palubní desce.' },
+      { q: 'Kolik AdBlue auto ročně spotřebuje?', a: 'Průměrně 1–1,5 litr na 1 000 km. Při ročním nájezdu 15 000 km potřebujete 15–22 litrů. Nádrž má objem 10–25 litrů — doplňujete přibližně jednou až dvakrát ročně.' },
+      { q: 'Lze doplnit AdBlue sám nebo musím do servisu?', a: 'Doplnění je jednoduché jako tankování nafty. Plnicí hrdlo AdBlue je oddělené, označené modrou barvou. Kanystr nalijete sami. Pozor — nikdy nesmíchejte AdBlue s naftou, jinak hrozí oprava za desítky tisíc korun.' },
+    ],
+  },
+
+  'ceny-benzinu-v-evrope-2026-srovnani': {
+    title: 'Ceny benzínu v Evropě 2026: Srovnání zemí EU – kde je nejlevnější?',
+    excerpt: 'ČR patří mezi 5 nejlevnějších zemí EU pro tankování. Bulharsko a Polsko jsou levnější, západ Evropy výrazně dražší. Kompletní srovnání cen benzínu a nafty v Evropě.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Srovnání',
+    content: `
+## Kde je benzín v Evropě nejlevnější v roce 2026?
+
+Ceny pohonných hmot se v Evropě výrazně liší — rozdíl mezi nejlevnější a nejdražší zemí EU je u benzínu přes 25 Kč/litr. Klíčovým faktorem nejsou ceny ropy (ty jsou všude stejné), ale **výše spotřebních daní** v každé zemi.
+
+### Nejlevnější benzín v EU 2026
+
+Nejnižší ceny benzínu Natural 95 jsou tradičně v jihovýchodní a střední Evropě:
+
+| Země | Benzín Natural 95 | Nafta |
+|---|---|---|
+| Bulharsko | ~29–31 Kč/l | ~28–30 Kč/l |
+| Polsko | ~33–36 Kč/l | ~32–35 Kč/l |
+| Maďarsko | ~34–37 Kč/l | ~33–36 Kč/l |
+| Rumunsko | ~34–38 Kč/l | ~33–36 Kč/l |
+| **Česká republika** | **~39–43 Kč/l** | **~38–44 Kč/l** |
+| Slovensko | ~40–44 Kč/l | ~39–43 Kč/l |
+
+ČR je v první pětici nejlevnějších zemí EU. Oproti průměru celé EU je litr benzínu v Česku levnější o přibližně 6–7 Kč.
+
+### Nejdražší benzín v EU 2026
+
+Západ a sever Evropy mají výrazně vyšší ceny — primárně kvůli vysokým spotřebním daním:
+
+| Země | Benzín Natural 95 |
+|---|---|
+| Norsko | ~55–65 Kč/l |
+| Holandsko | ~52–58 Kč/l |
+| Finsko | ~50–55 Kč/l |
+| Švédsko | ~48–54 Kč/l |
+| Dánsko | ~48–53 Kč/l |
+| Německo | ~44–50 Kč/l |
+| Rakousko | ~43–48 Kč/l |
+
+Německo je pro mnoho Čechů nejbližší „drahá" země — benzín je tam o 3–7 Kč/l dražší než v ČR.
+
+## Proč jsou ceny v EU tak rozdílné?
+
+### 1. Spotřební daň — hlavní faktor
+
+Spotřební daň na benzín se v EU pohybuje od 25 do 80 Kč/litr. Holandsko a skandinávské státy mají spotřební daně nejvyšší na světě — tvoří 50–60 % ceny paliva na pumpě. V ČR je spotřební daň u benzínu 12,84 Kč/l, u nafty 9,95 Kč/l — patříme k zemím s nižší daní.
+
+### 2. DPH
+
+DPH se v EU pohybuje od 17 % (Lucembursko) do 27 % (Maďarsko). ČR má 21 % — průměr EU.
+
+### 3. Životní úroveň a mzdy
+
+Ceny v Norsku jsou high — ale Norové mají také trojnásobné průměrné mzdy. Z pohledu „kolik litrů koupím za hodinu průměrné mzdy" jsou Norové a Finové na tom lépe než většina střední Evropy.
+
+### 4. Vzdálenost od ropných terminálů
+
+Periferní regiony EU (ostrovy, vzdálené oblasti) mají vyšší distribuční náklady.
+
+## Je výhodné tankovat v zahraničí při cestování?
+
+Závisí na trase:
+
+**Polsko** je pro Čechy z pohraničních regionů zajímavé — benzín je o 3–7 Kč/l levnější. Více v článku Tankovat v Polsku nebo na Slovensku?.
+
+**Německo a Rakousko** — výrazně dražší než v ČR. Při jízdě do Německa se vyplatí odjet s plnou nádrží z domova.
+
+**Slovensko** — srovnatelné ceny jako ČR, mírně dražší.
+
+**Chorvatsko, Slovinsko** — dražší než ČR o 3–5 Kč/l, zvláště u dálničních čerpacích stanic.
+
+## Jak ČR obstojí na světové úrovni?
+
+Ve světovém srovnání patří české ceny paliv ke středu tabulky:
+
+- **Nejlevnější benzín na světě:** Venezuela (cena regulována státem, ~0,01 USD/l), Írán, Libye
+- **Nejdražší benzín na světě:** Hong Kong, Norsko, Islandsko
+- **USA:** ~30–35 Kč/l (nízké daně, vlastní těžba ropy)
+- **ČR:** Přibližně na úrovni USA v přepočtu, ale s výrazně nižšími mzdami
+
+## Kdy se budou ceny v EU sbližovat?
+
+ETS2 emisní povolenky (plánované od 2028) budou platit jednotně v celé EU — ale každá země si daň ponechá ve státním rozpočtu. To neznamená, že se ceny srovnají. Skandinávie bude pravděpodobně dál výrazně dražší.
+
+Sledujte aktuální srovnání cen na BenzinMapa.cz — zobrazujeme průměrné ceny v ČR aktualizované 3× denně.
+    `,
+    faqs: [
+      { q: 'Kde je benzín v Evropě nejlevnější?', a: 'Nejlevnější benzín v EU mají Bulharsko (~30 Kč/l) a Polsko (~34 Kč/l). ČR patří do top 5 nejlevnějších zemí EU — benzín je zde o 6–7 Kč levnější než je průměr EU.' },
+      { q: 'Proč je benzín v Německu dražší než v ČR?', a: 'Německo má výrazně vyšší spotřební daně na pohonné hmoty. Spotřební daň u benzínu v Německu je přibližně 25–30 Kč/l, v ČR jen 12,84 Kč/l. Výsledkem je cena o 3–7 Kč/l vyšší.' },
+      { q: 'Vyplatí se tankovat v Polsku?', a: 'Pro řidiče z pohraničních regionů (Ostrava, Opava, Liberec) ano — benzín v Polsku je o 3–7 Kč/l levnější. Pro řidiče z Prahy je odbočka do Polska prodělečná — benzín na cestu stojí víc než ušetříte. Detailní výpočet najdete v článku o tankování v Polsku.' },
+      { q: 'Proč je benzín v ČR levnější než v Holandsku?', a: 'Primárně kvůli daním. Holandsko má jedny z nejvyšších spotřebních daní na pohonné hmoty v Evropě — přes 50 Kč/l, zatímco ČR má 12,84 Kč/l. Holanďané to částečně kompenzují vysokými mzdami.' },
+      { q: 'Je ČR opravdu mezi nejlevnějšími zeměmi EU?', a: 'Ano. ČR pravidelně patří do první pětice nejlevnějších zemí EU pro pohonné hmoty. Levnější jsou Bulharsko, Polsko, Maďarsko a Rumunsko. Německo je přibližně o 10–20 % dražší, Holandsko o 30–40 %.' },
+    ],
+  },
+
+  'premium-benzin-shell-vpower-stoji-za-to': {
+    title: 'Shell V-Power a prémium benzíny: Stojí za příplatek 3–4 Kč/l?',
+    excerpt: 'Shell V-Power, OMV MaxxMotion, Benzina Verva — prémiová paliva stojí o 3–4 Kč/l více. Čisticí aditiva fungují, ale pro většinu aut nejde o nutnost. Zjistěte, kdy se prémium vyplatí.',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Test',
+    content: `
+## Co jsou prémiová paliva a čím se liší od standardního benzínu?
+
+Na českých čerpačkách najdete vedle standardního Natural 95 také prémiové varianty:
+
+- **Shell V-Power** (Natural 98+, oktanové číslo ≥ 98 RON)
+- **OMV MaxxMotion 100** (100 RON)
+- **Benzina Verva 100** (100 RON)
+- **MOL EVO 100** (100 RON)
+
+Prémiová paliva se od standardního Natural 95 liší ve dvou věcech:
+
+**1. Vyšší oktanové číslo** — odolnější vůči předčasnému vznícení (klepání motoru), umožňuje lepší nastavení zapalování u vhodných motorů.
+
+**2. Přísada čisticích aditiv** — Shell V-Power obsahuje vlastní patentovou formuli čisticích látek, které aktivně čistí vstřikovací trysky a ventily od karbonových usazenin.
+
+## Jak fungují čisticí aditiva a fungují opravdu?
+
+Moderní benzínové motory s přímým vstřikem (GDI, FSI, TFSI) trpí usazováním karbonu na vstřikovacích tryskách a sacích ventilech. Standard EN 228 pro benzín vyžaduje minimální obsah aditiv — ale prémiová paliva jejich obsah výrazně překračují.
+
+Testování Shell prokázalo, že V-Power při pravidelném tankování:
+- Obnoví průtok tryskou z průměrných 85 % zpět na 100 % za 5 000 km
+- Snižuje spotřebu o průměrně 1,5 % u znečištěných vstřikovačů
+- Prodlužuje interval čistění vstřikovačů v servisu
+
+Nezávislé testy (SvetMotoru.cz, Auto.cz) výsledky Shell potvrzují — efekt existuje, ale projeví se výrazněji u starších nebo zanedbaných motorů.
+
+## Kdy se prémium benzín vyplatí — a kdy ne?
+
+### Vyplatí se pro:
+- **Výkonné motory s přímým vstřikem** (BMW TwinPower Turbo, Mercedes AMG, Porsche, Audi RS) — tyto motory jsou optimalizovány pro vysoké RON a benefitují z lepšího nastavení zapalování
+- **Auta doporučující tankovat 98+ RON** (viz servisní knížka) — pokud výrobce 98 RON doporučuje, Natural 95 způsobuje drobné ztráty výkonu
+- **Zanedbaná auta nebo auta s viditelnou spotřebou** — čisticí efekt je znatelný na autě, které nikdy prémium nejezdilo
+
+### Nevyplatí se pro:
+- **Běžné motory optimalizované pro 95 RON** (Škoda 1.0 TSI, Volkswagen 1.5 TSI, Toyota benzín atd.) — žádný prokazatelný benefit na výkon, minimální čisticí efekt
+- **Dieselové motory** — oktanové číslo pro naftu neexistuje (diesel má cetanové číslo), prémiová nafta má jiné výhody (mazivost, aditiva)
+- **Krátkodobé citycar použití** — při jízdě výhradně ve městě se aditiva nestačí projevit
+
+## Jaký je reálný rozdíl v ceně a výkonu?
+
+### Cena:
+Shell V-Power je o **3–4 Kč/l dražší** než Standard Natural 95. Při 50litrové nádrži tankujete o 150–200 Kč více.
+
+### Výkon:
+U motorů optimalizovaných pro 98+ RON může být nárůst výkonu **3–5 %** díky optimálnímu nastavení zapalování a zabraňování klepání. Pro motor na 95 RON je rozdíl minimální.
+
+### Spotřeba:
+Natural 98 má **nepatrně vyšší energetický obsah** (asi 0,5 %) než Natural 95. Na praktickou spotřebu to nemá měřitelný vliv.
+
+## Konkurence Shell V-Power v ČR
+
+| Palivo | Oktany | Cena vs. 95 | Dostupnost |
+|---|---|---|---|
+| Shell V-Power | ≥ 98 RON | +3–4 Kč/l | Shell síť |
+| OMV MaxxMotion 100 | 100 RON | +4–5 Kč/l | OMV síť |
+| Benzina Verva 100 | 100 RON | +3–4 Kč/l | Benzina síť |
+| MOL EVO 100 | 100 RON | +3–4 Kč/l | MOL síť |
+
+Všechna prémiová paliva obsahují čisticí aditiva — liší se formulí a dostupností.
+
+## Verdikt: Stojí prémium benzín za to?
+
+**Pro moderní výkonné motory s přímým vstřikem (TSI, TDI, i turba) a doporučením výrobce 98+ RON: ano.** Aditiva snižují frekvenci servisního čistění vstřikovačů, a to může vyvážit příplatek za palivo.
+
+**Pro běžné motory na 95 RON: ne, není to nutné.** Servisní interval čistění motoru lze udržet pravidelnou údržbou a olejem správné viskozity.
+
+Kompromis: **tankujte prémium každý čtvrtý tankování.** Získáte čisticí efekt za výrazně nižší celkové náklady než při 100% tankování V-Power.
+    `,
+    faqs: [
+      { q: 'Co je Shell V-Power a liší se od Normal Natural 95?', a: 'Shell V-Power má vyšší oktanové číslo (≥ 98 RON vs. 95 RON) a vyšší koncentraci čisticích aditiv. Aditiva aktivně čistí vstřikovací trysky a ventily od karbonových usazenin, které snižují výkon a zvyšují spotřebu.' },
+      { q: 'Stojí Shell V-Power za příplatek 3–4 Kč/l?', a: 'Pro výkonné motory s přímým vstřikem (TSI, TDI, BMW TwinPower) a doporučením výrobce 98+ RON: ano. Pro běžné motory optimalizované na 95 RON: efekt je minimální a příplatek se nevyplatí. Sledujte, co doporučuje servisní knížka.' },
+      { q: 'Může prémiový benzín poškodit motor na 95 RON?', a: 'Ne, vyšší oktanové číslo motoru neubližuje. V nejhorším případě žádný přínos (u motorů na 95 RON motor nemůže využít vyšší oktany). Škodu by způsobilo naopak tankování nízkokvalitatního benzínu do motoru doporučujícího 98+.' },
+      { q: 'Jaký je rozdíl mezi Natural 98 a Natural 100?', a: 'Natural 100 (OMV MaxxMotion 100, Benzina Verva 100) má vyšší oktanové číslo (100 RON vs. 98 RON). Pro běžná sériová auta je rozdíl zanedbatelný. Benefit pocítí pouze závodní nebo extrémně výkonné motory.' },
+      { q: 'Jak často tankovat V-Power pro čisticí efekt?', a: 'Shell doporučuje tankovat V-Power pravidelně. Kompromis pro řidiče kteří chtějí čisticí efekt za nižší náklady: každý 3.–4. tankování prémium. Aditiva začnou čistit ihned, efekt se kumuluje.' },
+    ],
+  },
+
+  'jak-spravne-tankovat-chyby-ridicu': {
+    title: 'Jak správně tankovat auto: 7 chyb, které řidiči dělají a nevědí o tom',
+    excerpt: 'Přetankování poškodí EVAP systém, záměna paliva zničí motor za stovky tisíc. 7 nejčastějších chyb při tankování a jak je nedělat – praktický průvodce pro každého řidiče.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Tipy',
+    content: `
+## Tankování vypadá jednoduše. Přesto řidiči dělají chyby, které stojí tisíce
+
+Tankování patří k nejrutinnějším úkonům každého řidiče. A právě proto vznikají nebezpečné zvyky, které mohou způsobit škody od stovek do stovek tisíc korun. Přinášíme 7 nejčastějších chyb — a jak je nedělat.
+
+### Chyba 1: Tankování po první cvaknutí píšťaly (přetankování)
+
+**Co řidiči dělají:** Po cvaknutí píšťaly natankují „ještě trochu víc" aby zaokrouhlili cenu nebo využili celou nádrž.
+
+**Proč je to špatně:** Moderní auta mají systém EVAP (Evaporative Emission Control), který zachytává výpary benzínu z nádrže pomocí filtru s aktivním uhlím. Pokud do plné nádrže přidáte víc paliva, kapalný benzín se dostane do tohoto filtru — a poškodí ho.
+
+**Oprava filtru EVAP:** 3 000–15 000 Kč.
+
+**Pravidlo:** Cvaknutí = stop. Nikdy netankujte dál.
+
+### Chyba 2: Záměna nafty a benzínu
+
+**Co řidiči dělají:** Uniknou na autopilotu a natočí špatné palivo. Ročně se to v ČR stane desítkám tisíc řidičů.
+
+**Proč je to špatně:**
+- **Benzín do dieselu** — benzín nemazí palivové čerpadlo a vstřikovače jako nafta. Při nastartování a jízdě dochází k rychlému opotřebení a destrukci čerpadla a vstřikovačů. Oprava motoru: 50 000–300 000 Kč.
+- **Nafta do benzínu** — méně destruktivní, ale motor nebude správně pracovat. Auta zpravidla se záměnou nastartují a jedou pár km, pak přestanou.
+
+**Pravidlo:** Nafta má menší průměr hrdla pistole, benzínové pistole větší — proto se nafta do benzínové nádrže snadno nedostane. Ale moderní diesely mají rozměrově kompatibilní hrdlo — benzín do diesel nádrže natočit lze.
+
+**Co dělat při záměně:** NENASTARTOVAT. Okamžitě zavolat odtahovou službu. Čím dříve, tím levnější oprava.
+
+### Chyba 3: Jízda s prázdnou nebo skoro prázdnou nádrží
+
+**Co řidiči dělají:** Záměrně jezdí „na rezervě" — šetří čas nebo oddalují tankování.
+
+**Proč je to špatně:** Palivové čerpadlo se chladí a maže palivem. V prázdné nádrži čerpadlo chladí vzduch — hřeje se a opotřebovává. Navíc drobné sedimenty a nečistoty, které se usazují na dně nádrže, se při malém množství paliva nasávají přímo do čerpadla.
+
+**Výměna palivového čerpadla:** 7 000–25 000 Kč.
+
+**Pravidlo:** Tankujte při čtvrtině nádrže nebo dříve.
+
+### Chyba 4: Tankování se zapnutým motorem
+
+**Co řidiči dělají:** Nechávají motor běžet kvůli klimatizaci nebo rychlejšímu odjezdu.
+
+**Proč je to špatně:** Benzínové výpary jsou lehčí než vzduch a hromadí se kolem vozidla. Při jiskře (motor, elektrostatický výboj) hrozí vzplanutí. Navíc je tankování se zapnutým motorem na většině čerpacích stanic zakázáno a hrozí pokuta.
+
+**Pravidlo:** Motor vždy vypnout před tankováním.
+
+### Chyba 5: Neuzemění před tankováním
+
+**Co řidiči dělají:** Rovnou sahají po pistoli bez dotyku kovového předmětu.
+
+**Proč je to špatně:** Sedadlo nebo čalounění auta může generovat elektrostatický náboj. Při kontaktu s pistolí na benzínu může dojít ke statické jiskře v prostředí výparů — teoretická možnost vznícení.
+
+**Pravidlo:** Před sáhnutím na pistoli se dotkněte kovového rámu dveří nebo karoserie.
+
+### Chyba 6: Tankování LPG bez povolení systému (pro LPG auta)
+
+**Co řidiči dělají:** U aut s LPG přestavbou tankují LPG bez aktivace správného módu v autě, nebo tankují příliš rychle.
+
+**Proč je to špatně:** LPG je pod tlakem — při rychlém plnění může tlak v nádrži překročit bezpečnostní limit. Moderní LPG ventily mají pojistku, ale starší přestavby ne vždy.
+
+**Pravidlo:** Tankovejte LPG pomalu, sledujte indikátor tlaku.
+
+### Chyba 7: Ignorování blikajícího indikátoru „palivo"
+
+**Co řidiči dělají:** Spoléhají na to, že „ještě dojede" a odkládají tankování.
+
+**Proč je to špatně:** Blikající indikátor paliva neznamená „máte pár litrů". U moderních aut s elektronickými palivovými systémy může auto přejít do nouzového režimu při nízkém tlaku paliva — zvláště u dieselů s common rail.
+
+Navíc jízdě s prázdnou nádrží urychlujete opotřebení palivového čerpadla (viz Chyba 3).
+
+**Pravidlo:** Blikající indikátor = tankovat do 50 km.
+
+## Bonus: Jak ušetřit při každém tankování
+
+Výběr správné čerpačky ušetří více než jakákoliv jiná strategie:
+- Supermarketové čerpačky (Kaufland, Lidl) a nezávislé sítě (Eurobit, Robin Oil) bývají o 1,5–3 Kč/l levnější než Shell nebo OMV
+- Na BenzinMapa.cz najdete nejlevnější čerpačky v okolí aktualizované každých 6 hodin
+- Rozdíl při 50litrové nádrži: 75–150 Kč za tankování
+    `,
+    faqs: [
+      { q: 'Proč nesmím tankovat za první cvaknutí pistole?', a: 'Cvaknutí signalizuje plnou nádrž. Tankování navíc způsobí přetečení do filtru EVAP (systém zachycující výpary), který je určen jen pro páry, ne kapalné palivo. Oprava poškozeného EVAP filtru stojí 3 000–15 000 Kč.' },
+      { q: 'Co udělat, když omylem natočím benzín do dieselu?', a: 'Ihned přestat tankovat a NENASTARTOVAT. Zavolat odtahovou službu. Čím dříve je záměna řešena, tím nižší škoda. Nastartování a jízda s benzínem v dieselové nádrži způsobí destrukci čerpadla a vstřikovačů za 50 000–300 000 Kč.' },
+      { q: 'Je nebezpečné tankovat se zapnutým motorem?', a: 'Ano. Benzínové výpary se hromadí kolem auta. Zapnutý motor nebo elektrostatická jiskra je potenciálním zdrojem vznícení. Navíc je tankování se zapnutým motorem na čerpacích stanicích zakázáno — hrozí pokuta.' },
+      { q: 'Jak nízko mohu nechat klesnout hladinu paliva?', a: 'Ideálně netankujte pod čtvrtinu nádrže. Palivové čerpadlo se chladí palivem — při nízké hladině hřeje a opotřebovává se. Navíc sedimenty ze dna nádrže se při malém množství paliva nasávají do čerpadla. Výměna čerpadla: 7 000–25 000 Kč.' },
+      { q: 'Musím se uzemňovat před tankováním?', a: 'Je to dobrý zvyk, zvláště v suchu nebo zimě kdy elektrostatika bývá silnější. Dotkněte se kovového rámu dveří nebo karoserie před sáhnutím na pistoli. Eliminuje riziko statické jiskry v prostředí benzínových výparů.' },
+    ],
+  },
+
   'trumpova-celni-valka-a-ceny-benzinu-cr-2026': {
     title: 'Trumpova celní válka a ceny benzínu v ČR: Co čekat do konce roku?',
     excerpt: 'Americká cla způsobila propad ropy na šestileté minimum. Co to reálně znamená pro ceny na českých pumpách a proč efekt nepřichází tak rychle, jak byste čekali.',

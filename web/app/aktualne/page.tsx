@@ -10,6 +10,38 @@ export const metadata: Metadata = {
 
 const POSTS = [
   {
+    slug: 'jak-spravne-tankovat-chyby-ridicu',
+    title: 'Jak správně tankovat auto: 7 chyb, které řidiči dělají a nevědí o tom',
+    excerpt: 'Přetankování poškodí EVAP systém, záměna paliva zničí motor za stovky tisíc. 7 nejčastějších chyb při tankování a jak je nedělat – praktický průvodce.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Tipy',
+  },
+  {
+    slug: 'premium-benzin-shell-vpower-stoji-za-to',
+    title: 'Shell V-Power a prémium benzíny: Stojí za příplatek 3–4 Kč/l?',
+    excerpt: 'Shell V-Power, OMV MaxxMotion, Benzina Verva — prémiová paliva stojí o 3–4 Kč/l více. Čisticí aditiva fungují, ale pro většinu aut nejde o nutnost. Kdy se prémium vyplatí?',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Test',
+  },
+  {
+    slug: 'ceny-benzinu-v-evrope-2026-srovnani',
+    title: 'Ceny benzínu v Evropě 2026: Srovnání zemí EU – kde je nejlevnější?',
+    excerpt: 'ČR patří mezi 5 nejlevnějších zemí EU. Bulharsko a Polsko jsou levnější, západ Evropy výrazně dražší. Kompletní srovnání cen benzínu a nafty v 30 zemích Evropy.',
+    date: '2026-05-05',
+    readTime: '5 min',
+    tag: 'Srovnání',
+  },
+  {
+    slug: 'adblue-co-je-cena-kde-koupit-2026',
+    title: 'AdBlue: Co to je, kolik stojí a kde doplnit v ČR 2026',
+    excerpt: 'AdBlue potřebuje každý diesel Euro 5 a novější. Cena na stojanech se liší až 5×. Tank ONO má nejlevnější, Shell nejdražší. Kompletní průvodce pro řidiče dieselů.',
+    date: '2026-05-05',
+    readTime: '6 min',
+    tag: 'Průvodce',
+  },
+  {
     slug: 'biopaliva-benzin-nafta-2026-zdrazeni',
     title: 'Biopaliva v benzínu a naftě: Proč zdražila paliva od ledna 2026?',
     excerpt: 'Od 1. ledna 2026 musí všechny pohonné hmoty v ČR obsahovat minimálně 1,25 % pokročilých biopaliv. Čepro proto zdražil o 30 haléřů. Co jsou pokročilá biopaliva a co čekat dál?',
