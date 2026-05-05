@@ -1,7 +1,91 @@
 {
-  "last_run_ts": 1777906943,
-  "last_publish_ts": 1777907619,
+  "last_run_ts": 1777965411,
+  "last_publish_ts": 1777965763,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/nova-kia-ev4-prosla-obavanym-testem-spanelu-sazi-spise-na-jistotu-nez-rekordy",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Litr benzínu v Praze se dnes zvedl na 42,30 Kč, nafta 45,10 Kč. Přesně to, co řidiči v ČR potřebují vědět: kolik zaplatí za tankování, kde najít nejlevnější čerpací stanice a jaké faktory ovlivňují budoucí ceny.",
+      "filename": "benzinn-cena-42-30-kc-l.html",
+      "published_at": "05. 05. 2026 09:16",
+      "created": "2026-05-05 07:22:43",
+      "score": 3.8,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/maximalni-ceny-paliv-od-patku-prudce-vzrostou-oznamilo-ministerstvo/r~aaa2974cee2b7b6cf35d02bfd2784f77/",
+      "title": "Benzín a nafta v ČR: ceny prudce vzrostou od pátku",
+      "summary": "Od pátku se v ČR zvyšují maximální ceny pohonných hmot. Nafta se posune na 44,55 Kč/l, benzín na 43,89 Kč/l. Pro řidiče v Praze, Brně a Ostravě to znamená přibližně 200 Kč navíc na 55‑litrovou nádrž. Článek rozebírá příčiny, dopad na řidiče a tipy, kde natankovat nejlevněji.",
+      "filename": "benzina-nafta-ceny-rozrostou-patek.html",
+      "published_at": "05. 05. 2026 09:16",
+      "created": "2026-05-05 07:20:46",
+      "score": 3.9,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/nove-bmw-m3-dorazi-hned-dvakrat-elektricke-i-benzinove-vime-detaily-160864",
+      "title": "Benzín v ČR: Ceny, tankování a co čekat v roce 2027",
+      "summary": "Litr benzínu v Praze se v posledním měsíci zvýšil o 3,4 %. Přesná analýza cen, dopad na řidiče a tipy, kde natankovat nejlevněji. Připravte se na budoucí změny v pohonných hmotách, včetně nového BMW M3 v elektrickém i benzinovém podání.",
+      "filename": "benzyn-v-cr-ceny-tankovani.html",
+      "published_at": "05. 05. 2026 09:16",
+      "created": "2026-05-05 07:18:51",
+      "score": 4.25,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/finexpert/bydleni/dalsi-dodavatel-zvysuje-ceny-energii-od-kvetna-zdrazuje-fixovane-ceniky-1432570",
       "title": "Benzín v ČR: Ceny roste, co to znamená pro řidiče",
@@ -480,7 +564,7 @@
       "created": "2026-04-29 15:03:12",
       "score": 4.15,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -506,7 +590,7 @@
       "created": "2026-04-29 07:26:55",
       "score": 4.15,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -534,7 +618,7 @@
       "created": "2026-04-29 07:25:17",
       "score": 4.25,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
