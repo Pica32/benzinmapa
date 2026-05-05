@@ -8,17 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/leaflet": "^1.9.21",
-    "@types/leaflet.markercluster": "^1.5.6",
-    "leaflet": "^1.9.4",
-    "leaflet.markercluster": "^1.5.3",
     "lucide-react": "^1.8.0",
+    "maplibre-gl": "^4.7.1",
     "next": "16.2.4",
     "next-auth": "^4.24.14",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hot-toast": "^2.6.0",
-    "react-leaflet": "^5.0.0",
     "recharts": "^3.8.1",
     "web-vitals": "^5.2.0"
   },

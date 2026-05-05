@@ -17,33 +17,43 @@ export default function StationMiniMap({ lat, lng, name }: Props) {
     let cancelled = false;
 
     (async () => {
-      const L = (await import('leaflet')).default;
-      await import('leaflet/dist/leaflet.css');
+      const maplibregl = (await import('maplibre-gl')).default;
+      await import('maplibre-gl/dist/maplibre-gl.css');
       if (cancelled || !ref.current) return;
 
-      const map = L.map(ref.current, {
-        center: [lat, lng],
+      const map = new maplibregl.Map({
+        container: ref.current,
+        style: {
+          version: 8,
+          sources: {
+            osm: {
+              type: 'raster',
+              tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+              tileSize: 256,
+              attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+              maxzoom: 19,
+            },
+          },
+          layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
+        },
+        center: [lng, lat],
         zoom: 15,
-        zoomControl: true,
-        scrollWheelZoom: false,
-        attributionControl: true,
+        scrollZoom: false,
+        attributionControl: false,
       });
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        maxZoom: 19,
-      }).addTo(map);
+      map.addControl(new maplibregl.AttributionControl({ compact: true }));
 
-      const icon = L.divIcon({
-        className: '',
-        html: `<div style="width:18px;height:18px;background:#16a34a;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>`,
-        iconAnchor: [9, 9],
+      map.on('load', () => {
+        const el = document.createElement('div');
+        el.style.cssText = 'width:18px;height:18px;background:#16a34a;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.4)';
+
+        new maplibregl.Marker({ element: el, anchor: 'center' })
+          .setLngLat([lng, lat])
+          .setPopup(new maplibregl.Popup().setHTML(`<b>${name}</b>`))
+          .addTo(map)
+          .togglePopup();
       });
-
-      L.marker([lat, lng], { icon })
-        .bindPopup(`<b>${name}</b>`)
-        .addTo(map)
-        .openPopup();
 
       mapRef.current = map;
     })();
