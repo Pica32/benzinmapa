@@ -53,7 +53,7 @@ export default function KalkulackaPage() {
         <div className="flex items-center gap-3 mb-2">
           <Calculator size={28} className="text-green-600 flex-shrink-0" />
           <h1 className="text-3xl font-black text-gray-900 dark:text-white">
-            Kalkulačka spotřeby paliva
+            Kalkulačka spotřeby paliva – náklady na km, měsíc a rok
           </h1>
         </div>
         <p className="text-gray-600 dark:text-gray-400 mb-8">

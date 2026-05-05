@@ -11,7 +11,7 @@ export const revalidate = 21600;
 
 export const metadata: Metadata = {
   title: 'Ceny benzínu a nafty dnes v ČR – mapa 2 400+ čerpacích stanic | BenzinMapa',
-  description: 'Aktuální ceny benzínu a nafty dnes na 2 400+ čerpacích stanicích v ČR. Kde natankovat nejlevněji? Natural 95, nafta, LPG autogas – interaktivní mapa, tabulky, srovnání značek. Aktualizováno 3× denně.',
+  description: 'Aktuální ceny benzínu a nafty v ČR dnes. Kde natankovat nejlevněji? Natural 95, nafta, LPG – mapa 2 400+ čerpacích stanic. Aktualizováno 3× denně.',
   alternates: {
     canonical: 'https://benzinmapa.cz/',
     languages: { 'x-default': 'https://benzinmapa.cz/' },
@@ -47,11 +47,11 @@ export default async function HomePage() {
       <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 px-4 py-3">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-sm font-semibold text-gray-600 dark:text-gray-400">
-            Nejlevnější benzín a nafta v ČR –{' '}
+            Ceny benzínu a nafty dnes v ČR –{' '}
             <span className="text-green-700 dark:text-green-400">
               {stats.total_stations.toLocaleString('cs')} čerpacích stanic
             </span>
-            {' '}na mapě dnes
+            {' '}na mapě, Natural 95 nejlevněji
           </h1>
         </div>
       </div>

@@ -1,5 +1,6 @@
-import { getStationById, getStationsWithPrices, formatPrice } from '@/lib/data';
-import { GasStationJsonLd } from '@/components/JsonLd';
+import { getStationById, getStationsWithPrices, formatPrice, slugify } from '@/lib/data';
+import { CITIES } from '@/types';
+import { GasStationJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -34,12 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `Natural 95 ${formatPrice(p95)}${pNafta ? `, nafta ${formatPrice(pNafta)}` : ''}`
     : pNafta ? `Nafta ${formatPrice(pNafta)}` : '';
 
-  // Description max ~155 znaků aby nepřekročila 1000px
-  const desc = `Ceny paliv ${station.name} v ${station.city} dnes (${today}). ${priceStr ? priceStr + '. ' : ''}Mapa, navigace, GPS souřadnice a otevírací doba.`;
+  const desc = priceStr
+    ? `Aktuální ceny paliv ${station.name} ${station.city} – ${priceStr}. Mapa, navigace a otevírací doba. ${station.brand} čerpací stanice.`
+    : `Čerpací stanice ${station.name} v ${station.city} – ceny benzínu a nafty dnes, mapa, GPS souřadnice, otevírací doba. ${station.brand}.`;
 
   return {
-    title: `${station.name} ${station.city} – ceny paliv dnes | BenzinMapa`,
-    description: desc.slice(0, 155),
+    title: `${station.name} ${station.city} – ceny benzínu a nafty dnes | BenzinMapa`,
+    description: desc.slice(0, 158),
     alternates: { canonical: `https://benzinmapa.cz/stanice/${id}/` },
     openGraph: {
       title: `${station.name} ${station.city} – ceny paliv`,
@@ -72,6 +74,8 @@ export default async function StationPage({ params }: Props) {
 
   const lat = station.lat.toFixed(6);
   const lng = station.lng.toFixed(6);
+  const citySlug = slugify(station.city);
+  const cityExists = CITIES.some(c => c.slug === citySlug);
 
   const googleMapsUrl  = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   const wazeUrl        = `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
@@ -81,6 +85,11 @@ export default async function StationPage({ params }: Props) {
   return (
     <>
       <GasStationJsonLd station={station} />
+      <BreadcrumbJsonLd items={[
+        { name: 'BenzinMapa.cz', item: 'https://benzinmapa.cz/' },
+        ...(cityExists ? [{ name: station.city, item: `https://benzinmapa.cz/mesto/${citySlug}/` }] : [{ name: station.city }]),
+        { name: `${station.name} – ceny paliv` },
+      ]} />
 
       <div className="max-w-3xl mx-auto px-4 py-6">
 
@@ -88,8 +97,10 @@ export default async function StationPage({ params }: Props) {
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-5">
           <Link href="/" className="hover:text-green-600">Mapa</Link>
           <span>›</span>
-          <Link href={`/mesto/${station.city.toLowerCase().normalize('NFD').replace(/[̀-͟]/g,'').replace(/\s+/g,'-')}/`}
-                className="hover:text-green-600">{station.city}</Link>
+          {cityExists
+            ? <Link href={`/mesto/${citySlug}/`} className="hover:text-green-600">{station.city}</Link>
+            : <span>{station.city}</span>
+          }
           <span>›</span>
           <span className="text-gray-900 dark:text-white truncate max-w-[200px]">{station.name}</span>
         </nav>
@@ -101,7 +112,9 @@ export default async function StationPage({ params }: Props) {
               <span className="inline-block text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2.5 py-0.5 rounded-full uppercase tracking-wide mb-2">
                 {station.brand}
               </span>
-              <h1 className="text-2xl font-black text-gray-900 dark:text-white leading-tight">{station.name}</h1>
+              <h1 className="text-2xl font-black text-gray-900 dark:text-white leading-tight">
+                {station.name} – ceny benzínu a nafty {station.city}
+              </h1>
               <p className="text-gray-500 text-sm mt-1 flex items-center gap-1">
                 <MapPin size={13} /> {station.address}
               </p>
