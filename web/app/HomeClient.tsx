@@ -15,6 +15,7 @@ interface HomeClientProps {
 export default function HomeClient({ stats }: HomeClientProps) {
   const [stations, setStations] = useState<StationWithPrice[]>([]);
   const [loading, setLoading] = useState(true);
+  const [mapActivated, setMapActivated] = useState(false);
   const [, startTransition] = useTransition();
 
   const [fuelType, setFuelType] = useState<FuelType>('natural_95');
@@ -159,35 +160,71 @@ export default function HomeClient({ stats }: HomeClientProps) {
       )}
 
       <div style={{ height: '65vh', minHeight: '420px', maxHeight: '720px' }} className="relative w-full">
-        <Suspense fallback={
-          <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-            <div className="text-center space-y-3">
-              <div className="w-12 h-12 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto" />
-              <p className="text-gray-500 text-sm">
-                {loading ? `Načítám ${stats.total_stations.toLocaleString('cs')} čerpacích stanic...` : 'Načítám mapu...'}
-              </p>
+        {!mapActivated ? (
+          /* Placeholder s náhledem mapy – maplibre-gl se nenačte dokud uživatel neinteraguje */
+          <button
+            onClick={() => setMapActivated(true)}
+            onMouseEnter={() => setMapActivated(true)}
+            aria-label="Kliknutím nebo přejetím načíst interaktivní mapu čerpacích stanic"
+            className="w-full h-full relative overflow-hidden cursor-pointer border-0 group"
+          >
+            {/* Náhled mapy jako pozadí */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/map-preview.png"
+              alt="Náhled mapy čerpacích stanic v ČR"
+              className="w-full h-full object-cover object-center scale-105 group-hover:scale-100 transition-transform duration-500"
+            />
+
+            {/* Překrytí */}
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
+
+            {/* Obsah uprostřed */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+              {loading ? (
+                <>
+                  <div className="w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin" />
+                  <p className="text-white text-sm font-medium drop-shadow">
+                    Načítám {stats.total_stations.toLocaleString('cs')} stanic…
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="bg-green-600 group-hover:bg-green-500 text-white font-bold px-6 py-3 rounded-xl shadow-xl transition-colors flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                    </svg>
+                    Zobrazit interaktivní mapu
+                  </div>
+                  <p className="text-white/80 text-xs drop-shadow">
+                    {stats.total_stations.toLocaleString('cs')} čerpacích stanic · kliknutím nebo přejetím myší
+                  </p>
+                </>
+              )}
             </div>
-          </div>
-        }>
-          {!loading && (
-            <MapView stations={filtered} fuelType={fuelType} userLat={userLat} userLng={userLng} />
-          )}
-          {loading && (
+          </button>
+        ) : (
+          /* Mapa se načte až po kliknutí — maplibre-gl se vyhodnotí teprve teď */
+          <Suspense fallback={
             <div className="w-full h-full flex items-center justify-center bg-gray-100 dark:bg-gray-800">
               <div className="text-center space-y-3">
                 <div className="w-12 h-12 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto" />
-                <p className="text-gray-500 text-sm">Načítám {stats.total_stations.toLocaleString('cs')} čerpacích stanic...</p>
+                <p className="text-gray-500 text-sm">Načítám mapu…</p>
               </div>
             </div>
-          )}
-        </Suspense>
+          }>
+            <MapView stations={filtered} fuelType={fuelType} userLat={userLat} userLng={userLng} />
+          </Suspense>
+        )}
 
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none">
-          <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-1.5 text-xs text-gray-500 shadow-lg border border-gray-200 dark:border-gray-700 flex items-center gap-1.5">
-            <span>↓</span>
-            <span>Přejeďte dolů pro seznam nejlevnějších stanic</span>
+        {mapActivated && (
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full px-4 py-1.5 text-xs text-gray-500 shadow-lg border border-gray-200 dark:border-gray-700 flex items-center gap-1.5">
+              <span>↓</span>
+              <span>Přejeďte dolů pro seznam nejlevnějších stanic</span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );
