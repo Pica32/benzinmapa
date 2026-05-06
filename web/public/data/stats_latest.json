@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-06T10:17:10Z",
+  "last_updated": "2026-05-06T15:36:26Z",
   "averages": {
     "natural_95": 41.5,
     "natural_98": 44.8,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.5,
-      "station_id": "mb-hunsgas-nove-mesto-na-morave",
-      "city": "Nové Město na Moravě"
+      "price": 36.3,
+      "station_id": "osm_4960532910",
+      "city": "Jihomoravský kraj"
     },
     "nafta": {
       "price": 35.9,
@@ -30,6 +30,6 @@
   },
   "total_stations": 2547,
   "stations_updated_today": 2547,
-  "real_prices_count": 952,
-  "estimated_prices_count": 1595
+  "real_prices_count": 955,
+  "estimated_prices_count": 1592
 }
