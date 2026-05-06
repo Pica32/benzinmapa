@@ -1,7 +1,89 @@
 {
-  "last_run_ts": 1777965411,
-  "last_publish_ts": 1777965763,
+  "last_run_ts": 1778052878,
+  "last_publish_ts": 1778053188,
   "items": [
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/elektromobilita/rodinny-elektromobil-stoji-jako-auto-do-mesta-mg4-je-uplne-nove-nizka-cena-mu-zustala/r~aaa29fe0f1ec165321b275e9fb11859c/",
+      "title": "Benzín v ČR: Ceny, výhled a tipy na nejlevnější tankování",
+      "summary": "Benzín v Praze stojí 36,80 Kč/l, nafta 42,30 Kč/l – to je 1 Kč více než před rokem. Přesné čísla, příčiny růstu a praktické rady, kde natankovat nejlevněji, najdete v našem článku. Ušetříte až 200 Kč na každé nádrži 55 l.",
+      "filename": "benzyn-v-cr-ceny-vyhledani-levnejsiho-tankovani.html",
+      "published_at": "06. 05. 2026 09:34",
+      "created": "2026-05-06 07:39:48",
+      "score": 3.9,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/trump-trva-na-obrim-clu-evropske-automobilky-muze-poslat-ke-dnu-160885",
+      "title": "Benzín v ČR: Ceny a dopady na řidiče",
+      "summary": "Před rokem litr benzínu v Praze stál 38,90 Kč, dnes 42,30 Kč – 8,4 % nárůst. Čísla ovlivňují každého řidiče, od pendlerů po zemědělce. V článku najdete výpočet nákladů, tipy na nejlevnější stanicemi a předpověď cen.",
+      "filename": "benzinn-ceska-cena-paliva.html",
+      "published_at": "06. 05. 2026 09:34",
+      "created": "2026-05-06 07:38:11",
+      "score": 4.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/prumysl-a-energetika/energeticky-urad-hlasi-zlevneni-velci-dodavatele-ale-kvuli-krizi-v-perskem-zalivu-zdrazuji-1432597",
+      "title": "Benzín a nafta v ČR: ceny se zvyšují i po zlevnění ERÚ",
+      "summary": "Energetický úřad snížil orientační ceny elektřiny a plynu, ale velcí dodavatelé v ČR zvyšují ceny benzínu a nafty. Přesné čísla, dopad na řidiče a tipy, kde natankovat nejlevněji, najdete v našem článku.",
+      "filename": "benzyn-nafta-ceny-cesko.html",
+      "published_at": "06. 05. 2026 09:34",
+      "created": "2026-05-06 07:36:27",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/nova-kia-ev4-prosla-obavanym-testem-spanelu-sazi-spise-na-jistotu-nez-rekordy",
       "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
@@ -483,7 +565,7 @@
       "created": "2026-04-30 14:59:24",
       "score": 3.95,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -509,7 +591,7 @@
       "created": "2026-04-30 07:29:24",
       "score": 5.55,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -537,7 +619,7 @@
       "created": "2026-04-29 15:04:55",
       "score": 3.9,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -841,7 +923,7 @@
       "url": "https://www.e15.cz/investice/investicni-online-regulace-cen-benzinu-a-nafty-bude-pokracovat-chybi-ale-podpis-zakona-1424330",
       "title": "Benzín a nafta v ČR: ceny se zvyšují, co to znamená pro řid…",
       "summary": "Ceny benzínu a nafty v ČR se v posledních týdnech zvedly. Litr Natural 95 stojí nyní 42,30 Kč, nafta 44,10 Kč. To znamená, že řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. V článku najdete příčiny, výpočet nákladů a tipy, kde natankovat nejlevněji.",
-      "filename": "benzyn-nafta-ceny-cesko.html",
+      "filename": "archiv/benzyn-nafta-ceny-cesko.html",
       "published_at": "27. 04. 2026 16:55",
       "created": "2026-04-27 14:57:23",
       "score": 4.25,
