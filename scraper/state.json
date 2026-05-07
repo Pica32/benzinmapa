@@ -1,7 +1,95 @@
 {
-  "last_run_ts": 1778080799,
-  "last_publish_ts": 1778081171,
+  "last_run_ts": 1778139721,
+  "last_publish_ts": 1778140044,
   "items": [
+    {
+      "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-recenze-urgent-si-vystavuje-vlastni-diagnozu-chaos-roztaci-kolem-dusevniho-zdravi-lekaru-40576485",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "V ČR se cena benzínu a nafty zvedla na 42,30 Kč/l. Přes 600 slov vysvětlíme, co k tomu vedlo, kolik zaplatíte a kde najdete nejlevnější čerpací stanicu. Připravte se na tankování s rozumem.",
+      "filename": "benzinn-cti-cena-42-30-kc-l.html",
+      "published_at": "07. 05. 2026 09:42",
+      "created": "2026-05-07 07:47:24",
+      "score": 3.35,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/na-svet-se-dere-novy-velmi-usporny-hybridni-pohon-a-nestoji-za-nim-zadna-automobilka-160889",
+      "title": "Benzín v ČR: Co znamená nový hybridní pohon pro ceny paliv",
+      "summary": "Nový hybridní pohon od Aramco přináší otázky, zda se ceny benzínu a nafty v ČR zvýší. Přesné čísla, dopad na řidiče a tipy, kde natankovat nejlevněji, najdete v našem článku.",
+      "filename": "benzyn-v-cr-co-znameni-novy-hybridni-pohon-pro-ceny-paliv.html",
+      "published_at": "07. 05. 2026 09:42",
+      "created": "2026-05-07 07:45:41",
+      "score": 4.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/doprava-a-logistika/bmw-doplaci-na-cla-i-slabsi-cinu-zisk-luxusni-automobilky-klesl-o-23-procent-1432616",
+      "title": "Benzín v ČR: Ceny, tankování a co přináší BMW",
+      "summary": "Benzín v Praze stojí 42,30 Kč/l, nafta 41,10 Kč/l. Vliv globální politiky, čínského trhu a BMW na české řidiče je jasný. Zjistěte, kolik zaplatíte a kde najdete nejlevnější čerpací stanice.",
+      "filename": "benzyn-ceny-cesko-2026.html",
+      "published_at": "07. 05. 2026 09:42",
+      "created": "2026-05-07 07:44:02",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://ct24.ceskatelevize.cz/clanek/ekonomika/mezirocni-inflace-vzrostla-na-25-procenta-podle-analytiku-bude-zrychlovat-373160",
       "title": "Benzín a nafta v ČR: ceny rostou, inflace zrychluje",
@@ -482,7 +570,7 @@
       "created": "2026-05-02 14:07:08",
       "score": 4.1,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -508,7 +596,7 @@
       "created": "2026-05-02 14:05:35",
       "score": 6.3,
       "source": "ČT24 Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -536,7 +624,7 @@
       "created": "2026-05-02 07:06:43",
       "score": 4.05,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
