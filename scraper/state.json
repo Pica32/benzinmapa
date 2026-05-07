@@ -1,7 +1,65 @@
 {
-  "last_run_ts": 1778139721,
-  "last_publish_ts": 1778140044,
+  "last_run_ts": 1778167465,
+  "last_publish_ts": 1778167705,
   "items": [
+    {
+      "url": "https://www.e15.cz/zahranicni/geopolitika/trump-nasel-slabe-misto-k-propasovani-americkeho-lng-do-evropy-potichu-odtud-posiluje-vliv-nad-kontinentem-1432635",
+      "title": "Benzín v ČR: cena, tankování a vliv LNG na ceny paliv",
+      "summary": "Ceny benzínu a nafty se v ČR znovu zvedají. Přesné údaje o cenách, dopad LNG z Ameriky na evropské trhy a tipy, kde ušetřit při tankování, vám přináší BenzinMapa.cz.",
+      "filename": "benzinnova-cena-nafta-lpg-2026.html",
+      "published_at": "07. 05. 2026 17:24",
+      "created": "2026-05-07 15:28:25",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.novinky.cz/clanek/ekonomika-vyvoz-benzinu-a-nafty-z-usa-je-na-rekordu-40577172",
+      "title": "Benzín a nafta v ČR: co znamená rekordní export z USA",
+      "summary": "Rekordní export z USA ovlivňuje ceny benzínu a nafty v ČR. Přes 8,2 mil. barelů denně, meziroční nárůst 5 %. Co to znamená pro řidiče v Praze, Brně a Ostravě? Přesná čísla, příběhy řidičů a tipy na nejlevnější čerpací stanice.",
+      "filename": "benzyn-nafta-ceny-cesko.html",
+      "published_at": "07. 05. 2026 17:24",
+      "created": "2026-05-07 15:26:31",
+      "score": 6.65,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.novinky.cz/clanek/kultura-filmy-serialy-recenze-urgent-si-vystavuje-vlastni-diagnozu-chaos-roztaci-kolem-dusevniho-zdravi-lekaru-40576485",
       "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
@@ -515,7 +573,7 @@
       "created": "2026-05-03 07:21:27",
       "score": 3.25,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -543,7 +601,7 @@
       "created": "2026-05-03 07:19:52",
       "score": 3.75,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
