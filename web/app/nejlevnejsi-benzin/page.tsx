@@ -1,4 +1,4 @@
-import { getCheapestStations, getStats, getStationsWithPrices, formatPrice } from '@/lib/data';
+import { getCheapestStations, getStats, getStationsWithPrices, formatPrice, getBrandStats } from '@/lib/data';
 import { FaqJsonLd } from '@/components/JsonLd';
 import type { Metadata } from 'next';
 import CheapestTable from '@/components/CheapestTable';
@@ -48,20 +48,18 @@ const FAQS = [
   { q: 'Kdy bývá benzín nejlevnější?', a: 'Historicky bývají nejnižší ceny na přelomu října a listopadu (nízká sezónní poptávka). Během letní turistické sezóny (červenec–srpen) ceny mírně rostou. Denně bývá palivo mírně levnější ráno a večer díky nižší teplotě – hustší palivo = více energie za stejnou cenu.' },
 ];
 
-// Brand průměry – fixní data (orientační)
-const BRAND_PRICES = [
-  { brand: 'Eurobit / Robin Oil', diff: '−2,0 Kč', color: 'text-green-700 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/20' },
-  { brand: 'Kaufland / Lidl', diff: '−1,5 Kč', color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/20' },
-  { brand: 'EuroOil / Tank-ONO', diff: '−1,0 Kč', color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/20' },
-  { brand: 'MOL', diff: '±0 Kč', color: 'text-gray-600 dark:text-gray-400', bg: 'bg-gray-50 dark:bg-gray-800' },
-  { brand: 'Benzina ORLEN', diff: '+0,5 Kč', color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/20' },
-  { brand: 'OMV', diff: '+1,5 Kč', color: 'text-red-600 dark:text-red-400', bg: 'bg-red-50 dark:bg-red-900/20' },
-  { brand: 'Shell', diff: '+2,0 Kč', color: 'text-red-700 dark:text-red-400', bg: 'bg-red-50 dark:bg-red-900/20' },
-];
+function brandStyle(diff: number) {
+  if (diff <= -1) return { color: 'text-green-700 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/20' };
+  if (diff < 0)   return { color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/20' };
+  if (diff === 0) return { color: 'text-gray-600 dark:text-gray-400',   bg: 'bg-gray-50 dark:bg-gray-800' };
+  if (diff < 1)   return { color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/20' };
+  return            { color: 'text-red-700 dark:text-red-400',          bg: 'bg-red-50 dark:bg-red-900/20' };
+}
 
 export default function NejlevnejsiBenzinPage() {
   const stations = getCheapestStations('natural_95', 25);
   const stats = getStats();
+  const brandStats = getBrandStats('natural_95');
   const date = new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' });
   const avg = stats?.averages.natural_95;
 
@@ -175,23 +173,29 @@ export default function NejlevnejsiBenzinPage() {
           </p>
         </section>
 
-        {/* Srovnání značek */}
-        <section className="mb-10">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
-            Srovnání cen benzínu podle značky čerpačky
-          </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Průměrné odchylky od národního průměru Natural 95 v ČR podle dat BenzinMapa.cz:
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {BRAND_PRICES.map(({ brand, diff, color, bg }) => (
-              <div key={brand} className={`${bg} rounded-xl border border-gray-200 dark:border-gray-700 p-3 text-center`}>
-                <div className={`text-lg font-black ${color}`}>{diff}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">{brand}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Srovnání značek – počítáno z reálných dat mbenzin.cz */}
+        {brandStats.length > 0 && (
+          <section className="mb-10">
+            <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-3">
+              Srovnání cen benzínu podle značky čerpačky
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              Průměrná odchylka ceny Natural 95 dané sítě od národního průměru — spočítáno z aktuálních cen.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {brandStats.map(({ label, diff, diffLabel, count }) => {
+                const { color, bg } = brandStyle(diff);
+                return (
+                  <div key={label} className={`${bg} rounded-xl border border-gray-200 dark:border-gray-700 p-3 text-center`}>
+                    <div className={`text-lg font-black ${color}`}>{diffLabel}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">{label}</div>
+                    <div className="text-[10px] text-gray-400 mt-0.5">{count} stanic</div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Města */}
         <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">

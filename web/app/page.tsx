@@ -1,4 +1,4 @@
-import { getStats, getCheapestStations } from '@/lib/data';
+import { getStats, getCheapestStations, getBrandStats } from '@/lib/data';
 import HomeClient from './HomeClient';
 import CheapestTable from '@/components/CheapestTable';
 import Top4Cheapest from '@/components/Top4Cheapest';
@@ -38,6 +38,7 @@ export default async function HomePage() {
   // Předáme jen top 10 pro SSR tabulky – mapa se načte client-side
   const cheapestNafta  = getCheapestStations('nafta', 10);
   const cheapestBenzin = getCheapestStations('natural_95', 10);
+  const brandStats     = getBrandStats('natural_95');
 
   return (
     <>
@@ -167,28 +168,35 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Srovnání značek */}
-        <section>
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Srovnání značek čerpacích stanic</h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
-            Průměrné odchylky od národního průměru ceny Natural 95 v ČR podle dat BenzinMapa.cz:
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {[
-              { brand: 'Eurobit / Robin Oil', diff: '−2 Kč', color: 'text-green-700 dark:text-green-400' },
-              { brand: 'Kaufland / Lidl', diff: '−1,5 Kč', color: 'text-green-600 dark:text-green-400' },
-              { brand: 'MOL', diff: '±0 Kč', color: 'text-gray-600 dark:text-gray-300' },
-              { brand: 'Benzina ORLEN', diff: '+0,5 Kč', color: 'text-gray-600 dark:text-gray-300' },
-              { brand: 'OMV', diff: '+2 Kč', color: 'text-red-600 dark:text-red-400' },
-              { brand: 'Shell', diff: '+2,5 Kč', color: 'text-red-600 dark:text-red-400' },
-            ].map(({ brand, diff, color }) => (
-              <div key={brand} className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
-                <div className={`text-lg font-black ${color}`}>{diff}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">{brand}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Srovnání značek – počítáno z reálných dat mbenzin.cz */}
+        {brandStats.length > 0 && (
+          <section>
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Srovnání značek čerpacích stanic</h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-5">
+              Průměrná odchylka ceny Natural 95 dané sítě od národního průměru — spočítáno z aktuálních cen na BenzinMapa.cz.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {brandStats.map(({ label, diff, diffLabel, count }) => {
+                const color = diff <= -0.5
+                  ? 'text-green-700 dark:text-green-400'
+                  : diff < 0
+                  ? 'text-green-600 dark:text-green-400'
+                  : diff === 0
+                  ? 'text-gray-600 dark:text-gray-300'
+                  : diff < 1
+                  ? 'text-orange-600 dark:text-orange-400'
+                  : 'text-red-600 dark:text-red-400';
+                return (
+                  <div key={label} className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 text-center">
+                    <div className={`text-lg font-black ${color}`}>{diffLabel}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-1 leading-tight">{label}</div>
+                    <div className="text-[10px] text-gray-400 mt-0.5">{count} stanic</div>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* O nás */}
         <section className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 rounded-2xl p-8 border border-green-100 dark:border-gray-700">

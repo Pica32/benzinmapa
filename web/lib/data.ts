@@ -130,6 +130,62 @@ export function formatPrice(price: number | null): string {
   return price.toFixed(2).replace('.', ',') + ' Kč';
 }
 
+// Skupiny značek pro srovnávací tabulku — počítáno z reálných dat mbenzin.cz
+const BRAND_GROUPS: { label: string; keys: string[] }[] = [
+  { label: 'Eurobit / Robin Oil', keys: ['eurobit', 'robin'] },
+  { label: 'Kaufland / Lidl',     keys: ['kaufland', 'lidl'] },
+  { label: 'EuroOil',              keys: ['eurooil', 'euroil'] },
+  { label: 'MOL',                  keys: ['mol'] },
+  { label: 'Benzina ORLEN',        keys: ['benzina', 'orlen'] },
+  { label: 'OMV',                  keys: ['omv'] },
+  { label: 'Shell',                keys: ['shell'] },
+];
+
+export interface BrandStat {
+  label: string;
+  diff: number;        // odchylka v Kč od národního průměru (záporné = levnější)
+  diffLabel: string;   // formátované např. "−1,2 Kč" / "+0,8 Kč" / "±0 Kč"
+  avg: number;         // průměrná cena dané skupiny
+  count: number;       // počet stanic s cenou v dané skupině
+}
+
+/**
+ * Spočítá průměrnou odchylku ceny daného paliva pro každou skupinu značek
+ * vůči národnímu průměru. Pouze z čerstvých dat mbenzin.cz.
+ */
+export function getBrandStats(fuelType: FuelType): BrandStat[] {
+  const cutoff = Date.now() - TWO_DAYS_MS;
+  const fresh = getStationsWithPrices().filter(s =>
+    s.price?.[fuelType] != null &&
+    s.price?.source === 'mbenzin.cz' &&
+    new Date(s.price.reported_at).getTime() > cutoff
+  );
+
+  const allPrices = fresh.map(s => s.price![fuelType] as number);
+  if (allPrices.length === 0) return [];
+  const min = adaptiveMin(allPrices, PRICE_MIN[fuelType]);
+  const valid = fresh.filter(s => (s.price![fuelType] as number) >= min);
+  const validPrices = valid.map(s => s.price![fuelType] as number);
+  const nationalAvg = validPrices.reduce((a, b) => a + b, 0) / validPrices.length;
+
+  const results: BrandStat[] = [];
+  for (const group of BRAND_GROUPS) {
+    const matching = valid.filter(s => {
+      const b = s.brand.toLowerCase();
+      return group.keys.some(k => b.includes(k));
+    });
+    if (matching.length < 3) continue; // skupiny pod 3 stanice neukazujem (statisticky nedůvěryhodné)
+    const avg = matching.reduce((a, s) => a + (s.price![fuelType] as number), 0) / matching.length;
+    const diff = avg - nationalAvg;
+    const rounded = Math.round(diff * 10) / 10; // zaokrouhlení na desetinky
+    let diffLabel: string;
+    if (Math.abs(rounded) < 0.05) diffLabel = '±0 Kč';
+    else diffLabel = `${rounded > 0 ? '+' : '−'}${Math.abs(rounded).toFixed(1).replace('.', ',')} Kč`;
+    results.push({ label: group.label, diff: rounded, diffLabel, avg, count: matching.length });
+  }
+  return results.sort((a, b) => a.diff - b.diff);
+}
+
 export function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);

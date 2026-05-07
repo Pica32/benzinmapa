@@ -5,6 +5,23 @@ import Header from '@/components/Header';
 import PartnersFooter from '@/components/PartnersFooter';
 import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
 import WebVitals from '@/components/WebVitals';
+import CookieConsent from '@/components/CookieConsent';
+
+const GA_ID = 'G-NE6QMNHHJ9';
+
+const consentDefaults = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});
+gtag('js', new Date());
+gtag('config', '${GA_ID}', { anonymize_ip: true });
+`;
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], display: 'swap', preload: true });
 
@@ -66,6 +83,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="cs">
       <head>
+        {/* Google tag (gtag.js) — Consent Mode v2 default 'denied'; aktivuje CookieConsent */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        />
+        <script dangerouslySetInnerHTML={{ __html: consentDefaults }} />
         <WebsiteJsonLd />
         <OrganizationJsonLd />
         {/* Apple touch icon – vyžadováno iOS a SEO auditory */}
@@ -91,6 +114,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-4">
             <span>© {new Date().getFullYear()} BenzinMapa.cz</span>
             <span>Ceny jsou orientační a aktualizovány každých 6 hodin.</span>
+            <a href="/zasady-cookies" className="hover:text-blue-400 transition-colors">
+              Zásady cookies
+            </a>
             <a
               href="https://www.facebook.com/profile.php?id=61589320316796"
               target="_blank"
@@ -102,6 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
           </div>
         </footer>
+        <CookieConsent />
       </body>
     </html>
   );
