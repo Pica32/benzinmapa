@@ -1,4 +1,4 @@
-import { getStationsByBrand, getStats, formatPrice, getCheapestStations } from '@/lib/data';
+import { getStationsByBrand, getStats, formatPrice, getBrandStatsByKeys } from '@/lib/data';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
@@ -56,6 +56,8 @@ export default async function BrandPage({ params }: Props) {
 
   const stations = getStationsByBrand(brand);
   const stats = getStats();
+  const brandStats = getBrandStatsByKeys('natural_95', BRAND_PAGES);
+  const myStat = brandStats.get(brand.slug);
   const today = new Date().toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' });
 
   const withPrice95 = stations.filter(s => s.price?.natural_95 && s.price.source === 'mbenzin.cz');
@@ -88,7 +90,9 @@ export default async function BrandPage({ params }: Props) {
     { q: `Kolik stojí nafta na ${brand.fullName} dnes?`, a: avgNafta ? `Průměrná cena nafty na stanicích ${brand.fullName} je dnes ${formatPrice(avgNafta)}/l. ${nationalNafta && avgNafta ? `Oproti národnímu průměru (${formatPrice(nationalNafta)}/l) je to o ${Math.abs(avgNafta - nationalNafta).toFixed(2).replace('.', ',')} Kč ${avgNafta < nationalNafta ? 'levněji' : 'dráže'}.` : ''}` : `Aktuální ceny nafty na stanicích ${brand.fullName} najdete v tabulce výše.` },
     { q: `Kde jsou nejlevnější stanice ${brand.fullName}?`, a: `Nejlevnější stanice ${brand.fullName} najdete seřazené v tabulkách výše. Ceny se liší podle regionu – obvykle jsou levnější stanice mimo dálnice a velká města.` },
     { q: `Kolik má ${brand.fullName} čerpacích stanic v ČR?`, a: `${brand.fullName} provozuje v ČR přibližně ${stations.length} čerpacích stanic, z nichž ${withPrice95.length} má aktuálně nahlášenou cenu benzínu.` },
-    { q: `Je ${brand.fullName} levnější nebo dražší než průměr?`, a: `${brand.fullName} se pohybuje průměrně ${brand.priceOffset} od národního průměru ceny Natural 95. ${brand.priceOffsetNum > 0 ? 'Jde o prémiovou síť s vyššími cenami.' : brand.priceOffsetNum < 0 ? 'Patří mezi levnější sítě v ČR.' : 'Ceny jsou přibližně na úrovni národního průměru.'}` },
+    { q: `Je ${brand.fullName} levnější nebo dražší než průměr?`, a: myStat
+        ? `${brand.fullName} se pohybuje průměrně ${myStat.diffLabel} od národního průměru ceny Natural 95 (vypočítáno z ${myStat.count} stanic s aktuální cenou). ${myStat.diff > 0.05 ? 'Jde o dražší síť než průměr.' : myStat.diff < -0.05 ? 'Patří mezi levnější sítě v ČR.' : 'Ceny jsou přibližně na úrovni národního průměru.'}`
+        : `Pro ${brand.fullName} aktuálně nemáme dost dat na výpočet průměrné odchylky. Konkrétní ceny stanic najdete v tabulkách výše.` },
   ];
 
   return (
@@ -187,21 +191,32 @@ export default async function BrandPage({ params }: Props) {
           </section>
         )}
 
-        {/* Srovnání s ostatními značkami */}
+        {/* Srovnání s ostatními značkami – počítáno z reálných dat */}
         <section className="mb-8 bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
           <h2 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Srovnání všech značek</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {BRAND_PAGES.map(b => (
-              <Link key={b.slug} href={`/znacka/${b.slug}/`}
-                className={`rounded-xl border p-3 text-center transition-all ${b.slug === slug ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-700 hover:border-green-400'}`}>
-                <div className={`text-base font-black ${b.priceOffsetNum < 0 ? 'text-green-700 dark:text-green-400' : b.priceOffsetNum > 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-300'}`}>
-                  {b.priceOffset}
-                </div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-tight">{b.name}</div>
-              </Link>
-            ))}
+            {BRAND_PAGES.map(b => {
+              const stat = brandStats.get(b.slug);
+              const diff = stat?.diff;
+              const diffLabel = stat?.diffLabel ?? '—';
+              const colorCls = diff == null
+                ? 'text-gray-400'
+                : diff < 0
+                ? 'text-green-700 dark:text-green-400'
+                : diff > 0
+                ? 'text-red-600 dark:text-red-400'
+                : 'text-gray-600 dark:text-gray-300';
+              return (
+                <Link key={b.slug} href={`/znacka/${b.slug}/`}
+                  className={`rounded-xl border p-3 text-center transition-all ${b.slug === slug ? 'border-green-500 bg-green-50 dark:bg-green-900/20' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-700 hover:border-green-400'}`}>
+                  <div className={`text-base font-black ${colorCls}`}>{diffLabel}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-tight">{b.name}</div>
+                  {stat && <div className="text-[10px] text-gray-400 mt-0.5">{stat.count} stanic</div>}
+                </Link>
+              );
+            })}
           </div>
-          <p className="text-xs text-gray-400 mt-3">Průměrné odchylky od národního průměru Natural 95 v ČR.</p>
+          <p className="text-xs text-gray-400 mt-3">Průměrné odchylky od národního průměru Natural 95 v ČR — vypočítáno v reálném čase z aktuálních cen.</p>
         </section>
 
         {/* FAQ */}

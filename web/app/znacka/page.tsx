@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { BRAND_PAGES } from '@/types';
 import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { getBrandStatsByKeys } from '@/lib/data';
 import Link from 'next/link';
+
+export const revalidate = 21600;
 
 export const metadata: Metadata = {
   title: 'Ceny benzínu podle značky – Shell, MOL, OMV, Orlen | BenzinMapa',
@@ -11,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function ZnackaIndexPage() {
+  const stats = getBrandStatsByKeys('natural_95', BRAND_PAGES);
   return (
     <>
       <BreadcrumbJsonLd items={[
@@ -33,27 +37,39 @@ export default function ZnackaIndexPage() {
         </p>
 
         <div className="grid sm:grid-cols-2 gap-4">
-          {BRAND_PAGES.map(brand => (
-            <Link key={brand.slug} href={`/znacka/${brand.slug}/`}
-              className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-700 transition-all group">
-              <div className="flex items-center gap-3 mb-3">
-                <div className={`w-10 h-10 ${brand.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                  <span className="text-white font-black">{brand.name[0]}</span>
+          {BRAND_PAGES.map(brand => {
+            const stat = stats.get(brand.slug);
+            const diff = stat?.diff;
+            const diffLabel = stat?.diffLabel ?? '—';
+            const colorCls = diff == null
+              ? 'text-gray-400'
+              : diff < 0
+              ? 'text-green-700 dark:text-green-400'
+              : diff > 0
+              ? 'text-red-600 dark:text-red-400'
+              : 'text-gray-600 dark:text-gray-300';
+            return (
+              <Link key={brand.slug} href={`/znacka/${brand.slug}/`}
+                className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-green-500 hover:bg-green-50 dark:hover:bg-gray-700 transition-all group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`w-10 h-10 ${brand.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                    <span className="text-white font-black">{brand.name[0]}</span>
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400">{brand.fullName}</div>
+                    <div className="text-xs text-gray-500">~{brand.stationsCount} stanic v ČR{stat ? ` · ${stat.count} s cenou` : ''}</div>
+                  </div>
+                  <div className={`ml-auto text-lg font-black ${colorCls}`} title={stat ? `Průměr ${stat.avg.toFixed(2).replace('.', ',')} Kč` : 'Nedostatek dat'}>
+                    {diffLabel}
+                  </div>
                 </div>
-                <div>
-                  <div className="font-bold text-gray-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400">{brand.fullName}</div>
-                  <div className="text-xs text-gray-500">~{brand.stationsCount} stanic v ČR</div>
-                </div>
-                <div className={`ml-auto text-lg font-black ${brand.priceOffsetNum < 0 ? 'text-green-700 dark:text-green-400' : brand.priceOffsetNum > 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-300'}`}>
-                  {brand.priceOffset}
-                </div>
-              </div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{brand.description}</p>
-            </Link>
-          ))}
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{brand.description}</p>
+              </Link>
+            );
+          })}
         </div>
 
-        <p className="text-xs text-gray-400 mt-6">Cenové odchylky jsou průměrné hodnoty oproti národnímu průměru Natural 95 v ČR. Data z BenzinMapa.cz, aktualizováno každých 6 hodin.</p>
+        <p className="text-xs text-gray-400 mt-6">Cenové odchylky jsou průměry vypočítané v reálném čase z aktuálních cen Natural 95 oproti národnímu průměru. Data z BenzinMapa.cz, aktualizováno každých 6 hodin.</p>
 
         <div className="mt-8 flex flex-wrap gap-3 text-sm">
           <Link href="/nejlevnejsi-benzin/" className="text-green-700 dark:text-green-400 hover:underline">→ Nejlevnější benzín v ČR</Link>

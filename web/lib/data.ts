@@ -186,6 +186,46 @@ export function getBrandStats(fuelType: FuelType): BrandStat[] {
   return results.sort((a, b) => a.diff - b.diff);
 }
 
+/**
+ * Spočítá BrandStat pro libovolnou skupinu definovanou seznamem `brandKeys`
+ * (např. položky z BRAND_PAGES). Vrací mapu slug → BrandStat. Skupiny pod
+ * 3 stanice nezahrnuje (statisticky nedůvěryhodné).
+ */
+export function getBrandStatsByKeys(
+  fuelType: FuelType,
+  groups: { slug: string; brandKeys: string[] }[]
+): Map<string, BrandStat> {
+  const cutoff = Date.now() - TWO_DAYS_MS;
+  const fresh = getStationsWithPrices().filter(s =>
+    s.price?.[fuelType] != null &&
+    s.price?.source === 'mbenzin.cz' &&
+    new Date(s.price.reported_at).getTime() > cutoff
+  );
+  const map = new Map<string, BrandStat>();
+  const allPrices = fresh.map(s => s.price![fuelType] as number);
+  if (allPrices.length === 0) return map;
+  const min = adaptiveMin(allPrices, PRICE_MIN[fuelType]);
+  const valid = fresh.filter(s => (s.price![fuelType] as number) >= min);
+  const validPrices = valid.map(s => s.price![fuelType] as number);
+  const nationalAvg = validPrices.reduce((a, b) => a + b, 0) / validPrices.length;
+
+  for (const g of groups) {
+    const matching = valid.filter(s => {
+      const b = s.brand.toLowerCase();
+      return g.brandKeys.some(k => b.includes(k.toLowerCase()));
+    });
+    if (matching.length < 3) continue;
+    const avg = matching.reduce((a, s) => a + (s.price![fuelType] as number), 0) / matching.length;
+    const diff = avg - nationalAvg;
+    const rounded = Math.round(diff * 10) / 10;
+    let diffLabel: string;
+    if (Math.abs(rounded) < 0.05) diffLabel = '±0 Kč';
+    else diffLabel = `${rounded > 0 ? '+' : '−'}${Math.abs(rounded).toFixed(1).replace('.', ',')} Kč`;
+    map.set(g.slug, { label: g.slug, diff: rounded, diffLabel, avg, count: matching.length });
+  }
+  return map;
+}
+
 export function timeAgo(dateStr: string): string {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
