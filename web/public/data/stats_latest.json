@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-06T15:36:26Z",
+  "last_updated": "2026-05-07T06:09:01Z",
   "averages": {
-    "natural_95": 41.5,
-    "natural_98": 44.8,
-    "nafta": 42.4,
+    "natural_95": 41.6,
+    "natural_98": 44.9,
+    "nafta": 42.5,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.3,
-      "station_id": "osm_4960532910",
-      "city": "Jihomoravský kraj"
+      "price": 35.9,
+      "station_id": "mb-arex-kaplice",
+      "city": "Kaplice"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2547,
-  "stations_updated_today": 2547,
-  "real_prices_count": 955,
-  "estimated_prices_count": 1592
+  "total_stations": 2548,
+  "stations_updated_today": 2548,
+  "real_prices_count": 952,
+  "estimated_prices_count": 1596
 }
