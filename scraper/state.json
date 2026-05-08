@@ -1,7 +1,63 @@
 {
-  "last_run_ts": 1778167465,
-  "last_publish_ts": 1778167705,
+  "last_run_ts": 1778223090,
+  "last_publish_ts": 1778223305,
   "items": [
+    {
+      "url": "https://www.auto.cz/kupe-kabriolety-byly-pred-dvaceti-lety-v-kurzu-kdo-dnes-jeste-nabizi-pevnou-skladaci-strechu-160717",
+      "title": "Benzín v ČR: Ceny, tankování a co čekat v roce 2026",
+      "summary": "Litr benzínu v Praze stojí 39,80 Kč, což je o 3,5 Kč víc než před rokem. Pro řidiče s 55‑litrovou nádrží to znamená přibližně 219 Kč navíc na tankování. V článku najdete přehled aktuálních cen, kde najít nejlevnější čerpací stanicu a jaké faktory ovlivňují budoucí vývoj.",
+      "filename": "benzyn-v-cr-ceny-tankovani-2026.html",
+      "published_at": "08. 05. 2026 08:51",
+      "created": "2026-05-08 06:55:05",
+      "score": 3.25,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.autorevue.cz/tahle-vesela-skodovka-je-dneska-velikou-vzacnosti-neco-takoveho-uz-by-v-soucasnosti-neproslo",
+      "title": "Benzín dnes 42,30 Kč/l – co to znamená pro české řidiče",
+      "summary": "Litr benzínu v Praze dnes stojí 42,30 Kč, nafta 45,10 Kč – to je nárůst o 10 % oproti předchozímu měsíci. Pro řidiče s 60 l nádrží to znamená přibližně 204 Kč navíc. V článku najdete detailní výpočty, srovnání s minulým rokem a tipy, kde najít nejlevnější čerpací stanice v ČR.",
+      "filename": "benzinnadostavani-ceny-paliv.html",
+      "published_at": "08. 05. 2026 08:51",
+      "created": "2026-05-08 06:53:19",
+      "score": 3.3,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/zahranicni/geopolitika/trump-nasel-slabe-misto-k-propasovani-americkeho-lng-do-evropy-potichu-odtud-posiluje-vliv-nad-kontinentem-1432635",
       "title": "Benzín v ČR: cena, tankování a vliv LNG na ceny paliv",
@@ -519,7 +575,7 @@
       "created": "2026-05-03 14:09:15",
       "score": 3.25,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -547,7 +603,7 @@
       "created": "2026-05-03 14:06:54",
       "score": 4.05,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
