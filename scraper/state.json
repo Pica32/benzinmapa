@@ -1,7 +1,35 @@
 {
-  "last_run_ts": 1778223090,
-  "last_publish_ts": 1778223305,
+  "last_run_ts": 1778251579,
+  "last_publish_ts": 1778251692,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/znama-automobilka-propusti-kazdeho-desateho-zamestnance-v-nevytizene-tovarne-navic-slouci-linky-1432628",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Přes 42 Kč/l na benzín, 45 Kč/l na naftu – to je dnes cena, kterou zaplatí řidič v Praze, Brně či Ostravě. Přesné výpočty, srovnání s minulým rokem a tipy, kde najít nejlevnější čerpací stanice. Čtěte, abyste věděli, kolik vám ušetří nebo kolik vám to přinese.",
+      "filename": "benzinn-litr-cena-42-kc.html",
+      "published_at": "08. 05. 2026 16:46",
+      "created": "2026-05-08 14:48:12",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.auto.cz/kupe-kabriolety-byly-pred-dvaceti-lety-v-kurzu-kdo-dnes-jeste-nabizi-pevnou-skladaci-strechu-160717",
       "title": "Benzín v ČR: Ceny, tankování a co čekat v roce 2026",
@@ -547,7 +575,7 @@
       "created": "2026-05-04 07:49:24",
       "score": 3.8,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",

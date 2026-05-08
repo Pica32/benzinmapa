@@ -1,6 +1,39 @@
 {
   "entries": [
     {
+      "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/znama-automobilka-propusti-kazdeho-desateho-zamestnance-v-nevytizene-tovarne-navic-slouci-linky-1432628",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "simhash": 6667303125397462066,
+      "ngrams_hash": "d37155dfdecddd0f",
+      "entities": [
+        "mpo",
+        "čnb",
+        "omv",
+        "zdroj",
+        "dnes",
+        "praze",
+        "kurz",
+        "kde",
+        "pro",
+        "nafta",
+        "kolik",
+        "pergol",
+        "ropa brent",
+        "natural",
+        "mol",
+        "opec",
+        "jak",
+        "brna",
+        "pokud",
+        "natural 95",
+        "lpg",
+        "usd",
+        "brent",
+        "jako"
+      ],
+      "created_at": "2026-05-08T16:48:12.007760+02:00"
+    },
+    {
       "url": "https://www.auto.cz/kupe-kabriolety-byly-pred-dvaceti-lety-v-kurzu-kdo-dnes-jeste-nabizi-pevnou-skladaci-strechu-160717",
       "title": "Benzín v ČR: Ceny, tankování a co čekat v roce 2026",
       "simhash": 6667323053978672178,
