@@ -1,7 +1,67 @@
 {
-  "last_run_ts": 1778310429,
-  "last_publish_ts": 1778310642,
+  "last_run_ts": 1778335933,
+  "last_publish_ts": 1778336155,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/mercedes-ukazuje-zakulisi-vyroby-elektrickeho-glc-poptavku-ma-zatim-rekordni",
+      "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "V Praze, Brně i Ostravě se ceny pohonných hmot zvedly na rekordní úroveň. Litr nafty 42,30 Kč, benzín 42,80 Kč – řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. Přečtěte si, co je za tím, kde najít levnější pumpu a jak se na to připravit.",
+      "filename": "benzinn-cena-2026.html",
+      "published_at": "09. 05. 2026 16:12",
+      "created": "2026-05-09 14:15:55",
+      "score": 3.8,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/prepadli-jsme-benzinku-proslo-nam-to-nove-delo-na-mlhu-uz-zazit-nechceme-160904",
+      "title": "Benzín v ČR: Ceny, tankování a nejlevnější stánky",
+      "summary": "Litr benzínu v Praze dnes stojí 42,30 Kč, nafta 43,10 Kč. Přes 600 slov odhalíme, proč ceny roste, kolik zaplatíte při tankování a kde najdete nejlevnější čerpací stanice. Připravte se na cestu s rozumným rozpočtem.",
+      "filename": "benzyn-v-cr-ceny-tankovani-nejlevnejsi-stanice.html",
+      "published_at": "09. 05. 2026 16:12",
+      "created": "2026-05-09 14:14:14",
+      "score": 4.25,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://ct24.ceskatelevize.cz/clanek/ekonomika/valka-s-iranem-zdrazuje-plyn-zejmena-pro-nove-zakazniky-373240",
       "title": "Ceny benzínu v ČR: co se změnilo a proč",
@@ -520,7 +580,7 @@
       "created": "2026-05-05 07:18:51",
       "score": 4.25,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -548,7 +608,7 @@
       "created": "2026-05-04 15:13:39",
       "score": 4.05,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
