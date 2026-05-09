@@ -1,7 +1,65 @@
 {
-  "last_run_ts": 1778251579,
-  "last_publish_ts": 1778251692,
+  "last_run_ts": 1778310429,
+  "last_publish_ts": 1778310642,
   "items": [
+    {
+      "url": "https://ct24.ceskatelevize.cz/clanek/ekonomika/valka-s-iranem-zdrazuje-plyn-zejmena-pro-nove-zakazniky-373240",
+      "title": "Ceny benzínu v ČR: co se změnilo a proč",
+      "summary": "Benzín v ČR se v posledních týdnech zvedl o téměř 10 %. Přesné čísla, dopad na řidiče a tipy, kde natankovat nejlevněji – vše v našem detailním průvodci.",
+      "filename": "ceny-benzinu-v-cr-co-se-zmenilo.html",
+      "published_at": "09. 05. 2026 09:07",
+      "created": "2026-05-09 07:10:42",
+      "score": 4.0,
+      "source": "ČT24 Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/konec-automobiloveho-supermarketu-nejvetsi-autobazar-sveta-doplatil-na-online-trh-i-cenu-pudy-1432697",
+      "title": "Ceny benzínu v ČR: Jak se vyrovnat s rostoucími cenami",
+      "summary": "V Praze se cena benzínu zvýšila na 42,30 Kč/l, nafta 44,10 Kč/l. Přesné výpočty, proč se ceny zvedají, a praktické rady, kde najít nejlevnější čerpací stanice. Ušetřete až 200 Kč na každé nádrži.",
+      "filename": "ceny-benzinu-v-cr-rozsah.html",
+      "published_at": "09. 05. 2026 09:07",
+      "created": "2026-05-09 07:09:05",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/znama-automobilka-propusti-kazdeho-desateho-zamestnance-v-nevytizene-tovarne-navic-slouci-linky-1432628",
       "title": "Benzín v ČR: 42,30 Kč/l – co to znamená pro řidiče",
@@ -519,7 +577,7 @@
       "created": "2026-05-04 15:09:35",
       "score": 4.15,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -547,7 +605,7 @@
       "created": "2026-05-04 07:51:37",
       "score": 3.75,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
