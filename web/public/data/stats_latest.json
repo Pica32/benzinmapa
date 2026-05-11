@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-11T11:05:13Z",
+  "last_updated": "2026-05-11T16:06:50Z",
   "averages": {
     "natural_95": 41.8,
     "natural_98": 45.1,
-    "nafta": 42.4,
+    "nafta": 42.3,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.9,
-      "station_id": "mb-arex-kaplice",
-      "city": "Kaplice"
+      "price": 36.0,
+      "station_id": "mb-jaroslav-krauer-uhlirske-janovice",
+      "city": "Uhlířské Janovice"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2549,
-  "stations_updated_today": 2549,
-  "real_prices_count": 958,
-  "estimated_prices_count": 1591
+  "total_stations": 2547,
+  "stations_updated_today": 2547,
+  "real_prices_count": 950,
+  "estimated_prices_count": 1597
 }
