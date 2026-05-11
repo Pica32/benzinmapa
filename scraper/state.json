@@ -1,7 +1,35 @@
 {
-  "last_run_ts": 1778487840,
-  "last_publish_ts": 1778422772,
+  "last_run_ts": 1778514687,
+  "last_publish_ts": 1778514832,
   "items": [
+    {
+      "url": "https://www.novinky.cz/clanek/ekonomika-maximalni-ceny-paliv-klesnou-nafta-o-vice-nez-korunu-40577482",
+      "title": "Benzín a nafta: ceny klesají, nafta o více než korunu",
+      "summary": "Ministerstvo financí snížilo maximální ceny paliv: benzín 44,03 Kč/l, nafta 42,84 Kč/l. To znamená úsporu pro řidiče v Praze, Brně i Ostravě. Přehled, proč se ceny změnily a jak najít nejlevnější čerpací stanice.",
+      "filename": "benzina-nafta-ceny-klesaji.html",
+      "published_at": "11. 05. 2026 17:51",
+      "created": "2026-05-11 15:53:52",
+      "score": 6.95,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/volkswagen-ovladl-velkeho-konkurenta-muskovy-tesly-nemci-posiluji-svou-pozici-v-elektromobilite-1432627",
       "title": "Benzín v ČR: Ceny, tankování a co ovlivňuje trh",
@@ -554,7 +582,7 @@
       "created": "2026-05-06 07:39:48",
       "score": 3.9,
       "source": "Aktuálně Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
