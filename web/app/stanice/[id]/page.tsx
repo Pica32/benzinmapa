@@ -1,10 +1,10 @@
-import { getStationById, getStationsWithPrices, formatPrice, slugify } from '@/lib/data';
+import { getStationById, getStationsWithPrices, getStationsByCity, formatPrice, slugify } from '@/lib/data';
 import { CITIES } from '@/types';
 import { GasStationJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { MapPin, Clock, ChevronLeft, Navigation } from 'lucide-react';
+import { MapPin, Clock, ChevronLeft, Navigation, CheckCircle2, AlertCircle } from 'lucide-react';
 import GpsButtons from './GpsButtons';
 import StationPrices from '@/components/StationPrices';
 import StationMiniMap from '@/components/StationMiniMap';
@@ -39,18 +39,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `Aktuální ceny paliv ${station.name} ${station.city} – ${priceStr}. Mapa, navigace a otevírací doba. ${station.brand} čerpací stanice.`
     : `Čerpací stanice ${station.name} v ${station.city} – ceny benzínu a nafty dnes, mapa, GPS souřadnice, otevírací doba. ${station.brand}.`;
 
-  // Stanice bez reálné ceny z mbenzin.cz mají jen šablonový obsah a odhadovanou cenu.
-  // Google AdSense + Search označuje takový obsah jako "thin content" -> noindex.
-  // Indexované zůstávají jen stanice s reálně nahlášenou cenou (source = mbenzin.cz).
-  const hasRealPrice = station.price?.source === 'mbenzin.cz';
-
   return {
     title: `${station.name} ${station.city} – ceny benzínu a nafty dnes | BenzinMapa`,
     description: desc.slice(0, 158),
     alternates: { canonical: `https://benzinmapa.cz/stanice/${id}/` },
-    robots: hasRealPrice
-      ? { index: true, follow: true }
-      : { index: false, follow: true },
     openGraph: {
       title: `${station.name} ${station.city} – ceny paliv`,
       description: desc.slice(0, 155),
@@ -84,6 +76,20 @@ export default async function StationPage({ params }: Props) {
   const lng = station.lng.toFixed(6);
   const citySlug = slugify(station.city);
   const cityExists = CITIES.some(c => c.slug === citySlug);
+  const hasRealPrice = station.price?.source === 'mbenzin.cz';
+
+  // Nejlevnější stanice se skutečnou cenou v tomtéž městě (kromě této).
+  // Slouží jako interní cross-linking + přidává hodnotu šablonovým stránkám bez reálné ceny.
+  const nearbyWithRealPrice = getStationsByCity(station.city)
+    .filter(s => s.id !== station.id)
+    .filter(s => s.price?.source === 'mbenzin.cz')
+    .filter(s => s.price?.natural_95 != null || s.price?.nafta != null)
+    .sort((a, b) => {
+      const pa = a.price?.natural_95 ?? a.price?.nafta ?? Infinity;
+      const pb = b.price?.natural_95 ?? b.price?.nafta ?? Infinity;
+      return pa - pb;
+    })
+    .slice(0, 5);
 
   const googleMapsUrl  = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
   const wazeUrl        = `https://waze.com/ul?ll=${lat},${lng}&navigate=yes`;
@@ -218,6 +224,93 @@ export default async function StationPage({ params }: Props) {
           <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Sdílet tuto stanici</p>
           <ShareButtons url={`https://benzinmapa.cz/stanice/${id}`} title={`${station.name} – ceny paliv | BenzinMapa.cz`} />
         </div>
+
+        {/* Pro stanice bez reálné ceny: výrazná CTA + cross-linking na ověřené stanice */}
+        {!hasRealPrice && (
+          <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-5 mb-5">
+            <div className="flex items-start gap-3 mb-3">
+              <AlertCircle className="text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" size={20} />
+              <div>
+                <h2 className="text-base font-bold text-gray-900 dark:text-white mb-1">
+                  Cena na této stanici není komunitně ověřená
+                </h2>
+                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  Pro stanici <strong>{station.name}</strong> v {station.city} zatím
+                  nikdo nenahlásil aktuální cenu. Zobrazený odhad počítáme z národního
+                  průměru a typické cenové odchylky sítě {station.brand}.
+                </p>
+                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
+                  <strong>Víte, kolik tu dnes stojí benzín nebo nafta?</strong>{' '}
+                  Zadejte cenu výše (sekce „Nahlásit cenu") a pomozte ostatním řidičům
+                  v {station.city}.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Stanice s ověřenou cenou ve stejném městě – cross-linking + lokální SEO */}
+        {nearbyWithRealPrice.length > 0 && (
+          <section className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 mb-5 shadow-sm">
+            <h2 className="text-base font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
+              <CheckCircle2 className="text-green-600 dark:text-green-400" size={18} />
+              Stanice s ověřenou cenou v {station.city}
+            </h2>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+              {hasRealPrice
+                ? `Další čerpací stanice v ${station.city} s aktuální cenou nahlášenou komunitou.`
+                : `Pokud potřebujete ověřenou cenu hned, podívejte se na nejbližší stanice v ${station.city}, kde komunita nahlásila aktuální údaje.`}
+            </p>
+            <ul className="divide-y divide-gray-100 dark:divide-gray-700">
+              {nearbyWithRealPrice.map(s => {
+                const p95 = s.price?.natural_95;
+                const pNa = s.price?.nafta;
+                return (
+                  <li key={s.id} className="py-3 first:pt-0 last:pb-0">
+                    <Link
+                      href={`/stanice/${s.id}/`}
+                      className="flex items-center justify-between gap-3 group"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-xs font-semibold uppercase tracking-wide text-green-700 dark:text-green-400 bg-green-100 dark:bg-green-900/40 px-1.5 py-0.5 rounded">
+                            {s.brand}
+                          </span>
+                          <span className="text-sm font-semibold text-gray-900 dark:text-white truncate group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
+                            {s.name}
+                          </span>
+                        </div>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                          {s.address}
+                        </p>
+                      </div>
+                      <div className="text-right flex-shrink-0">
+                        {p95 != null && (
+                          <div className="text-sm font-bold text-gray-900 dark:text-white whitespace-nowrap">
+                            {formatPrice(p95)} <span className="text-xs font-normal text-gray-500">N95</span>
+                          </div>
+                        )}
+                        {pNa != null && (
+                          <div className="text-xs text-gray-600 dark:text-gray-400 whitespace-nowrap">
+                            {formatPrice(pNa)} <span className="text-[10px] text-gray-500">nafta</span>
+                          </div>
+                        )}
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            {cityExists && (
+              <Link
+                href={`/mesto/${citySlug}/`}
+                className="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-green-700 dark:text-green-400 hover:underline"
+              >
+                Všechny čerpací stanice v {station.city} →
+              </Link>
+            )}
+          </section>
+        )}
 
         {/* SEO textový obsah */}
         <section className="mt-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 shadow-sm">
