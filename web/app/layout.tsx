@@ -110,22 +110,39 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <PartnersFooter />
-        <footer className="bg-gray-900 text-gray-400 text-center py-4 text-xs border-t border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-4">
-            <span>© {new Date().getFullYear()} BenzinMapa.cz</span>
-            <span>Ceny jsou orientační a aktualizovány každých 6 hodin.</span>
-            <a href="/zasady-cookies" className="hover:text-blue-400 transition-colors">
-              Zásady cookies
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61589320316796"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
-              aria-label="BenzinMapa.cz na Facebooku"
-            >
-              Facebook
-            </a>
+        <footer className="bg-gray-900 text-gray-400 py-6 text-xs border-t border-gray-800">
+          <div className="max-w-7xl mx-auto px-4 space-y-3 text-center">
+            <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+              <a href="/o-nas/" className="hover:text-blue-400 transition-colors">
+                O projektu
+              </a>
+              <a href="/kontakt/" className="hover:text-blue-400 transition-colors">
+                Kontakt
+              </a>
+              <a href="/zasady-ochrany-osobnich-udaju/" className="hover:text-blue-400 transition-colors">
+                Ochrana osobních údajů
+              </a>
+              <a href="/zasady-cookies/" className="hover:text-blue-400 transition-colors">
+                Zásady cookies
+              </a>
+              <a href="/podminky-pouzivani/" className="hover:text-blue-400 transition-colors">
+                Podmínky používání
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61589320316796"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition-colors"
+                aria-label="BenzinMapa.cz na Facebooku"
+              >
+                Facebook
+              </a>
+            </nav>
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-gray-500">
+              <span>© {new Date().getFullYear()} BenzinMapa.cz</span>
+              <span>Provozovatel: Jiří Karafiát, IČO 88600386, Pelhřimov</span>
+              <span>Ceny jsou orientační a aktualizovány 3× denně.</span>
+            </div>
           </div>
         </footer>
         <CookieConsent />

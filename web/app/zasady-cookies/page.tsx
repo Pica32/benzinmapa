@@ -100,8 +100,10 @@ export default function CookiePolicyPage() {
 
       <h2>Kontakt</h2>
       <p>
-        Provozovatel: BenzinMapa.cz, kontakt:{' '}
-        <a href="mailto:info@benzinmapa.cz">info@benzinmapa.cz</a>.
+        Provozovatel: <strong>Jiří Karafiát</strong>, IČO 88600386,
+        Pelhřimov. E-mail:{' '}
+        <a href="mailto:jiri.karafiat@seznam.cz">jiri.karafiat@seznam.cz</a>.
+        Více v sekci <a href="/kontakt/">Kontakt</a>.
       </p>
 
       <p className="text-sm text-gray-500">

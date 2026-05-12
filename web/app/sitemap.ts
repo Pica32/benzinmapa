@@ -42,6 +42,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/kalkulacka-spotreby`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${BASE}/aktualne`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/vyvoj-ceny`, lastModified: new Date(), changeFrequency: 'daily', priority: 0.8 },
+    { url: `${BASE}/o-nas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/kontakt`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${BASE}/zasady-ochrany-osobnich-udaju`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/podminky-pouzivani`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/zasady-cookies`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
   const cityPages: MetadataRoute.Sitemap = CITIES.map(city => ({

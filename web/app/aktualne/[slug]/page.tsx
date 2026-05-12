@@ -1211,6 +1211,36 @@ export default async function AktualnePostPage({ params }: Props) {
           })}
         </div>
 
+        {/* Partnerský odkaz – polský sesterský projekt, jen pro článek o Polsku */}
+        {slug === 'tankovat-v-polsku-nebo-slovensku-2026' && (
+          <aside className="mt-8 rounded-2xl border border-green-200 dark:border-green-800 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-800 p-5">
+            <div className="flex items-start gap-3">
+              <div className="text-2xl flex-shrink-0">🇵🇱</div>
+              <div className="flex-1">
+                <p className="text-[10px] font-bold uppercase tracking-wider text-green-700 dark:text-green-400 mb-1">
+                  Partnerský web
+                </p>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1">
+                  Tankujete v Polsku? Vyzkoušejte BenzynaMapa.pl
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Sesterský polský projekt sleduje ceny PB95, ON a LPG na více
+                  než 4 400 čerpacích stanicích v Polsku. Stejné rozhraní, ceny
+                  v zlotých.{' '}
+                  <a
+                    href="https://benzynamapa.pl/"
+                    target="_blank"
+                    rel="noopener noreferrer external"
+                    className="font-semibold text-green-700 dark:text-green-400 hover:underline"
+                  >
+                    Otevřít BenzynaMapa.pl →
+                  </a>
+                </p>
+              </div>
+            </div>
+          </aside>
+        )}
+
         {post.faqs.length > 0 && (
           <section className="mt-10">
             <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Nejčastější dotazy</h2>
