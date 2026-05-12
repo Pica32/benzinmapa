@@ -39,10 +39,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `Aktuální ceny paliv ${station.name} ${station.city} – ${priceStr}. Mapa, navigace a otevírací doba. ${station.brand} čerpací stanice.`
     : `Čerpací stanice ${station.name} v ${station.city} – ceny benzínu a nafty dnes, mapa, GPS souřadnice, otevírací doba. ${station.brand}.`;
 
+  // Stanice bez reálné ceny z mbenzin.cz mají jen šablonový obsah a odhadovanou cenu.
+  // Google AdSense + Search označuje takový obsah jako "thin content" -> noindex.
+  // Indexované zůstávají jen stanice s reálně nahlášenou cenou (source = mbenzin.cz).
+  const hasRealPrice = station.price?.source === 'mbenzin.cz';
+
   return {
     title: `${station.name} ${station.city} – ceny benzínu a nafty dnes | BenzinMapa`,
     description: desc.slice(0, 158),
     alternates: { canonical: `https://benzinmapa.cz/stanice/${id}/` },
+    robots: hasRealPrice
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     openGraph: {
       title: `${station.name} ${station.city} – ceny paliv`,
       description: desc.slice(0, 155),

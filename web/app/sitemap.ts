@@ -56,14 +56,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  // Všechny stanice s cenou – stránky existují (dynamicParams = true, ISR)
+  // Sitemap obsahuje jen stanice s reálně nahlášenou cenou z mbenzin.cz.
+  // Stanice s odhadovanou cenou mají v generateMetadata robots:noindex,
+  // takže do sitemap nepatří (Google by je stejně neindexoval).
+  // Odhadované stanice ale zůstávají dostupné v aplikaci (mapa, vyhledávání).
   const stationPages: MetadataRoute.Sitemap = stations
+    .filter(s => s.price?.source === 'mbenzin.cz')
     .filter(s => s.price?.natural_95 != null || s.price?.nafta != null)
     .map(s => ({
       url: `${BASE}/stanice/${s.id}`,
       lastModified: new Date(),
       changeFrequency: 'hourly' as const,
-      priority: s.price?.source === 'mbenzin.cz' ? 0.75 : 0.6,
+      priority: 0.75,
     }));
 
   const aktualne: MetadataRoute.Sitemap = AKTUALNE_SLUGS.map(slug => ({

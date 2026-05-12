@@ -1,11 +1,11 @@
-name: Generování článků (2× denně)
+name: Generování článků (1× týdně)
 
 on:
   schedule:
-    # Praha letní čas (CEST = UTC+2): 7:00 → 5:00 UTC, 15:00 → 13:00 UTC
-    # Spouští se hodinu po aktualizaci cen → má čerstvá data pro články
-    - cron: '0 5 * * *'
-    - cron: '0 13 * * *'
+    # Sníženo z 2× denně na 1× týdně (úterý 9:00 CEST = 7:00 UTC).
+    # Důvod: AdSense penalizuje vysokou frekvenci AI-generovaných článků
+    # jako "Scaled content abuse policy" (Google Search Essentials, 2024).
+    - cron: '0 7 * * 2'
   workflow_dispatch:
 
 permissions:
