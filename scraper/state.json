@@ -1,7 +1,35 @@
 {
-  "last_run_ts": 1778514687,
-  "last_publish_ts": 1778514832,
+  "last_run_ts": 1778571699,
+  "last_publish_ts": 1778571811,
   "items": [
+    {
+      "url": "https://oilprice.com/Energy/Energy-General/BP-Shell-TotalEnergies-Pocket-Billions-in-War-Driven-Trading-Windfall.html",
+      "title": "Benzín v ČR: 42,30 Kč/l a co to znamená pro řidiče",
+      "summary": "Litr nafty dnes stojí 42,30 Kč, což je o 3,4 Kč víc než před rokem. Přesné výpočty, příběhy řidičů a tipy, kde natankovat nejlevněji. Čtěte dál!",
+      "filename": "benzyn-v-cr-42-30-kc-l.html",
+      "published_at": "12. 05. 2026 09:41",
+      "created": "2026-05-12 07:43:31",
+      "score": 4.75,
+      "source": "OilPrice.com",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.novinky.cz/clanek/ekonomika-maximalni-ceny-paliv-klesnou-nafta-o-vice-nez-korunu-40577482",
       "title": "Benzín a nafta: ceny klesají, nafta o více než korunu",
@@ -556,7 +584,7 @@
       "created": "2026-05-06 15:22:22",
       "score": 6.25,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",

@@ -1,6 +1,42 @@
 {
   "entries": [
     {
+      "url": "https://oilprice.com/Energy/Energy-General/BP-Shell-TotalEnergies-Pocket-Billions-in-War-Driven-Trading-Windfall.html",
+      "title": "Benzín v ČR: 42,30 Kč/l a co to znamená pro řidiče",
+      "simhash": 6774822168420867234,
+      "ngrams_hash": "327bbd5c73ff51c3",
+      "entities": [
+        "lpg",
+        "brent",
+        "combie",
+        "zdroj",
+        "praze",
+        "pokud",
+        "shell",
+        "natural 95",
+        "pro",
+        "ale",
+        "usd",
+        "mpo",
+        "česmad",
+        "nafta",
+        "opec",
+        "kolik",
+        "natural",
+        "naopak",
+        "kde",
+        "jako",
+        "mol",
+        "čnb",
+        "pan",
+        "litr",
+        "ropa brent",
+        "jak",
+        "orlen"
+      ],
+      "created_at": "2026-05-12T09:43:31.678024+02:00"
+    },
+    {
       "url": "https://www.novinky.cz/clanek/ekonomika-maximalni-ceny-paliv-klesnou-nafta-o-vice-nez-korunu-40577482",
       "title": "Benzín a nafta: ceny klesají, nafta o více než korunu",
       "simhash": 11423121752254569650,
