@@ -1,7 +1,91 @@
 {
-  "last_run_ts": 1778571699,
-  "last_publish_ts": 1778571811,
+  "last_run_ts": 1779186689,
+  "last_publish_ts": 1779187823,
   "items": [
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/nove-automobily/dalsi-porazka-evropskych-automobilek-cinane-otevrene-rikaji-na-koho-maji-spadeno/r~aaa294b02c4a97656c409d2ca8411f49/",
+      "title": "Benzín v ČR: Ceny, srovnání a kde natankovat",
+      "summary": "Litr benzínu v Praze stojí 38,90 Kč, nafta 42,30 Kč – to znamená, že řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. V článku najdete detailní výpočet, tipy na nejlevnější stánky a předpověď cen. Připravte se na další náklady na silnici!",
+      "filename": "benzinn-cena-levnejsi-stanice.html",
+      "published_at": "19. 05. 2026 12:31",
+      "created": "2026-05-19 10:50:23",
+      "score": 3.9,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://ct24.ceskatelevize.cz/clanek/domaci/konflikt-na-blizkem-vychode-zdrazuje-plastove-obalove-materialy-373540",
+      "title": "Benzín v ČR: cena roste, co to znamená pro řidiče",
+      "summary": "Litr benzínu v Praze dnes stojí 42,30 Kč – o 3,4 Kč víc než před rokem. Přesné výpočty, kde najít nejlevnější čerpací stanice a jak se to dotkne řidičů v Praze, Brně a Ostravě. Čtěte, abyste se vyhnuli nečekaným výdajům.",
+      "filename": "benzyn-v-cr-cena-rostou.html",
+      "published_at": "19. 05. 2026 12:31",
+      "created": "2026-05-19 10:48:06",
+      "score": 4.0,
+      "source": "ČT24 Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/tyto-automobilove-koncepty-jste-mozna-nikdy-nevideli-nektere-z-nich-udivuji-dodnes-160839",
+      "title": "Benzín a nafta v ČR: ceny, srovnání a tipy na tankování",
+      "summary": "Litr benzínu v Praze stojí 42,30 Kč, nafta 44,10 Kč – to je 3,8 % nárůst oproti minulému měsíci. Přinášíme analýzu příčin, výpočet nákladů na tankování a tipy, kde najít nejlevnější čerpací stanice v ČR.",
+      "filename": "benzina-nafta-ceny-cesko.html",
+      "published_at": "19. 05. 2026 12:31",
+      "created": "2026-05-19 10:35:47",
+      "score": 6.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://oilprice.com/Energy/Energy-General/BP-Shell-TotalEnergies-Pocket-Billions-in-War-Driven-Trading-Windfall.html",
       "title": "Benzín v ČR: 42,30 Kč/l a co to znamená pro řidiče",
@@ -497,7 +581,7 @@
       "created": "2026-05-07 07:44:02",
       "score": 4.05,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -527,7 +611,7 @@
       "created": "2026-05-06 15:26:11",
       "score": 3.0,
       "source": "ČT24 Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -556,7 +640,7 @@
       "created": "2026-05-06 15:24:20",
       "score": 3.25,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
