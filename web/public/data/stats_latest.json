@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-25T11:50:33Z",
+  "last_updated": "2026-05-25T16:01:16Z",
   "averages": {
     "natural_95": 42.3,
     "natural_98": 45.6,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.5,
-      "station_id": "osm_2403970198",
-      "city": "Středočeský kraj"
+      "price": 36.0,
+      "station_id": "mb-jaroslav-krauer-uhlirske-janovice",
+      "city": "Uhlířské Janovice"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2547,
-  "stations_updated_today": 2547,
-  "real_prices_count": 943,
-  "estimated_prices_count": 1604
+  "total_stations": 2546,
+  "stations_updated_today": 2546,
+  "real_prices_count": 944,
+  "estimated_prices_count": 1602
 }
