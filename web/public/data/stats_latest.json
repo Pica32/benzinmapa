@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-05-29T11:11:16Z",
+  "last_updated": "2026-05-29T16:51:00Z",
   "averages": {
-    "natural_95": 42.0,
+    "natural_95": 42.1,
     "natural_98": 45.6,
-    "nafta": 40.2,
+    "nafta": 40.1,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.4,
-      "station_id": "mb-u-pstrosa-rodvinov",
-      "city": "Rodvínov"
+      "price": 35.5,
+      "station_id": "osm_2403970198",
+      "city": "Středočeský kraj"
     },
     "nafta": {
       "price": 35.9,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2554,
-  "stations_updated_today": 2554,
-  "real_prices_count": 944,
-  "estimated_prices_count": 1610
+  "total_stations": 2555,
+  "stations_updated_today": 2555,
+  "real_prices_count": 943,
+  "estimated_prices_count": 1612
 }
