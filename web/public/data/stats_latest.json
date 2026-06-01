@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-06-01T13:37:10Z",
+  "last_updated": "2026-06-01T18:47:23Z",
   "averages": {
-    "natural_95": 41.7,
+    "natural_95": 41.6,
     "natural_98": 45.1,
-    "nafta": 39.4,
+    "nafta": 39.3,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.0,
-      "station_id": "mb-jaroslav-krauer-uhlirske-janovice",
-      "city": "Uhlířské Janovice"
+      "price": 36.9,
+      "station_id": "osm_3187371393",
+      "city": "Plzeňský kraj"
     },
     "nafta": {
       "price": 35.9,
-      "station_id": "mb-tomegas-sobeslav",
-      "city": "Soběslav"
+      "station_id": "osm_262416071",
+      "city": "Odrava"
     },
     "lpg": {
       "price": 19.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 2557,
   "stations_updated_today": 2557,
-  "real_prices_count": 944,
-  "estimated_prices_count": 1613
+  "real_prices_count": 946,
+  "estimated_prices_count": 1611
 }
