@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-05-31T14:54:54Z",
+  "last_updated": "2026-06-01T08:41:41Z",
   "averages": {
     "natural_95": 41.8,
-    "natural_98": 45.3,
-    "nafta": 39.5,
+    "natural_98": 45.1,
+    "nafta": 39.4,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.5,
-      "station_id": "osm_2403970198",
-      "city": "Středočeský kraj"
+      "price": 36.9,
+      "station_id": "osm_3187371393",
+      "city": "Plzeňský kraj"
     },
     "nafta": {
-      "price": 35.0,
-      "station_id": "osm_1857338179",
-      "city": "Jihomoravský kraj"
+      "price": 35.9,
+      "station_id": "mb-tomegas-sobeslav",
+      "city": "Soběslav"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2557,
-  "stations_updated_today": 2557,
-  "real_prices_count": 939,
-  "estimated_prices_count": 1618
+  "total_stations": 2558,
+  "stations_updated_today": 2558,
+  "real_prices_count": 945,
+  "estimated_prices_count": 1613
 }
