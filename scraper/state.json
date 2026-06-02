@@ -1,7 +1,93 @@
 {
-  "last_run_ts": 1779186689,
-  "last_publish_ts": 1779187823,
+  "last_run_ts": 1780398691,
+  "last_publish_ts": 1780399624,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/omlazeny-mercedes-benz-gle-ma-cesky-cenik-velke-zdrazeni-necekejte",
+      "title": "Benzín v ČR: Ceny, srovnání a tipy na nejlevnější tankování",
+      "summary": "Litr benzínu v Praze stojí 39,80 Kč, nafta 42,30 Kč. V tomto článku rozebíráme, co za tím stojí, kolik zaplatíte při tankování a kde najít nejlevnější čerpací stanice v ČR. Připravte se na výpočet a praktické tipy.",
+      "filename": "benzyn-ceny-levnejsi-tankovani.html",
+      "published_at": "02. 06. 2026 13:11",
+      "created": "2026-06-02 11:27:04",
+      "score": 4.1,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/cesta-autem-do-italie-covid-cena-poplatky-kam-jet",
+      "title": "Benzín 2026: Cesta do Itálie, poplatky a cena paliva",
+      "summary": "Připravte se na letní dovolenou do Itálie: od ceny benzínu 42,30 Kč/l po poplatky za dálniční známky a mýtné. V článku najdete praktické tipy, kde natankovat nejlevněji a jak se vyhnout překvapením na cestě.",
+      "filename": "benzyn-2026-cesta-do-italie-poplatky-cena-paliva.html",
+      "published_at": "02. 06. 2026 13:11",
+      "created": "2026-06-02 11:23:06",
+      "score": 4.25,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/automobilovi-sourozenci-byli-drive-zcela-bezny-jev-proc-jsou-dnes-tercem-posmechu-161145",
+      "title": "Benzín a nafta v ČR: Ceny, výhled a tipy na nejlevnější tan…",
+      "summary": "Litr benzínu v Praze stojí 42,30 Kč, nafta 45,10 Kč. Přesně to, co řidiči v ČR potřebují vědět: kolik zaplatí, proč ceny roste a kde najdou nejlevnější pumpu. V článku najdete i konkrétní příběh řidiče z Brna a praktické tipy na úsporu.",
+      "filename": "benzyn-nafta-ceny-cesko.html",
+      "published_at": "02. 06. 2026 13:11",
+      "created": "2026-06-02 11:16:15",
+      "score": 6.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://zpravy.aktualne.cz/ekonomika/auto/nove-automobily/dalsi-porazka-evropskych-automobilek-cinane-otevrene-rikaji-na-koho-maji-spadeno/r~aaa294b02c4a97656c409d2ca8411f49/",
       "title": "Benzín v ČR: Ceny, srovnání a kde natankovat",
@@ -490,12 +576,12 @@
       "url": "https://www.novinky.cz/clanek/ekonomika-vyvoz-benzinu-a-nafty-z-usa-je-na-rekordu-40577172",
       "title": "Benzín a nafta v ČR: co znamená rekordní export z USA",
       "summary": "Rekordní export z USA ovlivňuje ceny benzínu a nafty v ČR. Přes 8,2 mil. barelů denně, meziroční nárůst 5 %. Co to znamená pro řidiče v Praze, Brně a Ostravě? Přesná čísla, příběhy řidičů a tipy na nejlevnější čerpací stanice.",
-      "filename": "benzyn-nafta-ceny-cesko.html",
+      "filename": "archiv/benzyn-nafta-ceny-cesko.html",
       "published_at": "07. 05. 2026 17:24",
       "created": "2026-05-07 15:26:31",
       "score": 6.65,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -523,7 +609,7 @@
       "created": "2026-05-07 07:47:24",
       "score": 3.35,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -553,7 +639,7 @@
       "created": "2026-05-07 07:45:41",
       "score": 4.05,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
