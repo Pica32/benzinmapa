@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-06T06:36:55Z",
+  "last_updated": "2026-06-06T10:00:17Z",
   "averages": {
-    "natural_95": 40.8,
+    "natural_95": 40.7,
     "natural_98": 44.3,
     "nafta": 38.5,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 36.9,
-      "station_id": "osm_3187371393",
-      "city": "Plzeňský kraj"
+      "price": 35.8,
+      "station_id": "osm_1992108994",
+      "city": "Jihočeský kraj"
     },
     "nafta": {
       "price": 35.8,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2557,
-  "stations_updated_today": 2557,
-  "real_prices_count": 934,
-  "estimated_prices_count": 1623
+  "total_stations": 2558,
+  "stations_updated_today": 2558,
+  "real_prices_count": 932,
+  "estimated_prices_count": 1626
 }
