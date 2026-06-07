@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-07T07:13:48Z",
+  "last_updated": "2026-06-07T10:28:12Z",
   "averages": {
     "natural_95": 40.6,
     "natural_98": 44.2,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.5,
-      "station_id": "osm_2403970198",
-      "city": "Středočeský kraj"
+      "price": 35.6,
+      "station_id": "mb-loal-zrusena-mesto-albrechtice",
+      "city": "zrušena- Město Albrechtice"
     },
     "nafta": {
       "price": 35.8,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2562,
-  "stations_updated_today": 2562,
-  "real_prices_count": 928,
-  "estimated_prices_count": 1634
+  "total_stations": 2561,
+  "stations_updated_today": 2561,
+  "real_prices_count": 933,
+  "estimated_prices_count": 1628
 }
