@@ -1,7 +1,63 @@
 {
-  "last_run_ts": 1780398691,
-  "last_publish_ts": 1780399624,
+  "last_run_ts": 1781000828,
+  "last_publish_ts": 1781001049,
   "items": [
+    {
+      "url": "https://www.novinky.cz/clanek/ekonomika-benzin-z-odpadu-nestaci-plan-na-bezemisni-letani-ceka-revize-varuji-aerolinky-40582121",
+      "title": "Benzín v ČR: Ceny, tankování a co čeká řidiče",
+      "summary": "Průměrná cena benzínu v ČR se v posledním měsíci zvýšila o 3,5 %. Řidiči v Praze, Brně a Ostravě se tak musí přizpůsobit novému rozpočtu. V článku najdete detailní výpočet nákladů na tankování, příběh řidiče z Brna a praktické rady, kde najít nejlevnější čerpací stanice.",
+      "filename": "benzinn-ceny-paliv-cesko.html",
+      "published_at": "09. 06. 2026 12:27",
+      "created": "2026-06-09 10:30:49",
+      "score": 4.15,
+      "source": "Novinky Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.autorevue.cz/toyota-prius-zmenila-svet-hybrid-ktery-si-lide-dobirali-dnes-drzi-automobilku-nad-vodou",
+      "title": "Benzín 42,30 Kč/l – co to znamená pro české řidiče?",
+      "summary": "Ceny benzínu a nafty v ČR se v posledních týdnech zvýšily. Litr nafty nyní stojí 42,30 Kč, což znamená, že řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. V článku najdete příčiny, výpočet nákladů a tipy, kde natankovat nejlevněji.",
+      "filename": "benzinn-42-30-kc-l-co-to-znamen.html",
+      "published_at": "09. 06. 2026 12:27",
+      "created": "2026-06-09 10:28:52",
+      "score": 6.1,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "MPO",
+        "ČESMAD",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/omlazeny-mercedes-benz-gle-ma-cesky-cenik-velke-zdrazeni-necekejte",
       "title": "Benzín v ČR: Ceny, srovnání a tipy na nejlevnější tankování",
@@ -523,7 +579,7 @@
       "created": "2026-05-08 06:53:19",
       "score": 3.3,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -551,7 +607,7 @@
       "created": "2026-05-07 15:28:25",
       "score": 3.75,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
