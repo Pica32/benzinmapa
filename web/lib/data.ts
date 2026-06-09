@@ -1,4 +1,4 @@
-import { Station, StationPrice, StationWithPrice, Stats, FuelType, BrandPage } from '@/types';
+import { Station, StationPrice, StationWithPrice, Stats, FuelType, FUEL_LABELS, BrandPage } from '@/types';
 import fs from 'fs';
 import path from 'path';
 
@@ -224,6 +224,70 @@ export function getBrandStatsByKeys(
     map.set(g.slug, { label: g.slug, diff: rounded, diffLabel, avg, count: matching.length });
   }
   return map;
+}
+
+export interface NationalAverage {
+  fuel_type: FuelType;
+  label: string;
+  avg: number;    // průměrná cena v Kč/l
+  count: number;  // počet stanic s čerstvou reálnou cenou (mbenzin.cz, < 2 dny)
+}
+
+export interface NationalAverages {
+  averages: Record<FuelType, number>;
+  details: NationalAverage[];
+  total_stations: number;
+  last_updated: string;
+}
+
+/**
+ * Národní průměr ceny pro každý druh paliva — počítáno z čerstvých reálných
+ * cen mbenzin.cz (< 2 dny) se stejným adaptiveMin filtrem jako zbytek webu.
+ * Když pro palivo nejsou čerstvá reálná data, použije se předpočítaný průměr
+ * ze scraperu (stats_latest.json). Žádná hardcoded čísla.
+ */
+export function getNationalAverages(): NationalAverages {
+  const cutoff = Date.now() - TWO_DAYS_MS;
+  const withPrices = getStationsWithPrices();
+  const stats = getStats();
+  const fuels: FuelType[] = ['natural_95', 'natural_98', 'nafta', 'lpg'];
+
+  const averages = {} as Record<FuelType, number>;
+  const details: NationalAverage[] = [];
+
+  for (const fuel of fuels) {
+    const freshPrices = withPrices
+      .filter(s =>
+        s.price?.[fuel] != null &&
+        s.price?.source === 'mbenzin.cz' &&
+        new Date(s.price.reported_at).getTime() > cutoff
+      )
+      .map(s => s.price![fuel] as number);
+
+    let avg: number;
+    let count: number;
+    if (freshPrices.length > 0) {
+      const min = adaptiveMin(freshPrices, PRICE_MIN[fuel]);
+      const valid = freshPrices.filter(p => p >= min);
+      avg = valid.reduce((a, b) => a + b, 0) / valid.length;
+      count = valid.length;
+    } else {
+      // fallback: předpočítaný průměr ze scraperu
+      avg = stats?.averages[fuel] ?? 0;
+      count = 0;
+    }
+
+    const rounded = Math.round(avg * 100) / 100;
+    averages[fuel] = rounded;
+    details.push({ fuel_type: fuel, label: FUEL_LABELS[fuel], avg: rounded, count });
+  }
+
+  return {
+    averages,
+    details,
+    total_stations: stats?.total_stations ?? withPrices.length,
+    last_updated: stats?.last_updated ?? new Date().toISOString(),
+  };
 }
 
 export function timeAgo(dateStr: string): string {
