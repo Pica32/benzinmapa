@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-11T07:37:47Z",
+  "last_updated": "2026-06-11T12:11:22Z",
   "averages": {
     "natural_95": 40.3,
     "natural_98": 43.9,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.5,
-      "station_id": "osm_1992108994",
-      "city": "Jihočeský kraj"
+      "price": 35.7,
+      "station_id": "osm_12630335366",
+      "city": "Jihomoravský kraj"
     },
     "nafta": {
       "price": 35.8,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2559,
-  "stations_updated_today": 2559,
-  "real_prices_count": 932,
-  "estimated_prices_count": 1627
+  "total_stations": 2558,
+  "stations_updated_today": 2558,
+  "real_prices_count": 926,
+  "estimated_prices_count": 1632
 }
