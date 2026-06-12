@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-06-11T17:04:19Z",
+  "last_updated": "2026-06-12T07:30:06Z",
   "averages": {
-    "natural_95": 40.3,
-    "natural_98": 43.9,
+    "natural_95": 40.2,
+    "natural_98": 43.8,
     "nafta": 38.1,
     "lpg": 19.5
   },
@@ -13,9 +13,9 @@
       "city": "Jihomoravský kraj"
     },
     "nafta": {
-      "price": 35.5,
-      "station_id": "osm_6977967699",
-      "city": "Královéhradecký kraj"
+      "price": 35.8,
+      "station_id": "osm_366191998",
+      "city": "Středočeský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2557,
-  "stations_updated_today": 2557,
-  "real_prices_count": 931,
-  "estimated_prices_count": 1626
+  "total_stations": 2555,
+  "stations_updated_today": 2555,
+  "real_prices_count": 928,
+  "estimated_prices_count": 1627
 }
