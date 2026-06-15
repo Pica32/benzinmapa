@@ -9,6 +9,7 @@ import GpsButtons from './GpsButtons';
 import StationPrices from '@/components/StationPrices';
 import StationMiniMap from '@/components/StationMiniMap';
 import ShareButtons from '@/components/ShareButtons';
+import AffiliateBanners from '@/components/AffiliateBanners';
 
 export const revalidate = 21600;
 export const dynamicParams = true;
@@ -118,6 +119,9 @@ export default async function StationPage({ params }: Props) {
           <span>›</span>
           <span className="text-gray-900 dark:text-white truncate max-w-[200px]">{station.name}</span>
         </nav>
+
+        {/* Afiliate nabídky pro řidiče – nahoře na stránce */}
+        <AffiliateBanners cityName={station.city} className="mb-5" />
 
         {/* Hlavní karta */}
         <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 mb-5 shadow-sm">

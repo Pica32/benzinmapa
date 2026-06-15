@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { CITIES } from '@/types';
 import CheapestTable from '@/components/CheapestTable';
+import AffiliateBanners from '@/components/AffiliateBanners';
 import Link from 'next/link';
 import { MapPin, TrendingDown, Info, Fuel } from 'lucide-react';
 
@@ -211,6 +212,9 @@ export default async function MestoPage({ params }: Props) {
             Otevřít mapu – {city.name}
           </Link>
         </div>
+
+        {/* Afiliate nabídky pro řidiče */}
+        <AffiliateBanners cityName={city.name} className="mb-8" />
 
         {/* Maximální přípustné ceny MF */}
         <div className="bg-blue-50 dark:bg-gray-800 border border-blue-200 dark:border-blue-900 rounded-2xl p-5 mb-8">

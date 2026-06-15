@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="970" height="310" viewBox="0 0 970 310" role="img" aria-label="Cebia – prověřte historii vozidla podle VIN">
+  <defs>
+    <linearGradient id="cebiaBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.5" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <clipPath id="cebiaClip"><rect width="970" height="310" rx="24"/></clipPath>
+  </defs>
+  <a xlink:href="https://ehub.cz/system/scripts/click.php?a_aid=b7023ca5&amp;a_bid=67e04d9d" target="_blank">
+    <g clip-path="url(#cebiaClip)">
+      <rect width="970" height="310" fill="url(#cebiaBg)"/>
+      <circle cx="900" cy="40" r="150" fill="#ffffff" opacity="0.05"/>
+      <circle cx="120" cy="300" r="120" fill="#dc2626" opacity="0.08"/>
+
+      <!-- Reklama štítek -->
+      <text x="945" y="40" text-anchor="end" font-family="Arial, sans-serif" font-size="13" letter-spacing="2" fill="#64748b">REKLAMA</text>
+
+      <!-- Ikona štít -->
+      <rect x="55" y="105" width="92" height="92" rx="20" fill="#ffffff" opacity="0.10"/>
+      <g transform="translate(73,123) scale(2.33)" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+        <path d="m9 12 2 2 4-4"/>
+      </g>
+
+      <!-- Texty -->
+      <text x="180" y="118" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="1" fill="#f87171">KUPUJETE OJETÉ AUTO?</text>
+      <text x="180" y="165" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#ffffff">Prověřte historii vozu</text>
+      <text x="180" y="210" font-family="Arial, sans-serif" font-size="40" font-weight="800" fill="#ffffff">podle VIN, než zaplatíte</text>
+      <text x="180" y="252" font-family="Arial, sans-serif" font-size="18" fill="#cbd5e1">Stočený tachometr · nehody · odcizení · leasing</text>
+
+      <!-- CTA -->
+      <rect x="660" y="118" width="250" height="74" rx="16" fill="#dc2626"/>
+      <text x="785" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#ffffff">Prověřit vozidlo  →</text>
+    </g>
+  </a>
+</svg>

@@ -2,6 +2,7 @@ import { getStats, getCheapestStations, getBrandStats } from '@/lib/data';
 import HomeClient from './HomeClient';
 import CheapestTable from '@/components/CheapestTable';
 import Top4Cheapest from '@/components/Top4Cheapest';
+import AffiliateBanners from '@/components/AffiliateBanners';
 import { FaqJsonLd } from '@/components/JsonLd';
 import Link from 'next/link';
 import { CITIES } from '@/types';
@@ -65,6 +66,9 @@ export default async function HomePage() {
 
       {/* Obsah pod mapou */}
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
+
+        {/* Afiliate nabídky pro řidiče – hned pod mapou */}
+        <AffiliateBanners />
 
         {/* Nejlevnější tabulky (SSR data – rychlé) */}
         <div className="grid md:grid-cols-2 gap-8">
