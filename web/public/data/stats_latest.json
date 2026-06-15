@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-14T15:17:01Z",
+  "last_updated": "2026-06-15T09:09:43Z",
   "averages": {
     "natural_95": 39.9,
     "natural_98": 43.6,
@@ -9,13 +9,13 @@
   "cheapest_today": {
     "natural_95": {
       "price": 35.0,
-      "station_id": "osm_1992108994",
+      "station_id": "osm_13625149816",
       "city": "Jihočeský kraj"
     },
     "nafta": {
-      "price": 35.5,
-      "station_id": "osm_262416071",
-      "city": "Odrava"
+      "price": 35.8,
+      "station_id": "osm_366191998",
+      "city": "Středočeský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2560,
-  "stations_updated_today": 2560,
-  "real_prices_count": 928,
-  "estimated_prices_count": 1632
+  "total_stations": 2558,
+  "stations_updated_today": 2558,
+  "real_prices_count": 929,
+  "estimated_prices_count": 1629
 }
