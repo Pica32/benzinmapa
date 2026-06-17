@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-06-16T18:15:12Z",
+  "last_updated": "2026-06-17T08:35:13Z",
   "averages": {
-    "natural_95": 39.8,
+    "natural_95": 39.6,
     "natural_98": 43.5,
-    "nafta": 38.1,
+    "nafta": 37.9,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -13,9 +13,9 @@
       "city": "zrušena- Město Albrechtice"
     },
     "nafta": {
-      "price": 35.5,
-      "station_id": "osm_622011416",
-      "city": "Královéhradecký kraj"
+      "price": 35.0,
+      "station_id": "osm_2242671747",
+      "city": "Brno"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2553,
-  "stations_updated_today": 2553,
-  "real_prices_count": 932,
-  "estimated_prices_count": 1621
+  "total_stations": 2557,
+  "stations_updated_today": 2557,
+  "real_prices_count": 931,
+  "estimated_prices_count": 1626
 }
