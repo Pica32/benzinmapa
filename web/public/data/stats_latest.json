@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-21T08:07:42Z",
+  "last_updated": "2026-06-21T11:06:55Z",
   "averages": {
     "natural_95": 38.8,
     "natural_98": 42.8,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2551,
-  "stations_updated_today": 2551,
-  "real_prices_count": 926,
-  "estimated_prices_count": 1625
+  "total_stations": 2554,
+  "stations_updated_today": 2554,
+  "real_prices_count": 931,
+  "estimated_prices_count": 1623
 }
