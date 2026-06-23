@@ -1,7 +1,93 @@
 {
-  "last_run_ts": 1781611355,
-  "last_publish_ts": 1781611578,
+  "last_run_ts": 1782210434,
+  "last_publish_ts": 1782210802,
   "items": [
+    {
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/India-Boosts-US-LPG-Imports-to-Record-High.html",
+      "title": "Benzín v ČR: rekordní ceny a dopad globálního trhu",
+      "summary": "Benzín v ČR se zvedl na rekordní úroveň, zatímco Indie importuje největší objem LPG z USA. Česko se potýká s vyššími cenami pohonných hmot a řidiči v Praze, Brně a Ostravě musí přizpůsobit rozpočet.",
+      "filename": "benzinn-rekordni-ceny-dopad-globlnho-trhu.html",
+      "published_at": "23. 06. 2026 12:27",
+      "created": "2026-06-23 10:33:22",
+      "score": 3.65,
+      "source": "OilPrice.com",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/polsky-sen-o-vlastni-automobilce-oziva-zahrnuje-tovarnu-na-400-000-aut-a-partnera-z-tchajwanu-161407",
+      "title": "Benzín v ČR: Ceny, tankování a co přinese polský sen o auto…",
+      "summary": "Polský sen o vlastní automobilce a jeho dopad na české řidiče: ceny benzínu a nafty se zvyšují, ale i v Praze, Brně a Ostravě najdete levnější čerpací stanice. Přehled cen, výpočty a tipy na úsporu.",
+      "filename": "benzyn-v-cr-ceny-pohonnych-hmot.html",
+      "published_at": "23. 06. 2026 12:27",
+      "created": "2026-06-23 10:31:11",
+      "score": 4.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/evropsky-automobilovy-trh-roste-petinu-prodeju-uz-tvori-elektromobily-1433768",
+      "title": "Benzín v ČR: cena roste, co to znamená pro řidiče",
+      "summary": "Benzín v ČR letos zvedl cenu o 1,20 Kč/l, což znamená, že průměrná nádrž 55 l nyní stojí 2 117 Kč. Přesné čísla, dopad na tankování, nejlevnější stánky a výhled cen paliv. Zjistěte, kolik zaplatíte a kde najít úsporu.",
+      "filename": "benzin-v-cr-cena-rosne.html",
+      "published_at": "23. 06. 2026 12:27",
+      "created": "2026-06-23 10:29:09",
+      "score": 5.55,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/peugeot-v-cesku-zlevnuje-klicove-modely-v-akci-jsou-suv-rodinny-rifter-i-pracovni-expert",
       "title": "Benzín v ČR: co se změnilo a jak ušetřit na tankování",
@@ -492,7 +578,7 @@
       "created": "2026-05-09 14:14:14",
       "score": 4.25,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -522,7 +608,7 @@
       "created": "2026-05-09 07:10:42",
       "score": 4.0,
       "source": "ČT24 Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -550,7 +636,7 @@
       "created": "2026-05-09 07:09:05",
       "score": 4.05,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
