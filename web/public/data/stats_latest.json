@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22T17:49:14Z",
+  "last_updated": "2026-06-23T06:58:17Z",
   "averages": {
     "natural_95": 38.8,
     "natural_98": 42.7,
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_448897597",
-      "city": "Jihomoravský kraj"
+      "station_id": "osm_310678468",
+      "city": "Olomoucký kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2551,
-  "stations_updated_today": 2551,
-  "real_prices_count": 921,
-  "estimated_prices_count": 1630
+  "total_stations": 2550,
+  "stations_updated_today": 2550,
+  "real_prices_count": 922,
+  "estimated_prices_count": 1628
 }
