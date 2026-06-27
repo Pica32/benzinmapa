@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-27T06:37:16Z",
+  "last_updated": "2026-06-27T10:03:12Z",
   "averages": {
     "natural_95": 38.6,
     "natural_98": 42.5,
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_286815137",
-      "city": "Vysočina"
+      "station_id": "osm_310678468",
+      "city": "Olomoucký kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2549,
-  "stations_updated_today": 2549,
+  "total_stations": 2548,
+  "stations_updated_today": 2548,
   "real_prices_count": 919,
-  "estimated_prices_count": 1630
+  "estimated_prices_count": 1629
 }
