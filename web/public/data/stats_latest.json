@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-06-29T16:48:12Z",
+  "last_updated": "2026-06-30T07:03:36Z",
   "averages": {
     "natural_95": 38.5,
     "natural_98": 42.4,
-    "nafta": 37.5,
+    "nafta": 37.4,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -13,9 +13,9 @@
       "city": "Vlachovo Březí"
     },
     "nafta": {
-      "price": 35.0,
-      "station_id": "osm_310678468",
-      "city": "Olomoucký kraj"
+      "price": 35.1,
+      "station_id": "mb-shell-trebic",
+      "city": "Třebíč"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2547,
-  "stations_updated_today": 2547,
-  "real_prices_count": 920,
-  "estimated_prices_count": 1627
+  "total_stations": 2551,
+  "stations_updated_today": 2551,
+  "real_prices_count": 918,
+  "estimated_prices_count": 1633
 }
