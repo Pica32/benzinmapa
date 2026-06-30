@@ -1,7 +1,95 @@
 {
-  "last_run_ts": 1782210434,
-  "last_publish_ts": 1782210802,
+  "last_run_ts": 1782815016,
+  "last_publish_ts": 1782815465,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/vyrazny-sesup-v-nosovicich-automobilce-hyundai-klesl-zisk-o-60-procent-loni-vyrobila-mene-aut-1433953",
+      "title": "benzín v ČR: 2026 ceny, tankování a co čeká řidiče",
+      "summary": "V ČR se ceny benzínu a nafty v roce 2026 zvýšily na 38,50 Kč/l a 42,30 Kč/l. To znamená, že řidič s 55 l nádrží zaplatí přibližně 2 120 Kč více než před rokem. Připravte se na nové tankovací strategie a zjistěte, kde najít nejlevnější čerpací stanice.",
+      "filename": "benzin-ceny-2026-tankovani.html",
+      "published_at": "30. 06. 2026 12:23",
+      "created": "2026-06-30 10:31:05",
+      "score": 4.05,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "BenzinMapa.cz",
+        "Combie.cz",
+        "Nadace.online"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.autorevue.cz/nejvetsi-cinsky-exporter-miri-do-nemecka-automobilovy-gigant-dobyva-evropu-hybridnimi-suv",
+      "title": "Benzín v ČR: ceny stoupají, co to znamená pro řidiče",
+      "summary": "Benzín v ČR v posledních týdnech zaznamenal výrazný nárůst cen. Natural 95 nyní stojí 38,50 Kč/l, nafta 36,20 Kč/l. Pro řidiče z Prahy, Brna a Ostravy to znamená vyšší náklady na tankování. Zjistěte, kde najít nejlevnější čerpací stanice a jak se tyto změny projeví na vašem rozp…",
+      "filename": "benzin-ceny-2026.html",
+      "published_at": "30. 06. 2026 12:23",
+      "created": "2026-06-30 10:28:01",
+      "score": 4.1,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Brent"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/pro-ridice/konec-automatickeho-zdrazovani-dalnicnich-znamek-pro-pristi-rok-se-ma-cena-zmrazit/r~aaa29175565458e2cac051b706d7f4b3/",
+      "title": "cena dálničních známek 2570 Kč – zůstane stejná v roce 2027",
+      "summary": "Cenová stabilita dálničních známek se pro rok 2027 zaručuje na 2570 Kč. Vláda a parlament se shodují na záměru zadržet inflaci a ušetřit řidičům. Pro řidiče z Prahy, Brna a Ostravy to znamená, že roční známka zůstane stejná, i když se v ostatních oblastech pohybuje s inflací.",
+      "filename": "cena-dalnicnich-znamek-2570-kc.html",
+      "published_at": "30. 06. 2026 12:23",
+      "created": "2026-06-30 10:25:42",
+      "score": 4.4,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "čr"
+      ]
+    },
     {
       "url": "https://oilprice.com/Latest-Energy-News/World-News/India-Boosts-US-LPG-Imports-to-Record-High.html",
       "title": "Benzín v ČR: rekordní ceny a dopad globálního trhu",
@@ -492,7 +580,7 @@
       "created": "2026-05-10 07:29:04",
       "score": 2.8,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -520,7 +608,7 @@
       "created": "2026-05-10 07:26:58",
       "score": 3.05,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -548,7 +636,7 @@
       "created": "2026-05-09 14:15:55",
       "score": 3.8,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
