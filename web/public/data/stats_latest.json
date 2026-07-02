@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-07-01T15:52:08Z",
+  "last_updated": "2026-07-02T06:48:45Z",
   "averages": {
     "natural_95": 38.5,
-    "natural_98": 42.4,
-    "nafta": 37.3,
+    "natural_98": 42.3,
+    "nafta": 37.4,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 35.1,
-      "station_id": "osm_998425264",
-      "city": "Královéhradecký kraj"
+      "station_id": "osm_1913211396",
+      "city": "Plzeňský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2550,
-  "stations_updated_today": 2550,
-  "real_prices_count": 918,
-  "estimated_prices_count": 1632
+  "total_stations": 2551,
+  "stations_updated_today": 2551,
+  "real_prices_count": 920,
+  "estimated_prices_count": 1631
 }
