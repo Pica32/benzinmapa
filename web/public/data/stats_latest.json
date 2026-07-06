@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06T12:04:21Z",
+  "last_updated": "2026-07-06T16:29:54Z",
   "averages": {
     "natural_95": 38.6,
     "natural_98": 42.4,
@@ -14,13 +14,13 @@
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "mb-g-a-s-petroleum-cernosin",
-      "city": "Černošín"
+      "station_id": "osm_6795799642",
+      "city": "Plzeňský kraj"
     },
     "lpg": {
       "price": 19.5,
-      "station_id": "mb-prim-praha-22",
-      "city": "Praha 22"
+      "station_id": "osm_25468982",
+      "city": "Olomoucký kraj"
     }
   },
   "trend_7d": {
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 923,
-  "stations_updated_today": 923,
-  "real_prices_count": 923,
-  "estimated_prices_count": 0
+  "total_stations": 2551,
+  "stations_updated_today": 2551,
+  "real_prices_count": 919,
+  "estimated_prices_count": 1632
 }
