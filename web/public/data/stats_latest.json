@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06T16:29:54Z",
+  "last_updated": "2026-07-07T06:51:34Z",
   "averages": {
     "natural_95": 38.6,
     "natural_98": 42.4,
@@ -9,8 +9,8 @@
   "cheapest_today": {
     "natural_95": {
       "price": 35.2,
-      "station_id": "mb-kvint-vlachovo-brezi",
-      "city": "Vlachovo Březí"
+      "station_id": "osm_13992927008",
+      "city": "Středočeský kraj"
     },
     "nafta": {
       "price": 35.0,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 2551,
-  "stations_updated_today": 2551,
+  "total_stations": 3242,
+  "stations_updated_today": 3242,
   "real_prices_count": 919,
-  "estimated_prices_count": 1632
+  "estimated_prices_count": 2323
 }
