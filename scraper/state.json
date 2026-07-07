@@ -1,7 +1,65 @@
 {
-  "last_run_ts": 1782815016,
-  "last_publish_ts": 1782815465,
+  "last_run_ts": 1783419480,
+  "last_publish_ts": 1783420634,
   "items": [
+    {
+      "url": "https://www.auto.cz/honda-odmitla-fuzi-s-automobilkou-nissan-nyni-se-blizi-podpisu-dohody-o-spolupraci-161590",
+      "title": "Honda Nissan spolupráce: co to znamená pro české řidiče",
+      "summary": "Honda Nissan spolupráce se blíží k podpisu, což přináší řadu otázek pro české řidiče. V tomto článku se podíváme na to, co tato dohoda znamená pro trh, jak ovlivní nabídku vozidel a co to bude mít pro každodenní život na silnicích.",
+      "filename": "honda-nissan-spoluprace.html",
+      "published_at": "07. 07. 2026 12:18",
+      "created": "2026-07-07 10:37:14",
+      "score": 4.05,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/prodej-elektromobilu-ma-v-cesku-novy-rekord-skoda-auto-dal-prohlubuje-trzni-propast/r~aaa292245907a1c804508e77de1b263b/",
+      "title": "Benzín v Česku: ceny roste, co to znamená pro řidiče",
+      "summary": "Benzín v Česku v posledních týdnech zaznamenal výrazný nárůst cen. Ceny se posunuly na 45,00 Kč/l, což znamená, že řidiči v Praze, Brně a Ostravě budou muset zaplatit více za každou nádrž. V článku se podíváme na příčiny, dopad na průměrné tankování a tipy, jak ušetřit.",
+      "filename": "benzinn-cesko-ceny-rozmach.html",
+      "published_at": "07. 07. 2026 12:18",
+      "created": "2026-07-07 10:19:57",
+      "score": 7.6,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/vyrazny-sesup-v-nosovicich-automobilce-hyundai-klesl-zisk-o-60-procent-loni-vyrobila-mene-aut-1433953",
       "title": "benzín v ČR: 2026 ceny, tankování a co čeká řidiče",
@@ -524,7 +582,7 @@
       "created": "2026-05-10 14:19:32",
       "score": 2.75,
       "source": "E15.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -552,7 +610,7 @@
       "created": "2026-05-10 14:17:32",
       "score": 3.95,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
