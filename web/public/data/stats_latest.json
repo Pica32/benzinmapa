@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-07-11T14:31:52Z",
+  "last_updated": "2026-07-12T06:02:59Z",
   "averages": {
-    "natural_95": 38.9,
+    "natural_95": 39.0,
     "natural_98": 42.6,
     "nafta": 37.1,
     "lpg": 19.5
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_310678468",
-      "city": "Olomoucký kraj"
+      "station_id": "osm_336098750",
+      "city": "Pardubický kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3240,
-  "stations_updated_today": 3240,
-  "real_prices_count": 911,
-  "estimated_prices_count": 2329
+  "total_stations": 3241,
+  "stations_updated_today": 3241,
+  "real_prices_count": 922,
+  "estimated_prices_count": 2319
 }
