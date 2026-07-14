@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-07-14T05:35:33Z",
+  "last_updated": "2026-07-14T09:52:02Z",
   "averages": {
     "natural_95": 39.1,
     "natural_98": 42.8,
-    "nafta": 36.8,
+    "nafta": 36.9,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.4,
-      "station_id": "osm_13868693792",
+      "price": 35.1,
+      "station_id": "osm_13992927008",
       "city": "Středočeský kraj"
     },
     "nafta": {
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3245,
-  "stations_updated_today": 3245,
-  "real_prices_count": 922,
-  "estimated_prices_count": 2323
+  "total_stations": 3246,
+  "stations_updated_today": 3246,
+  "real_prices_count": 931,
+  "estimated_prices_count": 2315
 }
