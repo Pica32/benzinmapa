@@ -1,7 +1,65 @@
 {
-  "last_run_ts": 1783419480,
-  "last_publish_ts": 1783420634,
+  "last_run_ts": 1784019491,
+  "last_publish_ts": 1784019931,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/novy-konkurent-skody-octavia-odhalil-nejvetsi-zbrane-dacia-striker-je-hybrid-na-lpg-a-nebude-draha",
+      "title": "Dacia Striker: nový LPG hybrid, cenově dostupný vůz",
+      "summary": "Dacia Striker, nový LPG hybrid, přichází do ČR s cenou okolo 12 000 Kč a úsporným provozem. Vysoká spotřeba 4,5 l/100 km a nízké náklady na palivo dělají z tohoto vozu ideální volbu pro rodiny i malé firmy. Přijďte zjistit, proč by vás to nemělo zaujmout.",
+      "filename": "dacia-striker-lpg-hybrid-cena.html",
+      "published_at": "14. 07. 2026 10:58",
+      "created": "2026-07-14 09:05:31",
+      "score": 3.8,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "BenzinMapa.cz",
+        "Pergol.cz"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://zpravy.aktualne.cz/ekonomika/auto/historie-automobilu/jak-se-vyrabi-auta-v-nejstrezenejsi-zemi-sveta-kimova-automobilka-ma-mir-i-v-nazvu/r~aaa2954b13b79d6adcefa50d5e808143/",
+      "title": "Benzín v ČR letos zvedl cenu o 3,5 %",
+      "summary": "Benzín v ČR letos zvedl cenu o 3,5 %. Průměrná nádrž 55 l nyní stojí 2 310 Kč. V Praze, Brně a Ostravě se ceny liší o až 0,30 Kč/l. Článek přináší přehled, kde natankovat nejlevněji a co očekávat v budoucnu.",
+      "filename": "benzinnovychcen-2026.html",
+      "published_at": "14. 07. 2026 10:58",
+      "created": "2026-07-14 08:59:51",
+      "score": 6.4,
+      "source": "Aktuálně Ekonomika",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.auto.cz/honda-odmitla-fuzi-s-automobilkou-nissan-nyni-se-blizi-podpisu-dohody-o-spolupraci-161590",
       "title": "Honda Nissan spolupráce: co to znamená pro české řidiče",
@@ -526,7 +584,7 @@
       "created": "2026-05-12 07:43:31",
       "score": 4.75,
       "source": "OilPrice.com",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -554,7 +612,7 @@
       "created": "2026-05-11 15:53:52",
       "score": 6.95,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
