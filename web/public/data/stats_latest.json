@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-07-16T15:11:46Z",
+  "last_updated": "2026-07-17T05:49:03Z",
   "averages": {
-    "natural_95": 39.5,
-    "natural_98": 42.9,
-    "nafta": 37.2,
+    "natural_95": 39.6,
+    "natural_98": 43.1,
+    "nafta": 37.4,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_336098750",
-      "city": "Pardubický kraj"
+      "station_id": "osm_536071318",
+      "city": "Ústecký kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3244,
   "stations_updated_today": 3244,
-  "real_prices_count": 937,
-  "estimated_prices_count": 2307
+  "real_prices_count": 935,
+  "estimated_prices_count": 2309
 }
