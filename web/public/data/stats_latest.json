@@ -1,26 +1,26 @@
 {
-  "last_updated": "2026-07-18T14:32:23Z",
+  "last_updated": "2026-07-19T05:57:44Z",
   "averages": {
-    "natural_95": 40.1,
-    "natural_98": 43.3,
-    "nafta": 38.2,
+    "natural_95": 40.2,
+    "natural_98": 43.5,
+    "nafta": 38.4,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.1,
-      "station_id": "mb-kvint-vlachovo-brezi",
-      "city": "Vlachovo Březí"
+      "price": 36.5,
+      "station_id": "osm_410767739",
+      "city": "Královéhradecký kraj"
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "mb-g-a-s-petroleum-litvinov",
-      "city": "Litvínov"
+      "station_id": "osm_536071318",
+      "city": "Ústecký kraj"
     },
     "lpg": {
       "price": 19.5,
-      "station_id": "mb-prim-praha-22",
-      "city": "Praha 22"
+      "station_id": "osm_25468982",
+      "city": "Olomoucký kraj"
     }
   },
   "trend_7d": {
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 936,
-  "stations_updated_today": 936,
-  "real_prices_count": 936,
-  "estimated_prices_count": 0
+  "total_stations": 3245,
+  "stations_updated_today": 3245,
+  "real_prices_count": 942,
+  "estimated_prices_count": 2303
 }
