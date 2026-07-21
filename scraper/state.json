@@ -1,7 +1,65 @@
 {
-  "last_run_ts": 1784019491,
-  "last_publish_ts": 1784019931,
+  "last_run_ts": 1784625705,
+  "last_publish_ts": 1784626742,
   "items": [
+    {
+      "url": "https://www.e15.cz/byznys/obchod-a-sluzby/cesi-se-kvuli-valce-presunuli-jinam-jedna-dovolenkova-stalice-vyrazne-propadla-1434424",
+      "title": "Benzín v ČR: ceny roste, co to znamená pro řidiče",
+      "summary": "Benzín v ČR se v posledních týdnech zvedl na rekordní úroveň. 42,30 Kč/l znamená pro řidiče s 60 l nádrží 204 Kč víc než před rokem. V článku najdete detailní výpočet, proč ceny rostou a kde najít nejlevnější čerpací stanice.",
+      "filename": "benzin-v-cr-ceny-rostou.html",
+      "published_at": "21. 07. 2026 11:21",
+      "created": "2026-07-21 09:39:02",
+      "score": 3.75,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/bmw-a-toyota-testuji-umely-benzin-chteji-s-nim-presvedcit-evropske-politiky-161742",
+      "title": "Benzín v ČR: ceny, syntetický pohon a dopad na řidiče",
+      "summary": "Benzín v ČR se v posledních týdnech stal tématem napětí. Průměrná cena Natural 95 se v Praze posunula na 38,90 Kč/l, zatímco nafta stojí 42,30 Kč/l. Zjistěte, co stojí za tímto růstem, jak syntetický benzín ovlivní české řidiče a kde najít nejlevnější čerpací stanice.",
+      "filename": "benzin-ceny-synteticky-pohon.html",
+      "published_at": "21. 07. 2026 11:21",
+      "created": "2026-07-21 09:33:43",
+      "score": 4.25,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.autorevue.cz/novy-konkurent-skody-octavia-odhalil-nejvetsi-zbrane-dacia-striker-je-hybrid-na-lpg-a-nebude-draha",
       "title": "Dacia Striker: nový LPG hybrid, cenově dostupný vůz",
@@ -528,7 +586,7 @@
       "created": "2026-05-19 10:48:06",
       "score": 4.0,
       "source": "ČT24 Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -556,7 +614,7 @@
       "created": "2026-05-19 10:35:47",
       "score": 6.05,
       "source": "Auto.cz",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
