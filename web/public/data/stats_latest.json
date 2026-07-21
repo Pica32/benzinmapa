@@ -1,21 +1,21 @@
 {
-  "last_updated": "2026-07-21T05:56:41Z",
+  "last_updated": "2026-07-21T10:22:45Z",
   "averages": {
-    "natural_95": 40.6,
+    "natural_95": 40.7,
     "natural_98": 44.0,
-    "nafta": 39.5,
+    "nafta": 39.8,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
       "price": 35.5,
-      "station_id": "mb-icom-pocatky",
-      "city": "Počátky"
+      "station_id": "osm_2403970198",
+      "city": "Středočeský kraj"
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_536071318",
-      "city": "Ústecký kraj"
+      "station_id": "osm_6795799642",
+      "city": "Plzeňský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3244,
-  "stations_updated_today": 3244,
+  "total_stations": 3245,
+  "stations_updated_today": 3245,
   "real_prices_count": 943,
-  "estimated_prices_count": 2301
+  "estimated_prices_count": 2302
 }
