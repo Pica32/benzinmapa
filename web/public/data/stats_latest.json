@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-07-25T05:50:11Z",
+  "last_updated": "2026-07-25T09:34:01Z",
   "averages": {
     "natural_95": 41.4,
     "natural_98": 44.7,
-    "nafta": 41.7,
+    "nafta": 42.0,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 35.9,
-      "station_id": "osm_444517469",
-      "city": "Borotín"
+      "price": 35.5,
+      "station_id": "osm_2403970198",
+      "city": "Středočeský kraj"
     },
     "nafta": {
       "price": 35.0,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3247,
-  "stations_updated_today": 3247,
-  "real_prices_count": 951,
-  "estimated_prices_count": 2296
+  "total_stations": 3246,
+  "stations_updated_today": 3246,
+  "real_prices_count": 953,
+  "estimated_prices_count": 2293
 }
