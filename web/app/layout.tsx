@@ -6,6 +6,7 @@ import PartnersFooter from '@/components/PartnersFooter';
 import { WebsiteJsonLd, OrganizationJsonLd } from '@/components/JsonLd';
 import WebVitals from '@/components/WebVitals';
 import CookieConsent from '@/components/CookieConsent';
+import { Analytics } from '@vercel/analytics/next';
 
 const GA_ID = 'G-NE6QMNHHJ9';
 
@@ -146,6 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
