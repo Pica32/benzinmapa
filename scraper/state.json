@@ -1,7 +1,94 @@
 {
-  "last_run_ts": 1785230997,
-  "last_publish_ts": 1785233299,
+  "last_run_ts": 1785835921,
+  "last_publish_ts": 1785837336,
   "items": [
+    {
+      "url": "https://www.autorevue.cz/novy-mercedes-benz-gla-oficialne-ujede-pres-650-kilometru-na-elektrinu-ale-bude-i-na-benzin",
+      "title": "Benzín v ČR 2026: ceny roste, co to znamená pro řidiče",
+      "summary": "Benzín v ČR letos klesá, ale stále zůstává největším výdajem na pohonné hmoty. Ceny Natural 95 se zvýšily o 1,20 Kč/l, nafta o 2,10 Kč/l. Pro řidiče z Prahy, Brna či Ostravy to znamená vyšší náklady na tankování a nutnost sledovat trh. Přehled cen, výpočty a tipy, kde natankovat…",
+      "filename": "benzyn-cena-2026.html",
+      "published_at": "04. 08. 2026 11:32",
+      "created": "2026-08-04 09:55:36",
+      "score": 4.3,
+      "source": "AutoRevue",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/valka-na-blizkem-vychode-ma-prekvapiveho-viteze-elektromobily-lamou-rekordy-1434669",
+      "title": "Benzín v ČR: ceny roste, řidiči se připravují",
+      "summary": "Benzín v ČR se zvedá – natural 95 nyní 39,20 Kč/l, nafta 42,30 Kč/l. Připravte se na vyšší náklady na tankování, zjistěte, kolik zaplatíte na 60l a kde najít nejlevnější čerpací stanice.",
+      "filename": "benzin-ceny-rozvaha.html",
+      "published_at": "04. 08. 2026 11:32",
+      "created": "2026-08-04 09:52:56",
+      "score": 5.25,
+      "source": "E15.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Euro palivo"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
+    {
+      "url": "https://www.auto.cz/keramika-na-auto-od-spreje-za-300-kc-z-benzinky-az-po-profi-peci-vyplati-se-161936",
+      "title": "benzín cena v ČR: 42,30 Kč/l – co to znamená pro řidiče",
+      "summary": "Benzín v ČR se v posledních týdnech zvedl o 3,4 Kč na litr, což znamená, že řidič s 60 l nádrží zaplatí o 204 Kč víc než před rokem. Co je za tímto růstem, kde najít nejlevnější čerpací stanice a jak se na to připravit?",
+      "filename": "benzin-cena-v-cr.html",
+      "published_at": "04. 08. 2026 11:32",
+      "created": "2026-08-04 09:47:24",
+      "score": 5.55,
+      "source": "Auto.cz",
+      "is_archive": false,
+      "category": "Ceny paliv",
+      "entities": [
+        "Benzina ORLEN",
+        "MOL",
+        "OPEC",
+        "ČNB",
+        "ČESMAD",
+        "MPO",
+        "SÚKL",
+        "Shell",
+        "OMV"
+      ],
+      "tags": [
+        "benzín",
+        "nafta",
+        "ceny paliv",
+        "tankování",
+        "ČR"
+      ]
+    },
     {
       "url": "https://www.e15.cz/byznys/cesky-a-evropsky-autoprumysl/cesky-trh-se-rychle-meni-cinske-automobilky-prepisuji-poradi-prodeju-1434561",
       "title": "Benzín v ČR roste – co to znamená pro řidiče",
@@ -503,7 +590,7 @@
       "created": "2026-06-09 10:30:49",
       "score": 4.15,
       "source": "Novinky Ekonomika",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -531,7 +618,7 @@
       "created": "2026-06-09 10:28:52",
       "score": 6.1,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
@@ -559,7 +646,7 @@
       "created": "2026-06-02 11:27:04",
       "score": 4.1,
       "source": "AutoRevue",
-      "is_archive": false,
+      "is_archive": true,
       "category": "Ceny paliv",
       "entities": [
         "Benzina ORLEN",
