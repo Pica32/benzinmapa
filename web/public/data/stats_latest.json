@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-05T05:52:31Z",
+  "last_updated": "2026-08-05T10:34:58Z",
   "averages": {
     "natural_95": 41.6,
     "natural_98": 45.0,
@@ -9,18 +9,18 @@
   "cheapest_today": {
     "natural_95": {
       "price": 35.5,
-      "station_id": "osm_2403970198",
-      "city": "Středočeský kraj"
+      "station_id": "mb-arex-cz-benesov-nad-cernou",
+      "city": "Benešov nad Černou"
     },
     "nafta": {
       "price": 35.0,
-      "station_id": "osm_6795799642",
-      "city": "Plzeňský kraj"
+      "station_id": "mb-g-a-s-petroleum-cernosin",
+      "city": "Černošín"
     },
     "lpg": {
       "price": 19.5,
-      "station_id": "osm_25468982",
-      "city": "Olomoucký kraj"
+      "station_id": "mb-eurooil-praha-4-branik",
+      "city": "Praha 4 - Braník"
     }
   },
   "trend_7d": {
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3249,
-  "stations_updated_today": 3249,
-  "real_prices_count": 957,
-  "estimated_prices_count": 2292
+  "total_stations": 955,
+  "stations_updated_today": 955,
+  "real_prices_count": 955,
+  "estimated_prices_count": 0
 }
