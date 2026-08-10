@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-09T13:58:54Z",
+  "last_updated": "2026-08-10T04:37:09Z",
   "averages": {
     "natural_95": 40.0,
     "natural_98": 43.5,
-    "nafta": 42.6,
+    "nafta": 42.7,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -13,9 +13,9 @@
       "city": "Strážný"
     },
     "nafta": {
-      "price": 35.2,
-      "station_id": "osm_88085430",
-      "city": "Olomoucký kraj"
+      "price": 35.3,
+      "station_id": "osm_1099636729",
+      "city": "Plzeňský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3176,
-  "stations_updated_today": 3176,
-  "real_prices_count": 643,
-  "estimated_prices_count": 2533
+  "total_stations": 3178,
+  "stations_updated_today": 3178,
+  "real_prices_count": 638,
+  "estimated_prices_count": 2540
 }
