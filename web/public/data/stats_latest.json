@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-11T14:30:44Z",
+  "last_updated": "2026-08-12T04:53:27Z",
   "averages": {
     "natural_95": 39.9,
     "natural_98": 43.5,
@@ -13,9 +13,9 @@
       "city": "Strážný"
     },
     "nafta": {
-      "price": 35.5,
-      "station_id": "osm_477278859",
-      "city": "Kácov"
+      "price": 35.3,
+      "station_id": "osm_1099636729",
+      "city": "Plzeňský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3180,
   "stations_updated_today": 3180,
-  "real_prices_count": 646,
-  "estimated_prices_count": 2534
+  "real_prices_count": 648,
+  "estimated_prices_count": 2532
 }
