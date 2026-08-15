@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-15T08:30:13Z",
+  "last_updated": "2026-08-15T13:40:23Z",
   "averages": {
     "natural_95": 40.0,
     "natural_98": 43.5,
@@ -9,7 +9,7 @@
   "cheapest_today": {
     "natural_95": {
       "price": 38.2,
-      "station_id": "osm_250122920",
+      "station_id": "osm_281875785",
       "city": "Vysočina"
     },
     "nafta": {
@@ -30,6 +30,6 @@
   },
   "total_stations": 3182,
   "stations_updated_today": 3182,
-  "real_prices_count": 653,
-  "estimated_prices_count": 2529
+  "real_prices_count": 658,
+  "estimated_prices_count": 2524
 }
