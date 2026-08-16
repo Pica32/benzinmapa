@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-08-16T08:34:57Z",
+  "last_updated": "2026-08-16T13:40:28Z",
   "averages": {
     "natural_95": 40.0,
     "natural_98": 43.5,
-    "nafta": 43.0,
+    "nafta": 43.1,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 37.5,
-      "station_id": "osm_32924797",
-      "city": "Karlovarský kraj"
+      "price": 38.2,
+      "station_id": "osm_250122920",
+      "city": "Vysočina"
     },
     "nafta": {
       "price": 35.6,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3181,
   "stations_updated_today": 3181,
-  "real_prices_count": 657,
-  "estimated_prices_count": 2524
+  "real_prices_count": 660,
+  "estimated_prices_count": 2521
 }
