@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-16T03:53:00Z",
+  "last_updated": "2026-08-16T08:34:57Z",
   "averages": {
     "natural_95": 40.0,
     "natural_98": 43.5,
@@ -13,9 +13,9 @@
       "city": "Karlovarský kraj"
     },
     "nafta": {
-      "price": 35.3,
-      "station_id": "osm_1099636729",
-      "city": "Plzeňský kraj"
+      "price": 35.6,
+      "station_id": "osm_5725116491",
+      "city": "Jihomoravský kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3181,
   "stations_updated_today": 3181,
-  "real_prices_count": 656,
-  "estimated_prices_count": 2525
+  "real_prices_count": 657,
+  "estimated_prices_count": 2524
 }
