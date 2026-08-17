@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-08-17T08:41:28Z",
+  "last_updated": "2026-08-17T13:49:28Z",
   "averages": {
     "natural_95": 40.0,
     "natural_98": 43.5,
-    "nafta": 43.1,
+    "nafta": 43.2,
     "lpg": 19.5
   },
   "cheapest_today": {
     "natural_95": {
       "price": 38.2,
-      "station_id": "osm_2344889211",
-      "city": "Vysočina"
+      "station_id": "osm_2569636388",
+      "city": "Vlašim"
     },
     "nafta": {
       "price": 35.6,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3181,
-  "stations_updated_today": 3181,
-  "real_prices_count": 659,
-  "estimated_prices_count": 2522
+  "total_stations": 3184,
+  "stations_updated_today": 3184,
+  "real_prices_count": 654,
+  "estimated_prices_count": 2530
 }
