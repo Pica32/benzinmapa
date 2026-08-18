@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-18T08:28:54Z",
+  "last_updated": "2026-08-18T13:50:47Z",
   "averages": {
-    "natural_95": 40.2,
+    "natural_95": 40.3,
     "natural_98": 43.5,
-    "nafta": 43.3,
+    "nafta": 43.4,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -13,9 +13,9 @@
       "city": "Vlašim"
     },
     "nafta": {
-      "price": 35.7,
-      "station_id": "osm_2489870492",
-      "city": "Vysočina"
+      "price": 35.6,
+      "station_id": "osm_2812457914",
+      "city": "Královéhradecký kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3179,
-  "stations_updated_today": 3179,
-  "real_prices_count": 701,
-  "estimated_prices_count": 2478
+  "total_stations": 3180,
+  "stations_updated_today": 3180,
+  "real_prices_count": 697,
+  "estimated_prices_count": 2483
 }
