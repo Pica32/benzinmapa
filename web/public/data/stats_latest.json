@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-24T03:59:16Z",
+  "last_updated": "2026-08-24T08:43:01Z",
   "averages": {
-    "natural_95": 40.7,
+    "natural_95": 40.6,
     "natural_98": 43.5,
-    "nafta": 44.3,
+    "nafta": 44.2,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -13,9 +13,9 @@
       "city": "Pardubický kraj"
     },
     "nafta": {
-      "price": 35.7,
-      "station_id": "osm_2489870492",
-      "city": "Vysočina"
+      "price": 36.3,
+      "station_id": "osm_13992926952",
+      "city": "Olomoucký kraj"
     },
     "lpg": {
       "price": 19.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3182,
-  "stations_updated_today": 3182,
-  "real_prices_count": 694,
-  "estimated_prices_count": 2488
+  "total_stations": 3183,
+  "stations_updated_today": 3183,
+  "real_prices_count": 686,
+  "estimated_prices_count": 2497
 }
