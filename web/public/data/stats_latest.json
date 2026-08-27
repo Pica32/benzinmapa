@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-27T13:51:01Z",
+  "last_updated": "2026-08-27T18:35:25Z",
   "averages": {
     "natural_95": 40.7,
     "natural_98": 43.5,
@@ -8,9 +8,9 @@
   },
   "cheapest_today": {
     "natural_95": {
-      "price": 38.7,
-      "station_id": "osm_13992933003",
-      "city": "Olomoucký kraj"
+      "price": 38.1,
+      "station_id": "osm_470503934",
+      "city": "Zlínský kraj"
     },
     "nafta": {
       "price": 40.5,
@@ -28,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3184,
-  "stations_updated_today": 3184,
-  "real_prices_count": 682,
-  "estimated_prices_count": 2502
+  "total_stations": 3181,
+  "stations_updated_today": 3181,
+  "real_prices_count": 681,
+  "estimated_prices_count": 2500
 }
