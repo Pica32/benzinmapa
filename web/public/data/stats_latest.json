@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-31T09:26:13Z",
+  "last_updated": "2026-08-31T15:42:39Z",
   "averages": {
     "natural_95": 40.8,
     "natural_98": 43.5,
-    "nafta": 44.5,
+    "nafta": 44.6,
     "lpg": 19.5
   },
   "cheapest_today": {
@@ -14,8 +14,8 @@
     },
     "nafta": {
       "price": 40.5,
-      "station_id": "osm_13992932901",
-      "city": "Středočeský kraj"
+      "station_id": "mb-cs-point-morkovice-slizany",
+      "city": "Slížany"
     },
     "lpg": {
       "price": 19.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3184,
   "stations_updated_today": 3184,
-  "real_prices_count": 689,
-  "estimated_prices_count": 2495
+  "real_prices_count": 690,
+  "estimated_prices_count": 2494
 }
