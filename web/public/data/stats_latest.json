@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-09-01T12:59:09Z",
+  "last_updated": "2026-09-01T17:21:30Z",
   "averages": {
-    "natural_95": 40.8,
+    "natural_95": 40.9,
     "natural_98": 43.5,
     "nafta": 44.6,
     "lpg": 19.5
@@ -13,7 +13,7 @@
       "city": "Olomoucký kraj"
     },
     "nafta": {
-      "price": 39.2,
+      "price": 40.2,
       "station_id": "osm_4359932312",
       "city": "Moravskoslezský kraj"
     },
@@ -30,6 +30,6 @@
   },
   "total_stations": 3184,
   "stations_updated_today": 3184,
-  "real_prices_count": 689,
-  "estimated_prices_count": 2495
+  "real_prices_count": 691,
+  "estimated_prices_count": 2493
 }
