@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-31T19:33:33Z",
+  "last_updated": "2026-09-01T08:23:54Z",
   "averages": {
     "natural_95": 40.8,
     "natural_98": 43.5,
@@ -30,6 +30,6 @@
   },
   "total_stations": 3184,
   "stations_updated_today": 3184,
-  "real_prices_count": 685,
-  "estimated_prices_count": 2499
+  "real_prices_count": 686,
+  "estimated_prices_count": 2498
 }
