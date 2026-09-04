@@ -1,22 +1,12 @@
 {
-  "last_updated": "2026-09-03T11:31:45Z",
+  "last_updated": "2026-09-04T07:41:12Z",
   "averages": {
-    "natural_95": 41.1,
+    "natural_95": 40.5,
     "natural_98": 43.5,
-    "nafta": 44.8,
+    "nafta": 42.1,
     "lpg": 19.5
   },
   "cheapest_today": {
-    "natural_95": {
-      "price": 38.7,
-      "station_id": "osm_13992933003",
-      "city": "Olomoucký kraj"
-    },
-    "nafta": {
-      "price": 40.5,
-      "station_id": "mb-cs-point-morkovice-slizany",
-      "city": "Slížany"
-    },
     "lpg": {
       "price": 19.5,
       "station_id": "osm_25468982",
@@ -28,8 +18,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3185,
-  "stations_updated_today": 3185,
-  "real_prices_count": 746,
-  "estimated_prices_count": 2439
+  "total_stations": 3164,
+  "stations_updated_today": 3164,
+  "real_prices_count": 0,
+  "estimated_prices_count": 3164
 }
