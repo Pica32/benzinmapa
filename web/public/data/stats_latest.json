@@ -1,12 +1,22 @@
 {
-  "last_updated": "2026-09-17T08:22:24Z",
+  "last_updated": "2026-09-17T18:27:28Z",
   "averages": {
-    "natural_95": 40.5,
+    "natural_95": 43.8,
     "natural_98": 43.5,
-    "nafta": 42.1,
+    "nafta": 48.0,
     "lpg": 19.5
   },
   "cheapest_today": {
+    "natural_95": {
+      "price": 39.5,
+      "station_id": "osm_343627336",
+      "city": "Středočeský kraj"
+    },
+    "nafta": {
+      "price": 42.6,
+      "station_id": "osm_3750729577",
+      "city": "Vysočina"
+    },
     "lpg": {
       "price": 19.5,
       "station_id": "osm_25468982",
@@ -18,8 +28,8 @@
     "nafta": -0.4,
     "lpg": 0.0
   },
-  "total_stations": 3164,
-  "stations_updated_today": 3164,
-  "real_prices_count": 0,
-  "estimated_prices_count": 3164
+  "total_stations": 3181,
+  "stations_updated_today": 3181,
+  "real_prices_count": 673,
+  "estimated_prices_count": 2508
 }
